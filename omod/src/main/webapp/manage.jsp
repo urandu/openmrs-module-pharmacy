@@ -15,34 +15,34 @@
     <title>Pharmacy Admin Panel</title>
 
     <!-- Bootstrap CSS -->
-    
+
     <openmrs:htmlInclude file="/WEB-INF/assets/everest/css/bootstrap.css" />
 
     <!-- Animate CSS -->
-    
+
     <openmrs:htmlInclude file="/WEB-INF/assets/everest/css/animate.css" />
 
     <!-- Alertify CSS -->
-    
+
     <openmrs:htmlInclude file="/WEB-INF/assets/everest/css/alertify/alertify.core.css" />
-    
+
     <openmrs:htmlInclude file="/WEB-INF/assets/everest/css/alertify/alertify.default.css" />
 
     <!-- Main CSS -->
-    
+
 
     <openmrs:htmlInclude file="/WEB-INF/assets/everest/css/main.css" />
     <!-- Datepicker CSS -->
-    
+
     <openmrs:htmlInclude file="/WEB-INF/assets/everest/css/datepicker.css" />
     <!-- Font Awesome -->
-   
+
     <openmrs:htmlInclude file="/WEB-INF/assets/everest/fonts/font-awesome.min.css" />
     <!-- HTML5 shiv and Respond.js IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
-   
+
     <openmrs:htmlInclude file="/WEB-INF/assets/everest/js/html5shiv.js" />
-    
+
     <openmrs:htmlInclude file="/WEB-INF/assets/everest/js/respond.min.js" />
     <![endif]-->
 
@@ -1165,52 +1165,52 @@
 <openmrs:htmlInclude file="/WEB-INF/assets/everest/js/bootstrap.min.js" />
 
 <!-- Sparkline graphs -->
- 
+
 <openmrs:htmlInclude file="/WEB-INF/assets/everest/js/sparkline.js" />
 
 <!-- jquery ScrollUp JS -->
- 
+
 <openmrs:htmlInclude file="/WEB-INF/assets/everest/js/scrollup/jquery.scrollUp.js" />
 
 <!-- Notifications JS -->
- 
+
 <openmrs:htmlInclude file="/WEB-INF/assets/everest/js/alertify/alertify.js" />
 
- 
+
 <openmrs:htmlInclude file="/WEB-INF/assets/everest/js/alertify/alertify-custom.js" />
 
 <!-- Flot Charts -->
- 
+
 <openmrs:htmlInclude file="/WEB-INF/assets/everest/js/flot/jquery.flot.js" />
 
- 
+
 <openmrs:htmlInclude file="/WEB-INF/assets/everest/js/flot/jquery.flot.tooltip.min.js" />
 
- 
+
 <openmrs:htmlInclude file="/WEB-INF/assets/everest/js/flot/jquery.flot.resize.min.js" />
 
- 
+
 <openmrs:htmlInclude file="/WEB-INF/assets/everest/js/flot/jquery.flot.stack.min.js" />
 
- 
+
 <openmrs:htmlInclude file="/WEB-INF/assets/everest/js/flot/jquery.flot.orderBar.min.js" />
 
- 
+
 <openmrs:htmlInclude file="/WEB-INF/assets/everest/js/flot/jquery.flot.pie.min.js" />
 
 <!-- JVector Map -->
- 
+
 <openmrs:htmlInclude file="/WEB-INF/assets/everest/js/jvectormap/jquery-jvectormap-1.2.2.min.js" />
 
- 
+
 <openmrs:htmlInclude file="/WEB-INF/assets/everest/js/jvectormap/jquery-jvectormap-usa.js" />
 
 <!-- Custom Index -->
- 
+
 <openmrs:htmlInclude file="/WEB-INF/assets/everest/js/custom.js" />
 
 
- 
+
 <openmrs:htmlInclude file="/WEB-INF/assets/everest/js/custom-index.js" />
 
 </body>
