@@ -1,6 +1,26 @@
 <%@ include file="/WEB-INF/template/include.jsp"%>
 
-
+<openmrs:authentication>
+    <c:if test="${authenticatedUser != null}">
+					<span id="userLoggedInAs" class="firstChild">
+						<openmrs:message code="header.logged.in"/> ${authenticatedUser.personName}
+					</span>
+					<span id="userLogout">
+						<a href='${pageContext.request.contextPath}/logout'><openmrs:message code="header.logout" /></a>
+					</span>
+					<span>
+						<a href="${pageContext.request.contextPath}/options.form"><openmrs:message code="Navigation.options"/></a>
+					</span>
+    </c:if>
+    <c:if test="${authenticatedUser == null}">
+					<span id="userLoggedOut" class="firstChild">
+						<openmrs:message code="header.logged.out"/>
+					</span>
+					<span id="userLogIn">
+						<a href='${pageContext.request.contextPath}/login.htm'><openmrs:message code="header.login"/></a>
+					</span>
+    </c:if>
+</openmrs:authentication>
 
 <!DOCTYPE html>
 <html lang="en">
