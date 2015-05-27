@@ -55,7 +55,7 @@
     <!-- Logo starts -->
     <div class="logo">
         <a href="#">
-            <img src="/moduleResources/pharmacy/assets/everest/img/logo.png" alt="logo">
+            <img src="/openmrs/moduleResources/pharmacy/assets/everest/img/logo.png" alt="logo">
 					<span class="menu-toggle hidden-xs">
 						<i class="fa fa-bars"></i>
 					</span>
@@ -85,34 +85,34 @@
                 <span class="info-label info-bg animated rubberBand">7+</span>
                 <ul class="blog-gallery dropdown-menu fadeInDown animated clearfix recent-tweets">
                     <li>
-                        <img src="/moduleResources/pharmacy/assets/everest/img/user1.jpg" alt="User">
+                        <img src="/openmrs/moduleResources/pharmacy/assets/everest/img/user1.jpg" alt="User">
                     </li>
                     <li>
-                        <img src="/moduleResources/pharmacy/assets/everest/img/user2.jpg" alt="User">
+                        <img src="/openmrs/moduleResources/pharmacy/assets/everest/img/user2.jpg" alt="User">
                     </li>
                     <li>
-                        <img src="/moduleResources/pharmacy/assets/everest/img/user3.jpg" alt="User">
+                        <img src="/openmrs/moduleResources/pharmacy/assets/everest/img/user3.jpg" alt="User">
                     </li>
                     <li>
-                        <img src="/moduleResources/pharmacy/assets/everest/img/user4.jpg" alt="User">
+                        <img src="/openmrs/moduleResources/pharmacy/assets/everest/img/user4.jpg" alt="User">
                     </li>
                     <li>
-                        <img src="/moduleResources/pharmacy/assets/everest/img/user5.jpg" alt="User">
+                        <img src="/openmrs/moduleResources/pharmacy/assets/everest/img/user5.jpg" alt="User">
                     </li>
                     <li>
-                        <img src="/moduleResources/pharmacy/assets/everest/img/user6.jpg" alt="User">
+                        <img src="/openmrs/moduleResources/pharmacy/assets/everest/img/user6.jpg" alt="User">
                     </li>
                     <li>
-                        <img src="/moduleResources/pharmacy/assets/everest/img/user7.jpg" alt="User">
+                        <img src="/openmrs/moduleResources/pharmacy/assets/everest/img/user7.jpg" alt="User">
                     </li>
                     <li>
-                        <img src="/moduleResources/pharmacy/assets/everest/img/user8.jpg" alt="User">
+                        <img src="/openmrs/moduleResources/pharmacy/assets/everest/img/user8.jpg" alt="User">
                     </li>
                     <li>
-                        <img src="/moduleResources/pharmacy/assets/everest/img/user9.jpg" alt="User">
+                        <img src="/openmrs/moduleResources/pharmacy/assets/everest/img/user9.jpg" alt="User">
                     </li>
                     <li>
-                        <img src="/moduleResources/pharmacy/assets/everest/img/user3.jpg" alt="User">
+                        <img src="/openmrs/moduleResources/pharmacy/assets/everest/img/user3.jpg" alt="User">
                     </li>
                 </ul>
             </li>
@@ -172,7 +172,7 @@
                     </li>
                     <li>
                         <div class="user-pic">
-                            <img src="/moduleResources/pharmacy/assets/everest/img/user4.jpg" alt="User">
+                            <img src="/openmrs/moduleResources/pharmacy/assets/everest/img/user4.jpg" alt="User">
                         </div>
                         <div class="details">
                             <strong class="text-danger">Wilson</strong>
@@ -185,7 +185,7 @@
                     </li>
                     <li>
                         <div class="user-pic">
-                            <img src="/moduleResources/pharmacy/assets/everest/img/user1.jpg" alt="User">
+                            <img src="/openmrs/moduleResources/pharmacy/assets/everest/img/user1.jpg" alt="User">
                         </div>
                         <div class="details">
                             <strong class="text-danger">Adams</strong>
@@ -198,7 +198,7 @@
                     </li>
                     <li>
                         <div class="user-pic">
-                            <img src="/moduleResources/pharmacy/assets/everest/img/user3.jpg" alt="User">
+                            <img src="/openmrs/moduleResources/pharmacy/assets/everest/img/user3.jpg" alt="User">
                         </div>
                         <div class="details">
                             <strong class="text-info">Sam</strong>
@@ -211,7 +211,7 @@
                     </li>
                     <li>
                         <div class="user-pic">
-                            <img src="/moduleResources/pharmacy/assets/everest/img/user5.jpg" alt="User">
+                            <img src="/openmrs/moduleResources/pharmacy/assets/everest/img/user5.jpg" alt="User">
                         </div>
                         <div class="details">
                             <strong class="text-info">Jennifer</strong>
@@ -226,7 +226,7 @@
             </li>
             <li class="list-box user-profile hidden-xs">
                 <a href="login.html" class="user-avtar animated rubberBand">
-                    <img src="/moduleResources/pharmacy/assets/everest/img/user4.jpg" alt="user avatar">
+                    <img src="/openmrs/moduleResources/pharmacy/assets/everest/img/user4.jpg" alt="user avatar">
                 </a>
             </li>
         </ul>
@@ -242,7 +242,7 @@
 <!-- Current User Starts -->
 <div class="current-user">
     <div class="user-avatar animated rubberBand">
-        <img src="/moduleResources/pharmacy/assets/everest/img/user4.jpg" alt="Current User">
+        <img src="/openmrs/moduleResources/pharmacy/assets/everest/img/user4.jpg" alt="Current User">
         <span class="busy"></span>
     </div>
     <div class="user-name">Welcome Mr. James</div>
@@ -673,7 +673,7 @@
         <div class="blog-body">
             <ul class="chats">
                 <li class="in">
-                    <img class="avatar" alt="" src="/moduleResources/pharmacy/assets/everest/img/user2.jpg">
+                    <img class="avatar" alt="" src="/openmrs/moduleResources/pharmacy/assets/everest/img/user2.jpg">
                     <div class="message">
                         <span class="arrow"></span>
                         <a href="#" class="name" data-original-title="" title="">Sandy</a>
@@ -693,7 +693,7 @@
                     </div>
                 </li>
                 <li class="out">
-                    <img class="avatar" alt="" src="/moduleResources/pharmacy/assets/everest/img/user3.jpg">
+                    <img class="avatar" alt="" src="/openmrs/moduleResources/pharmacy/assets/everest/img/user3.jpg">
                     <div class="message">
                         <span class="arrow"></span>
                         <a href="#" class="name" data-original-title="" title="">Peter</a>
@@ -706,7 +706,7 @@
                     </div>
                 </li>
                 <li class="in">
-                    <img class="avatar" alt="" src="/moduleResources/pharmacy/assets/everest/img/user4.jpg">
+                    <img class="avatar" alt="" src="/openmrs/moduleResources/pharmacy/assets/everest/img/user4.jpg">
                     <div class="message">
                         <span class="arrow"></span>
                         <a href="#" class="name" data-original-title="" title="">Johnson</a>
@@ -732,7 +732,7 @@
         <div class="blog-body">
             <ul class="clients-list">
                 <li class="client clearfix">
-                    <img src="/moduleResources/pharmacy/assets/everest/img/user4.jpg" class="avatar" alt="Client">
+                    <img src="/openmrs/moduleResources/pharmacy/assets/everest/img/user4.jpg" class="avatar" alt="Client">
                     <div class="client-details">
                         <p>
                             <span class="name">Peter</span>
@@ -758,7 +758,7 @@
                     </div>
                 </li>
                 <li class="client clearfix">
-                    <img src="/moduleResources/pharmacy/assets/everest/img/user1.jpg" class="avatar" alt="Client">
+                    <img src="/openmrs/moduleResources/pharmacy/assets/everest/img/user1.jpg" class="avatar" alt="Client">
                     <div class="client-details">
                         <p>
                             <span class="name">Willims</span>
@@ -784,7 +784,7 @@
                     </div>
                 </li>
                 <li class="client clearfix">
-                    <img src="/moduleResources/pharmacy/assets/everest/img/user2.jpg" class="avatar" alt="Client">
+                    <img src="/openmrs/moduleResources/pharmacy/assets/everest/img/user2.jpg" class="avatar" alt="Client">
                     <div class="client-details">
                         <p>
                             <span class="name">Henreque</span>
@@ -810,7 +810,7 @@
                     </div>
                 </li>
                 <li class="client clearfix">
-                    <img src="/moduleResources/pharmacy/assets/everest/img/user3.jpg" class="avatar" alt="Client">
+                    <img src="/openmrs/moduleResources/pharmacy/assets/everest/img/user3.jpg" class="avatar" alt="Client">
                     <div class="client-details">
                         <p>
                             <span class="name">Samson</span>
@@ -836,7 +836,7 @@
                     </div>
                 </li>
                 <li class="client clearfix">
-                    <img src="/moduleResources/pharmacy/assets/everest/img/user4.jpg" class="avatar" alt="Client">
+                    <img src="/openmrs/moduleResources/pharmacy/assets/everest/img/user4.jpg" class="avatar" alt="Client">
                     <div class="client-details">
                         <p>
                             <span class="name">Valli</span>
@@ -862,7 +862,7 @@
                     </div>
                 </li>
                 <li class="client clearfix">
-                    <img src="/moduleResources/pharmacy/assets/everest/img/user5.jpg" class="avatar" alt="Client">
+                    <img src="/openmrs/moduleResources/pharmacy/assets/everest/img/user5.jpg" class="avatar" alt="Client">
                     <div class="client-details">
                         <p>
                             <span class="name">Jene</span>
