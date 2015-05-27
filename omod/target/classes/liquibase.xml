@@ -17,5 +17,18 @@
             <column name="pricePerUnit" type="numeric"/>
         </createTable>
     </changeSet>
+
+    <changeSet author="kinyua" id="20131010-1">
+        <comment>Create the drug order table</comment>
+        <createTable tableName="mydrugOrder_myDrugOrder">
+            <column autoIncrement="true" name="myDrugOrderId" type="int">
+                <constraints primaryKey="true" nullable="false" />
+            </column>
+            <column name="unitsDelivered" type="varchar(255)" />
+            <column name="dateOfDelivery" type="date"/>
+            <column name="dateOfExpiration" type="date" />
+            <column name="batchNumber" type="int"/>
+        </createTable>
+    </changeSet>
     
 </databaseChangeLog>

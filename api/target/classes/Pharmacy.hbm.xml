@@ -21,7 +21,7 @@
 				  column="description" length="255" />
 		<property name="unitsInStock" type="java.lang.String" column="unitsInStock"
 				  length="255" unique="true" />
-		<property name="pricePerUnit" type="java.lang.String" column="pricePerUnot"
+		<property name="pricePerUnit" type="java.lang.String" column="pricePerUnit"
 				  length="255" unique="true" />
 	</class>
 
