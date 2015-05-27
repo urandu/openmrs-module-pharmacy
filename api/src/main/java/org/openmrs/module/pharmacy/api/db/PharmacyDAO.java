@@ -13,14 +13,18 @@
  */
 package org.openmrs.module.pharmacy.api.db;
 
+import org.openmrs.module.pharmacy.Pharmacy;
 import org.openmrs.module.pharmacy.api.PharmacyService;
+
+import java.util.List;
 
 /**
  *  Database methods for {@link PharmacyService}.
  */
 public interface PharmacyDAO {
-	
-	/*
-	 * Add DAO methods here
-	 */
+
+	List<Pharmacy> getAllMyDrugs();
+	Pharmacy getMyDrug(Integer drugId);
+	Pharmacy saveMyDrug(Pharmacy Pharmacy);
+	void purgeMyDrug(Pharmacy Pharmacy);
 }

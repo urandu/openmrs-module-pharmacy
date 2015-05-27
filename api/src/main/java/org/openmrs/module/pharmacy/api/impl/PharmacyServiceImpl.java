@@ -13,32 +13,48 @@
  */
 package org.openmrs.module.pharmacy.api.impl;
 
-import org.openmrs.api.impl.BaseOpenmrsService;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
+import org.openmrs.api.impl.BaseOpenmrsService;
+import org.openmrs.module.pharmacy.Pharmacy;
 import org.openmrs.module.pharmacy.api.PharmacyService;
 import org.openmrs.module.pharmacy.api.db.PharmacyDAO;
+
+import java.util.List;
 
 /**
  * It is a default implementation of {@link PharmacyService}.
  */
 public class PharmacyServiceImpl extends BaseOpenmrsService implements PharmacyService {
-	
-	protected final Log log = LogFactory.getLog(this.getClass());
-	
-	private PharmacyDAO dao;
-	
-	/**
-     * @param dao the dao to set
-     */
+
+    protected final Log log = LogFactory.getLog(this.getClass());
+    private PharmacyDAO dao;
+
     public void setDao(PharmacyDAO dao) {
-	    this.dao = dao;
+        this.dao = dao;
     }
-    
-    /**
-     * @return the dao
-     */
+
     public PharmacyDAO getDao() {
-	    return dao;
+        return dao;
+    }
+
+    @Override
+    public List<Pharmacy> getAllMyDrugs() {
+        return dao.getAllMyDrugs();
+    }
+
+    @Override
+    public Pharmacy getMyDrug(Integer myDrugId) {
+        return dao.getMyDrug(myDrugId);
+    }
+
+    @Override
+    public Pharmacy saveMyDrug(Pharmacy pharmacy) {
+        return dao.saveMyDrug(pharmacy);
+    }
+
+    @Override
+    public void purgeMyDrug(Pharmacy pharmacy){
+        dao.purgeMyDrug(pharmacy);
     }
 }

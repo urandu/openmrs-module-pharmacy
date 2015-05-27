@@ -14,7 +14,10 @@
 package org.openmrs.module.pharmacy.api;
 
 import org.openmrs.api.OpenmrsService;
+import org.openmrs.module.pharmacy.Pharmacy;
 import org.springframework.transaction.annotation.Transactional;
+
+import java.util.List;
 
 /**
  * This service exposes module's core functionality. It is a Spring managed bean which is configured in moduleApplicationContext.xml.
@@ -28,9 +31,14 @@ import org.springframework.transaction.annotation.Transactional;
  */
 @Transactional
 public interface PharmacyService extends OpenmrsService {
-     
-	/*
-	 * Add service methods here
-	 * 
-	 */
+
+	@Transactional(readOnly = true)
+	List<Pharmacy> getAllMyDrugs();
+
+	@Transactional(readOnly = true)
+	Pharmacy getMyDrug(Integer myDrugId);
+
+	Pharmacy saveMyDrug(Pharmacy pharmacy);
+
+	void purgeMyDrug(Pharmacy pharmacy);
 }

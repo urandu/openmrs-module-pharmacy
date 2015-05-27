@@ -13,9 +13,10 @@
  */
 package org.openmrs.module.pharmacy;
 
-import java.io.Serializable;
-import org.openmrs.BaseOpenmrsObject;
 import org.openmrs.BaseOpenmrsMetadata;
+import org.openmrs.BaseOpenmrsObject;
+
+import java.io.Serializable;
 
 /**
  * It is a model class. It should extend either {@link BaseOpenmrsObject} or {@link BaseOpenmrsMetadata}.
@@ -23,17 +24,62 @@ import org.openmrs.BaseOpenmrsMetadata;
 public class Pharmacy extends BaseOpenmrsObject implements Serializable {
 
 	private static final long serialVersionUID = 1L;
-	
-	private Integer id;
-	
+    private Integer id;
+    private String brandName;
+    private String genericName;
+    private String description;
+    private int unitsInStock;
+    private float pricePerUnit;
+
+    public float getPricePerUnit() {
+        return pricePerUnit;
+    }
+
+    public void setPricePerUnit(float pricePerUnit) {
+        this.pricePerUnit = pricePerUnit;
+    }
+
+    public int getUnitsInStock() {
+        return unitsInStock;
+    }
+
+    public void setUnitsInStock(int unitsInStock) {
+        this.unitsInStock = unitsInStock;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public String getGenericName() {
+        return genericName;
+    }
+
+    public void setGenericName(String genericName) {
+        this.genericName = genericName;
+    }
+
+    public String getBrandName() {
+        return brandName;
+    }
+
+    public void setBrandName(String brandName) {
+        this.brandName = brandName;
+    }
+
 	@Override
 	public Integer getId() {
 		return id;
 	}
-	
+
 	@Override
 	public void setId(Integer id) {
-		this.id = id;
+		this.id= id;
 	}
-	
+
+
 }
