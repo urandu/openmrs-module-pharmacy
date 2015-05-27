@@ -1,5 +1,3 @@
-<%@ include file="/WEB-INF/template/include.jsp"%>
-
 
 
 
@@ -11,39 +9,39 @@
     <meta name="description" content="Everest Admin Panel" />
     <meta name="keywords" content="Admin, Dashboard, Bootstrap3, Sass, transform, CSS3, HTML5, Web design, UI Design, Responsive Dashboard, Responsive Admin, Admin Theme, Best Admin UI, Bootstrap Theme, Wrapbootstrap, Bootstrap" />
     <meta name="author" content="Bootstrap Gallery" />
-    <link rel="shortcut icon" href="/WEB-INF/assets/everest/img/favicon.ico">
+    <link rel="shortcut icon" href="/moduleResources/assets/everest/img/favicon.ico">
     <title>Pharmacy Admin Panel</title>
 
     <!-- Bootstrap CSS -->
-    
-    <openmrs:htmlInclude file="/WEB-INF/assets/everest/css/bootstrap.css" />
+
+    <openmrs:htmlInclude file="/moduleResources/assets/everest/css/bootstrap.css" />
 
     <!-- Animate CSS -->
-    
-    <openmrs:htmlInclude file="/WEB-INF/assets/everest/css/animate.css" />
+
+    <openmrs:htmlInclude file="/moduleResources/assets/everest/css/animate.css" />
 
     <!-- Alertify CSS -->
-    
-    <openmrs:htmlInclude file="/WEB-INF/assets/everest/css/alertify/alertify.core.css" />
-    
-    <openmrs:htmlInclude file="/WEB-INF/assets/everest/css/alertify/alertify.default.css" />
+
+    <openmrs:htmlInclude file="/moduleResources/assets/everest/css/alertify/alertify.core.css" />
+
+    <openmrs:htmlInclude file="/moduleResources/assets/everest/css/alertify/alertify.default.css" />
 
     <!-- Main CSS -->
-    
 
-    <openmrs:htmlInclude file="/WEB-INF/assets/everest/css/main.css" />
+
+    <openmrs:htmlInclude file="/moduleResources/assets/everest/css/main.css" />
     <!-- Datepicker CSS -->
-    
-    <openmrs:htmlInclude file="/WEB-INF/assets/everest/css/datepicker.css" />
+
+    <openmrs:htmlInclude file="/moduleResources/assets/everest/css/datepicker.css" />
     <!-- Font Awesome -->
-   
-    <openmrs:htmlInclude file="/WEB-INF/assets/everest/fonts/font-awesome.min.css" />
+
+    <openmrs:htmlInclude file="/moduleResources/assets/everest/fonts/font-awesome.min.css" />
     <!-- HTML5 shiv and Respond.js IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
-   
-    <openmrs:htmlInclude file="/WEB-INF/assets/everest/js/html5shiv.js" />
-    
-    <openmrs:htmlInclude file="/WEB-INF/assets/everest/js/respond.min.js" />
+
+    <openmrs:htmlInclude file="/moduleResources/assets/everest/js/html5shiv.js" />
+
+    <openmrs:htmlInclude file="/moduleResources/assets/everest/js/respond.min.js" />
     <![endif]-->
 
 </head>
@@ -56,7 +54,7 @@
     <!-- Logo starts -->
     <div class="logo">
         <a href="#">
-            <img src="/WEB-INF/assets/everest/img/logo.png" alt="logo">
+            <img src="/moduleResources/assets/everest/img/logo.png" alt="logo">
 					<span class="menu-toggle hidden-xs">
 						<i class="fa fa-bars"></i>
 					</span>
@@ -86,34 +84,34 @@
                 <span class="info-label info-bg animated rubberBand">7+</span>
                 <ul class="blog-gallery dropdown-menu fadeInDown animated clearfix recent-tweets">
                     <li>
-                        <img src="/WEB-INF/assets/everest/img/user1.jpg" alt="User">
+                        <img src="/moduleResources/assets/everest/img/user1.jpg" alt="User">
                     </li>
                     <li>
-                        <img src="/WEB-INF/assets/everest/img/user2.jpg" alt="User">
+                        <img src="/moduleResources/assets/everest/img/user2.jpg" alt="User">
                     </li>
                     <li>
-                        <img src="/WEB-INF/assets/everest/img/user3.jpg" alt="User">
+                        <img src="/moduleResources/assets/everest/img/user3.jpg" alt="User">
                     </li>
                     <li>
-                        <img src="/WEB-INF/assets/everest/img/user4.jpg" alt="User">
+                        <img src="/moduleResources/assets/everest/img/user4.jpg" alt="User">
                     </li>
                     <li>
-                        <img src="/WEB-INF/assets/everest/img/user5.jpg" alt="User">
+                        <img src="/moduleResources/assets/everest/img/user5.jpg" alt="User">
                     </li>
                     <li>
-                        <img src="/WEB-INF/assets/everest/img/user6.jpg" alt="User">
+                        <img src="/moduleResources/assets/everest/img/user6.jpg" alt="User">
                     </li>
                     <li>
-                        <img src="/WEB-INF/assets/everest/img/user7.jpg" alt="User">
+                        <img src="/moduleResources/assets/everest/img/user7.jpg" alt="User">
                     </li>
                     <li>
-                        <img src="/WEB-INF/assets/everest/img/user8.jpg" alt="User">
+                        <img src="/moduleResources/assets/everest/img/user8.jpg" alt="User">
                     </li>
                     <li>
-                        <img src="/WEB-INF/assets/everest/img/user9.jpg" alt="User">
+                        <img src="/moduleResources/assets/everest/img/user9.jpg" alt="User">
                     </li>
                     <li>
-                        <img src="/WEB-INF/assets/everest/img/user3.jpg" alt="User">
+                        <img src="/moduleResources/assets/everest/img/user3.jpg" alt="User">
                     </li>
                 </ul>
             </li>
@@ -173,7 +171,7 @@
                     </li>
                     <li>
                         <div class="user-pic">
-                            <img src="/WEB-INF/assets/everest/img/user4.jpg" alt="User">
+                            <img src="/moduleResources/assets/everest/img/user4.jpg" alt="User">
                         </div>
                         <div class="details">
                             <strong class="text-danger">Wilson</strong>
@@ -186,7 +184,7 @@
                     </li>
                     <li>
                         <div class="user-pic">
-                            <img src="/WEB-INF/assets/everest/img/user1.jpg" alt="User">
+                            <img src="/moduleResources/assets/everest/img/user1.jpg" alt="User">
                         </div>
                         <div class="details">
                             <strong class="text-danger">Adams</strong>
@@ -199,7 +197,7 @@
                     </li>
                     <li>
                         <div class="user-pic">
-                            <img src="/WEB-INF/assets/everest/img/user3.jpg" alt="User">
+                            <img src="/moduleResources/assets/everest/img/user3.jpg" alt="User">
                         </div>
                         <div class="details">
                             <strong class="text-info">Sam</strong>
@@ -212,7 +210,7 @@
                     </li>
                     <li>
                         <div class="user-pic">
-                            <img src="/WEB-INF/assets/everest/img/user5.jpg" alt="User">
+                            <img src="/moduleResources/assets/everest/img/user5.jpg" alt="User">
                         </div>
                         <div class="details">
                             <strong class="text-info">Jennifer</strong>
@@ -227,7 +225,7 @@
             </li>
             <li class="list-box user-profile hidden-xs">
                 <a href="login.html" class="user-avtar animated rubberBand">
-                    <img src="/WEB-INF/assets/everest/img/user4.jpg" alt="user avatar">
+                    <img src="/moduleResources/assets/everest/img/user4.jpg" alt="user avatar">
                 </a>
             </li>
         </ul>
@@ -243,7 +241,7 @@
 <!-- Current User Starts -->
 <div class="current-user">
     <div class="user-avatar animated rubberBand">
-        <img src="/WEB-INF/assets/everest/img/user4.jpg" alt="Current User">
+        <img src="/moduleResources/assets/everest/img/user4.jpg" alt="Current User">
         <span class="busy"></span>
     </div>
     <div class="user-name">Welcome Mr. James</div>
@@ -674,7 +672,7 @@
         <div class="blog-body">
             <ul class="chats">
                 <li class="in">
-                    <img class="avatar" alt="" src="/WEB-INF/assets/everest/img/user2.jpg">
+                    <img class="avatar" alt="" src="/moduleResources/assets/everest/img/user2.jpg">
                     <div class="message">
                         <span class="arrow"></span>
                         <a href="#" class="name" data-original-title="" title="">Sandy</a>
@@ -694,7 +692,7 @@
                     </div>
                 </li>
                 <li class="out">
-                    <img class="avatar" alt="" src="/WEB-INF/assets/everest/img/user3.jpg">
+                    <img class="avatar" alt="" src="/moduleResources/assets/everest/img/user3.jpg">
                     <div class="message">
                         <span class="arrow"></span>
                         <a href="#" class="name" data-original-title="" title="">Peter</a>
@@ -707,7 +705,7 @@
                     </div>
                 </li>
                 <li class="in">
-                    <img class="avatar" alt="" src="/WEB-INF/assets/everest/img/user4.jpg">
+                    <img class="avatar" alt="" src="/moduleResources/assets/everest/img/user4.jpg">
                     <div class="message">
                         <span class="arrow"></span>
                         <a href="#" class="name" data-original-title="" title="">Johnson</a>
@@ -733,7 +731,7 @@
         <div class="blog-body">
             <ul class="clients-list">
                 <li class="client clearfix">
-                    <img src="/WEB-INF/assets/everest/img/user4.jpg" class="avatar" alt="Client">
+                    <img src="/moduleResources/assets/everest/img/user4.jpg" class="avatar" alt="Client">
                     <div class="client-details">
                         <p>
                             <span class="name">Peter</span>
@@ -759,7 +757,7 @@
                     </div>
                 </li>
                 <li class="client clearfix">
-                    <img src="/WEB-INF/assets/everest/img/user1.jpg" class="avatar" alt="Client">
+                    <img src="/moduleResources/assets/everest/img/user1.jpg" class="avatar" alt="Client">
                     <div class="client-details">
                         <p>
                             <span class="name">Willims</span>
@@ -785,7 +783,7 @@
                     </div>
                 </li>
                 <li class="client clearfix">
-                    <img src="/WEB-INF/assets/everest/img/user2.jpg" class="avatar" alt="Client">
+                    <img src="/moduleResources/assets/everest/img/user2.jpg" class="avatar" alt="Client">
                     <div class="client-details">
                         <p>
                             <span class="name">Henreque</span>
@@ -811,7 +809,7 @@
                     </div>
                 </li>
                 <li class="client clearfix">
-                    <img src="/WEB-INF/assets/everest/img/user3.jpg" class="avatar" alt="Client">
+                    <img src="/moduleResources/assets/everest/img/user3.jpg" class="avatar" alt="Client">
                     <div class="client-details">
                         <p>
                             <span class="name">Samson</span>
@@ -837,7 +835,7 @@
                     </div>
                 </li>
                 <li class="client clearfix">
-                    <img src="/WEB-INF/assets/everest/img/user4.jpg" class="avatar" alt="Client">
+                    <img src="/moduleResources/assets/everest/img/user4.jpg" class="avatar" alt="Client">
                     <div class="client-details">
                         <p>
                             <span class="name">Valli</span>
@@ -863,7 +861,7 @@
                     </div>
                 </li>
                 <li class="client clearfix">
-                    <img src="/WEB-INF/assets/everest/img/user5.jpg" class="avatar" alt="Client">
+                    <img src="/moduleResources/assets/everest/img/user5.jpg" class="avatar" alt="Client">
                     <div class="client-details">
                         <p>
                             <span class="name">Jene</span>
@@ -1154,64 +1152,64 @@
 
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
 
-<openmrs:htmlInclude file="/WEB-INF/assets/everest/js/jquery.js" />
+<openmrs:htmlInclude file="/moduleResources/assets/everest/js/jquery.js" />
 
 <!-- jQuery UI JS -->
 
-<openmrs:htmlInclude file="/WEB-INF/assets/everest/js/jquery-ui-v1.10.3.js" />
+<openmrs:htmlInclude file="/moduleResources/assets/everest/js/jquery-ui-v1.10.3.js" />
 
 <!-- Include all compiled plugins (below), or include individual files as needed -->
 
-<openmrs:htmlInclude file="/WEB-INF/assets/everest/js/bootstrap.min.js" />
+<openmrs:htmlInclude file="/moduleResources/assets/everest/js/bootstrap.min.js" />
 
 <!-- Sparkline graphs -->
- 
-<openmrs:htmlInclude file="/WEB-INF/assets/everest/js/sparkline.js" />
+
+<openmrs:htmlInclude file="/moduleResources/assets/everest/js/sparkline.js" />
 
 <!-- jquery ScrollUp JS -->
- 
-<openmrs:htmlInclude file="/WEB-INF/assets/everest/js/scrollup/jquery.scrollUp.js" />
+
+<openmrs:htmlInclude file="/moduleResources/assets/everest/js/scrollup/jquery.scrollUp.js" />
 
 <!-- Notifications JS -->
- 
-<openmrs:htmlInclude file="/WEB-INF/assets/everest/js/alertify/alertify.js" />
 
- 
-<openmrs:htmlInclude file="/WEB-INF/assets/everest/js/alertify/alertify-custom.js" />
+<openmrs:htmlInclude file="/moduleResources/assets/everest/js/alertify/alertify.js" />
+
+
+<openmrs:htmlInclude file="/moduleResources/assets/everest/js/alertify/alertify-custom.js" />
 
 <!-- Flot Charts -->
- 
-<openmrs:htmlInclude file="/WEB-INF/assets/everest/js/flot/jquery.flot.js" />
 
- 
-<openmrs:htmlInclude file="/WEB-INF/assets/everest/js/flot/jquery.flot.tooltip.min.js" />
+<openmrs:htmlInclude file="/moduleResources/assets/everest/js/flot/jquery.flot.js" />
 
- 
-<openmrs:htmlInclude file="/WEB-INF/assets/everest/js/flot/jquery.flot.resize.min.js" />
 
- 
-<openmrs:htmlInclude file="/WEB-INF/assets/everest/js/flot/jquery.flot.stack.min.js" />
+<openmrs:htmlInclude file="/moduleResources/assets/everest/js/flot/jquery.flot.tooltip.min.js" />
 
- 
-<openmrs:htmlInclude file="/WEB-INF/assets/everest/js/flot/jquery.flot.orderBar.min.js" />
 
- 
-<openmrs:htmlInclude file="/WEB-INF/assets/everest/js/flot/jquery.flot.pie.min.js" />
+<openmrs:htmlInclude file="/moduleResources/assets/everest/js/flot/jquery.flot.resize.min.js" />
+
+
+<openmrs:htmlInclude file="/moduleResources/assets/everest/js/flot/jquery.flot.stack.min.js" />
+
+
+<openmrs:htmlInclude file="/moduleResources/assets/everest/js/flot/jquery.flot.orderBar.min.js" />
+
+
+<openmrs:htmlInclude file="/moduleResources/assets/everest/js/flot/jquery.flot.pie.min.js" />
 
 <!-- JVector Map -->
- 
-<openmrs:htmlInclude file="/WEB-INF/assets/everest/js/jvectormap/jquery-jvectormap-1.2.2.min.js" />
 
- 
-<openmrs:htmlInclude file="/WEB-INF/assets/everest/js/jvectormap/jquery-jvectormap-usa.js" />
+<openmrs:htmlInclude file="/moduleResources/assets/everest/js/jvectormap/jquery-jvectormap-1.2.2.min.js" />
+
+
+<openmrs:htmlInclude file="/moduleResources/assets/everest/js/jvectormap/jquery-jvectormap-usa.js" />
 
 <!-- Custom Index -->
- 
-<openmrs:htmlInclude file="/WEB-INF/assets/everest/js/custom.js" />
+
+<openmrs:htmlInclude file="/moduleResources/assets/everest/js/custom.js" />
 
 
- 
-<openmrs:htmlInclude file="/WEB-INF/assets/everest/js/custom-index.js" />
+
+<openmrs:htmlInclude file="/moduleResources/assets/everest/js/custom-index.js" />
 
 </body>
 </html>
