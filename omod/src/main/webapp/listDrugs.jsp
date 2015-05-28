@@ -24,7 +24,25 @@
     <div class="col-md-12 col-sm-12 col-xs-12">
     <div class="panel">
     <div class="panel-heading">
-        <button type="button" class="btn btn-info"><i class="fa fa-plus"></i> Add New Drug</button>
+        <button type="button" data-toggle="modal" data-target="#newDrug" class="btn btn-info"><i class="fa fa-plus"></i> Add New Drug</button>
+        <!-- Modal -->
+        <div class="modal fade" id="newDrug" tabindex="-1" role="dialog" aria-labelledby="myModalLabel5" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                        <h4 class="modal-title text-info" id="myModalLabel5">New Drug</h4>
+                    </div>
+                    <div class="modal-body">
+                        ...
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-danger" data-dismiss="modal"><i class="fa fa-times"></i> Close</button>
+                        <button type="button" class="btn btn-success"><i class="fa fa-save"></i> Save</button>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
     <div class="panel-body">
     <div class="table-responsive">
