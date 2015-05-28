@@ -13,7 +13,7 @@
 <!-- Top Bar ends -->
 
 <!-- Main Container starts -->
-<div class="main-container">
+<div class="main-container-full">
 
 <!-- Container fluid Starts -->
 <div class="container-fluid">
