@@ -4,7 +4,7 @@
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog/1.9
                   http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-1.9.xsd">
-    <changeSet author="kinyua" id="f6102bddbba5d6caa8145568515ed2cb">
+    <changeSet author="kinyua" id="20131010-1">
         <comment>Create the myDrug table</comment>
         <createTable tableName="myDrug_myDrug">
             <column autoIncrement="true" name="myDrugId" type="int">
@@ -18,7 +18,7 @@
         </createTable>
     </changeSet>
 
-<!--    <changeSet author="kinyua1" id="20131010-2">
+    <changeSet author="kinyua1" id="20131010-2">
         <comment>Create the drug order table</comment>
         <createTable tableName="mydrugOrder_myDrugOrder">
             <column autoIncrement="true" name="myDrugOrderId" type="int">
@@ -26,13 +26,49 @@
             </column>
             <column name="unitsDelivered" type="varchar(255)" />
             <column name="dateOfDelivery" type="date"/>
-            <column name="dateOfExpiration" type="date" />
-            <column name="batchNumber" type="int"/>
+            <column name="dateOfExpiry" type="date" />
         </createTable>
-    </changeSet>-->
+    </changeSet>
 
-    <!--<changeSet author="kinyua" id="20131010-3">
-       &lt;!&ndash; i will create the rest tomorrow&ndash;&gt;
+    <changeSet author="kinyua" id="20131010-3">
+        <comment>create the drug dispensed table</comment>
+        <createTable tableName="myDispensedDrug_myDispensedDrug">
+            <column autoIncrement="true" name="dispenseId" type="int">
+                <constraints primaryKey="true" nullable="false" />
+            </column>
+            <column name="patient_id" type="int"/>
+            <column name="dateOfDispense" type="Date"/>
+            <column name="myDrugId" type="int"/>
+            <column name="unitsDispensed" type="int"/>
+            <column name="transactionId" type="int"/>
+            <column name="paymentStatus" type="tinyint"/>
+            <column name="comments" type="varchar(255)"/>
+        </createTable>
 
-    </changeSet>-->
+    </changeSet>
+    <changeSet author="kinyua" id="20131010-4">
+        <comment>create the drug expired table</comment>
+        <createTable tableName="myExpiredDrug_myExpiredDrug">
+            <column autoIncrement="true" name="expiryId" type="int">
+                <constraints primaryKey="true" nullable="false" />
+            </column>
+            <column name="myDrugId" type="int"/>
+            <column name="unitsExpired" type="int"/>
+            <column name="dateOfExpiry" type="Date"/>
+            <column name="dateReported" type="Date"/>
+        </createTable>
+    </changeSet>
+
+    <changeSet author="kinyua" id="20131010-">
+        <comment>create the payment table</comment>
+        <createTable tableName="payDrug_payDrug">
+            <column autoIncrement="true" name="transactionId" type="int">
+                <constraints primaryKey="true" nullable="false" />
+            </column>
+            <column name="patient_id" type="int"/>
+            <column name="isFullAmountPaid" type="tinyint"/>
+            <column name="totalAmount" type="numeric"/>
+            <column name="dateOfPayment" type="Date"/>
+        </createTable>
+    </changeSet>
 </databaseChangeLog>

@@ -6,15 +6,19 @@
 <hibernate-mapping package="org.openmrs.module.pharmacy.api.OtherModels">
 
 	<class name="DispenseDrug"
-		   table="pharmacy_pharmacy">
-		<id name="id" type="int" column="myDrugOrderId" unsaved-value="0">
+		   table="pharmacy_myDispensedDrug">
+		<id name="id"  type="int" column="dispenseId" unsaved-value="0">
 			<generator class="native" />
 		</id>
 		<discriminator column="id" insert="false" />
-		<property name="id" type="java.lang.String" column="myDrugId"
-				  length="38" unique="true" />
-		<!--I will create the other fields tomorrow-->
 
+		<property name="patientID" type="java.lang.Integer" column="patient_id"/>
+		<property name="dateOfDispense" type="java.util.Date" column="dateOfDispense"/>
+        <property name="drugId" type="java.lang.Integer" column="myDrugId"/>
+        <property name="unitsDispensed" type="java.lang.Integer" column="unitsDispensed"/>
+        <property name="transactionId" type="java.lang.Integer" column="transactionId"/>
+        <property name="paymentStatus" type="java.lang.Boolean" column="paymentStatus"/>
+        <property name="comments" type="java.lang.String" column="comments"/>
 	</class>
 
 </hibernate-mapping>
