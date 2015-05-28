@@ -6,7 +6,7 @@
 <!-- Top Bar starts -->
 <div class="top-bar">
     <div class="page-title">
-        Drug List
+        Pharmacy
     </div>
 
 </div>
@@ -24,7 +24,7 @@
     <div class="col-md-12 col-sm-12 col-xs-12">
     <div class="panel">
     <div class="panel-heading">
-        <h4 class="panel-title">Invoices</h4>
+        <h4 class="panel-title">Drug List</h4>
     </div>
     <div class="panel-body">
     <div class="table-responsive">
@@ -32,10 +32,8 @@
     <table class="table table-condensed table-striped table-hover table-bordered pull-left" id="data-table">
     <thead>
     <tr>
-        <th style="width:3%">
-            <input type="checkbox">
-        </th>
-        <th style="width:12%">Date</th>
+
+        <th style="width:15%">Date</th>
         <th style="width:15%">Inv. No</th>
         <th style="width:40%">Client Details</th>
         <th style="width:15%">Status</th>
