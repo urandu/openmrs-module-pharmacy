@@ -6,28 +6,9 @@
 <!-- Top Bar starts -->
 <div class="top-bar">
     <div class="page-title">
-        Dashboard
+        Pharmacy
     </div>
-    <ul class="stats hidden-xs">
-        <li>
-            <div class="stats-block hidden-sm hidden-xs">
-                <span id="downloads_graph"></span>
-            </div>
-            <div class="stats-details">
-                <h4>$<span id="today_income">580</span> <i class="fa fa-chevron-up up"></i></h4>
-                <h5>Today's Income</h5>
-            </div>
-        </li>
-        <li>
-            <div class="stats-block hidden-sm hidden-xs">
-                <span id="users_online_graph"></span>
-            </div>
-            <div class="stats-details">
-                <h4>$<span id="today_expenses">235</span> <i class="fa fa-chevron-down down"></i></h4>
-                <h5>Today's Expenses</h5>
-            </div>
-        </li>
-    </ul>
+
 </div>
 <!-- Top Bar ends -->
 
@@ -40,60 +21,7 @@
 <!-- Current Stats Start -->
 <div class="current-stats">
     <div class="row">
-        <div class="col-lg-2 col-md-4 col-sm-4 col-xs-6">
-            <div class="danger-bg center-align-text">
-                <div class="spacer-xs">
-                    <i class="fa fa-github fa-2x"></i>
-                    <small class="text-white">Github</small>
-                    <h3 class="no-margin no-padding">9%</h3>
-                </div>
-            </div>
-        </div>
-        <div class="col-lg-2 col-md-4 col-sm-4 col-xs-6">
-            <div class="success-bg center-align-text">
-                <div class="spacer-xs">
-                    <i class="fa fa-foursquare fa-2x"></i>
-                    <small class="text-white">Foursquare</small>
-                    <h3 class="no-margin no-padding text-white">45%</h3>
-                </div>
-            </div>
-        </div>
-        <div class="col-lg-2 col-md-4 col-sm-4 col-xs-6">
-            <div class="info-bg center-align-text">
-                <div class="spacer-xs">
-                    <i class="fa fa-facebook fa-2x"></i>
-                    <small class="text-white">Facebook</small>
-                    <h3 class="no-margin no-padding">37%</h3>
-                </div>
-            </div>
-        </div>
-        <div class="col-lg-2 col-md-4 col-sm-4 col-xs-6">
-            <div class="brown-bg center-align-text">
-                <div class="spacer-xs">
-                    <i class="fa fa-google-plus fa-2x"></i>
-                    <small class="text-white">Google Plus</small>
-                    <h3 class="no-margin no-padding">25%</h3>
-                </div>
-            </div>
-        </div>
-        <div class="col-lg-2 col-md-4 col-sm-4 col-xs-6">
-            <div class="linkedin-bg center-align-text">
-                <div class="spacer-xs">
-                    <i class="fa fa-linkedin fa-2x"></i>
-                    <small class="text-white">LinkedIn</small>
-                    <h3 class="no-margin no-padding">19%</h3>
-                </div>
-            </div>
-        </div>
-        <div class="col-lg-2 col-md-4 col-sm-4 col-xs-6">
-            <div class="twitter-bg center-align-text">
-                <div class="spacer-xs">
-                    <i class="fa fa-twitter fa-2x"></i>
-                    <small class="text-white">Twitter</small>
-                    <h3 class="no-margin no-padding text-white">12%</h3>
-                </div>
-            </div>
-        </div>
+
     </div>
 </div>
 <!-- Current Stats End -->
@@ -109,43 +37,7 @@
                 <h5 class="blog-title">Social Network Analysis</h5>
             </div>
             <div class="blog-body">
-                <div class="row">
-                    <div class="col-lg-10 col-md-10 col-sm-12 col-xs-12">
-                        <div id="us-map" class="chart-height-lg"></div>
-                    </div>
-                    <div class="visitors-total">
-                        <h3>88,305</h3>
-                        <p>Last week total visits</p>
-                    </div>
-                    <div class="visit-stats">
-                        <ul class="clearfix">
-                            <li>
-                                <div class="donut animated rubberBand">
-                                    <div id="donut-chart-1" style="width:48px; height: 48px;"></div>
-                                    <span>65%</span>
-                                </div>
-                                <h2 class="text-danger">7235</h2>
-                                <p>Visits</p>
-                            </li>
-                            <li>
-                                <div class="donut animated rubberBand">
-                                    <div id="donut-chart-2" style="width:48px; height: 48px;"></div>
-                                    <span>17%</span>
-                                </div>
-                                <h2 class="text-info">3269</h2>
-                                <p>Male</p>
-                            </li>
-                            <li>
-                                <div class="donut animated rubberBand">
-                                    <div id="donut-chart-3" style="width:48px; height: 48px;"></div>
-                                    <span>32%</span>
-                                </div>
-                                <h2 class="text-success">5972</h2>
-                                <p>Female</p>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
+
             </div>
         </div>
         <!-- Widget ends -->
@@ -191,63 +83,7 @@
 <!-- Row Start -->
 <div class="row">
 <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
-    <!-- Widget starts -->
-    <div class="blog blog-info">
-        <div class="blog-header">
-            <h5 class="blog-title">Chats</h5>
-        </div>
-        <div class="blog-body">
-            <ul class="chats">
-                <li class="in">
-                    <img class="avatar" alt="" src="/openmrs/moduleResources/pharmacy/assets/everest/img/user2.jpg">
-                    <div class="message">
-                        <span class="arrow"></span>
-                        <a href="#" class="name" data-original-title="" title="">Sandy</a>
-													<span class="date-time">
-														at May 21st, 2014 12:0<i class="fa fa-clock-o"></i>
-													</span>
-                        <div class="progress-stats clearfix">
-                            <i class="fa fa-camera-retro pull-left fa-lg text-info"></i>
-                            <div class="progress">
-                                <div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%;">
-                                </div>
-                            </div>
-                        </div>
-													<span class="body body-grey">
-														Raw denim heard of them master cleanse.
-													</span>
-                    </div>
-                </li>
-                <li class="out">
-                    <img class="avatar" alt="" src="/openmrs/moduleResources/pharmacy/assets/everest/img/user3.jpg">
-                    <div class="message">
-                        <span class="arrow"></span>
-                        <a href="#" class="name" data-original-title="" title="">Peter</a>
-													<span class="date-time">
-														at May 14th, 2014 09:32<i class="fa fa-clock-o"></i>
-													</span>
-													<span class="body body-blue">
-														Next level veard stumptown, thundercats <i class="fa fa-smile-o fa-lg text-primary"></i>
-													</span>
-                    </div>
-                </li>
-                <li class="in">
-                    <img class="avatar" alt="" src="/openmrs/moduleResources/pharmacy/assets/everest/img/user4.jpg">
-                    <div class="message">
-                        <span class="arrow"></span>
-                        <a href="#" class="name" data-original-title="" title="">Johnson</a>
-													<span class="date-time">
-														at Apr 28th, 2014 09:47<i class="fa fa-clock-o"></i>
-													</span>
-													<span class="body body-grey">
-														Beard stumptown scenester farm-to-table.
-													</span>
-                    </div>
-                </li>
-            </ul>
-        </div>
-    </div>
-    <!-- Widget ends -->
+    
 </div>
 <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
     <!-- Widget starts -->
