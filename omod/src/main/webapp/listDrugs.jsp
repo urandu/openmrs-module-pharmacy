@@ -24,7 +24,7 @@
     <div class="col-md-12 col-sm-12 col-xs-12">
     <div class="panel">
     <div class="panel-heading">
-        <h4 class="panel-title">Drug List</h4>
+        <h4 class="panel-title">Drug List</h4>&NonBreakingSpace; &NonBreakingSpace; 
     </div>
     <div class="panel-body">
     <div class="table-responsive">
@@ -39,7 +39,8 @@
         <th style="width:10%">Units in Stock</th>
         <th style="width:10%">D.O.A of Last Batch</th>
         <th style="width:10%">Edit drug details</th>
-        <th style="width:10%">Add Stock</th>
+        <th style="width:10%">Manage Stock</th>
+        <th style="width:10%">Units dispensed</th>
     </tr>
     </thead>
     <tbody>
@@ -63,6 +64,10 @@
             <button type="button" class="btn btn-success"><i class="fa fa-plus"></i> Add Stock</button>
         </td>
 
+        <td>
+
+            20,000
+        </td>
     </tr>
     </tbody>
     </table>
