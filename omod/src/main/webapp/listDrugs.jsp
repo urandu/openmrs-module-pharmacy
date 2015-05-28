@@ -53,11 +53,10 @@
             10/05/2015
         </td>
         <td>
-            <span class="label label-default">Pending</span>
+            <button type="button" class="btn btn-success"><i class="fa fa-edit"></i> Edit</button>
+            <button type="button" class="btn btn-success"><i class="fa fa-plus"></i> Add Stock</button>
         </td>
-        <td>
-            <span class="text-warning">$2600</span>
-        </td>
+
     </tr>
     </tbody>
     </table>
