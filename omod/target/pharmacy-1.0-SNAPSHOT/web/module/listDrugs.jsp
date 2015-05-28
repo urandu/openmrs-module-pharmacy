@@ -38,7 +38,7 @@
         <th style="width:10%">Price of drug</th>
         <th style="width:10%">Units in Stock</th>
         <th style="width:10%">Units dispensed</th>
-        <th style="width:10%">D.O.A of Last Batch</th>
+        <th style="width:10%">Last Batch</th>
         <th style="width:10%">Edit drug details</th>
         <th style="width:10%">Manage Stock</th>
 
@@ -55,7 +55,7 @@
         <td>60,000</td>
         <td>20,000</td>
         <td>
-            10/05/2015
+            <a href="#">TGHD564</a>
         </td>
         <td>
             <button type="button" class="btn btn-success"><i class="fa fa-edit"></i> Edit</button>
