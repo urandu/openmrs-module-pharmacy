@@ -6,7 +6,7 @@
 <!-- Top Bar starts -->
 <div class="top-bar">
     <div class="page-title">
-        Pharmacy
+        Pharmacy Panel
     </div>
 
 </div>
@@ -54,25 +54,7 @@
                 <h5 class="blog-title">Appointments</h5>
             </div>
             <div class="blog-body">
-                <!-- Row starts -->
-                <div class="row">
-                    <div class="col-lg-4 col-md-4 col-sm-5 col-xs-12">
-                        <div class="bg-primary-light">
-                            <h3 class="text-danger  no-margin">Today</h3>
-                            <ul class="appointments">
-                                <li><i class="fa fa-circle text-danger"></i>Meet Mr. Peter @ 10:30 AM</li>
-                                <li><i class="fa fa-circle text-warning"></i>Skype call @ 12:00 PM</li>
-                                <li><i class="fa fa-circle text-success"></i>Send greetings to Sandy</li>
-                                <li><i class="fa fa-circle text-info"></i>Pickup kids @ 4:00 PM</li>
-                                <li><i class="fa fa-circle text-fb"></i>Dinner with Maria @ 8:00 PM</li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="col-lg-8 col-md-8 col-sm-7 col-xs-12">
-                        <div id="datepicker"></div>
-                    </div>
-                </div>
-                <!-- Row ends -->
+
             </div>
         </div>
         <!-- Widget ends -->
