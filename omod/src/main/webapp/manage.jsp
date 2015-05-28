@@ -1,4 +1,4 @@
-<%@ include file="template/localHeader.jsp"%>
+<%@ include file="/header.jsp"%>
 
 <!-- Dashboard Wrapper starts -->
 <div class="dashboard-wrapper">
