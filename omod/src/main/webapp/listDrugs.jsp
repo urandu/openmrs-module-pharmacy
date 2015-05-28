@@ -33,10 +33,11 @@
     <thead>
     <tr>
 
-        <th style="width:15%">Name(Generic)</th>
-        <th style="width:15%">Brand Name</th>
-        <th style="width:15%">Units in Stock</th>
-        <th style="width:20%">D.O.A of Last Batch</th>
+        <th style="width:10%">Name(Generic)</th>
+        <th style="width:10%">Brand Name</th>
+        <th style="width:10%">Price of drug</th>
+        <th style="width:10%">Units in Stock</th>
+        <th style="width:10%">D.O.A of Last Batch</th>
         <th style="width:10%">Edit drug details</th>
         <th style="width:10%">Add Stock</th>
     </tr>
@@ -49,6 +50,7 @@
         </td>
         <td>panadol</td>
         <td>60,000</td>
+        <td>ksh.250</td>
         <td>
             10/05/2015
         </td>
@@ -75,39 +77,7 @@
 
 <!-- Spacer starts -->
 <div class="spacer">
-<!-- Row Start -->
-<div class="row">
-    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-        <!-- Widget starts -->
-        <div class="blog">
-            <div class="blog-header">
-                <h5 class="blog-title">Social Network Analysis</h5>
-            </div>
-            <div class="blog-body">
 
-            </div>
-        </div>
-        <!-- Widget ends -->
-    </div>
-</div>
-<!-- Row End -->
-
-<!-- Row Start -->
-<div class="row">
-    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-        <!-- Widget starts -->
-        <div class="blog">
-            <div class="blog-header">
-                <h5 class="blog-title">Appointments</h5>
-            </div>
-            <div class="blog-body">
-
-            </div>
-        </div>
-        <!-- Widget ends -->
-    </div>
-</div>
-<!-- Row End -->
 
 <!-- Row Start -->
 <div class="row">
@@ -136,12 +106,12 @@
 </div>
 <!-- Main Container ends -->
 
-<!-- Right sidebar starts -->
+<%--<!-- Right sidebar starts -->
 <div class="right-sidebar">
 
 
 
 </div>
-<!-- Right sidebar ends -->
+<!-- Right sidebar ends -->--%>
 
 <%@ include file="footer.jsp"%>
