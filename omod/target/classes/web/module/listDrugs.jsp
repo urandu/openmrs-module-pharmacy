@@ -36,7 +36,7 @@
                     <div class="modal-body">
 
 
-                        <form role="form" class="form" action="<c:url value='/module/pharmacy/newDrug.form' />" method="get">
+                        <form   action="<c:url value='/module/pharmacy/newDrug.form' />" method="get">
 
                             <div class="form-group">
                                 <label for="genericName">Generic Name:</label>
