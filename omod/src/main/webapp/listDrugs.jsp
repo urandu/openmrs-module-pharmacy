@@ -165,7 +165,47 @@
         </td>
         <td>
 
-            <button type="button" class="btn btn-success"><i class="fa fa-plus"></i> Add Stock</button>
+            <button type="button" class="btn btn-success"><i class="fa fa-plus"></i> Manage Stock</button>
+
+            <!-- Modal -->
+            <div class="modal fade" id="editDrug" tabindex="-1" role="dialog" aria-labelledby="myModalLabel5" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                            <h4 class="modal-title text-info" id="myModalLabel1">Edit Drug(Brand Name) Details</h4>
+                        </div>
+                        <div class="modal-body">
+
+
+                            <form   action="<c:url value='/module/pharmacy/editDrugStock.form' />" method="get">
+
+
+
+                                <div class="form-group">
+                                    <label for="unitsInStock">Units in Stock:</label>
+                                    <input type="text" class="form-control" name="unitsInStock" id="edit_unitsInStock" required>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="pricePerUnit">Price per Unit:</label>
+                                    <input type="text" class="form-control" name="pricePerUnit" id="edit_pricePerUnit" required>
+                                </div>
+
+
+
+                        </div>
+
+                        <div class="modal-footer">
+                            <button type="submit" class="btn btn-success"><i class="fa fa-save"></i> Save</button>
+                            </form>
+                            <button type="button" class="btn btn-danger" data-dismiss="modal"><i class="fa fa-times"></i> Close</button>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
         </td>
 
 
