@@ -4,7 +4,7 @@
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog/1.9
                   http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-1.9.xsd">
-    <changeSet author="kinyua" id="20131010-1">
+    <changeSet author="kinyua" id="f6102bddbba5d6caa8145568515ed2cb">
         <comment>Create the myDrug table</comment>
         <createTable tableName="myDrug_myDrug">
             <column autoIncrement="true" name="myDrugId" type="int">
@@ -18,7 +18,7 @@
         </createTable>
     </changeSet>
 
-    <changeSet author="kinyua" id="20131010-1">
+<!--    <changeSet author="kinyua1" id="20131010-2">
         <comment>Create the drug order table</comment>
         <createTable tableName="mydrugOrder_myDrugOrder">
             <column autoIncrement="true" name="myDrugOrderId" type="int">
@@ -29,6 +29,10 @@
             <column name="dateOfExpiration" type="date" />
             <column name="batchNumber" type="int"/>
         </createTable>
-    </changeSet>
-    
+    </changeSet>-->
+
+    <!--<changeSet author="kinyua" id="20131010-3">
+       &lt;!&ndash; i will create the rest tomorrow&ndash;&gt;
+
+    </changeSet>-->
 </databaseChangeLog>

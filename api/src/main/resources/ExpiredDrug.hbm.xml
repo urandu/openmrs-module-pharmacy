@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+		"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+		"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+
+<hibernate-mapping package="org.openmrs.module.pharmacy.api.OtherModels">
+
+	<class name="ExpiredDrug"
+		   table="${project.parent.artifactId}_myExpiredDrug">
+		<id name="id" type="int" column="expiryId" unsaved-value="0">
+			<generator class="native" />
+		</id>
+		<discriminator column="id" insert="false" />
+		<property name="drugId" type="java.lang.Integer" column="myDrugId"/>
+		<property name="unitsExpired" type="java.lang.Integer" column="unitsExpired"/>
+        <property name="dateOfExpiry" type="java.util.Date" column="dateOfExpiry"/>
+        <property name="dateReported" type="java.util.Date" column="dateReported"/>
+	</class>
+
+</hibernate-mapping>

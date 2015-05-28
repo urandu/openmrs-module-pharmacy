@@ -18,7 +18,7 @@
         </createTable>
     </changeSet>
 
-    <changeSet author="kinyua" id="20131010-1">
+    <changeSet author="kinyua1" id="20131010-2">
         <comment>Create the drug order table</comment>
         <createTable tableName="mydrugOrder_myDrugOrder">
             <column autoIncrement="true" name="myDrugOrderId" type="int">
@@ -26,9 +26,37 @@
             </column>
             <column name="unitsDelivered" type="varchar(255)" />
             <column name="dateOfDelivery" type="date"/>
-            <column name="dateOfExpiration" type="date" />
-            <column name="batchNumber" type="int"/>
+            <column name="dateOfExpiry" type="date" />
         </createTable>
     </changeSet>
-    
+
+    <changeSet author="kinyua" id="20131010-3">
+        <comment>create the drug dispensed table</comment>
+        <createTable tableName="myDispensedDrug_myDispensedDrug">
+            <column autoIncrement="true" name="dispenseId" type="int">
+                <constraints primaryKey="true" nullable="false" />
+            </column>
+            <column name="patient_id" type="int"/>
+            <column name="dateOfDispense" type="Date"/>
+            <column name="myDrugId" type="int"/>
+            <column name="unitsDispensed" type="int"/>
+            <column name="transactionId" type="int"/>
+            <column name="paymentStatus" type="tinyint"/>
+            <column name="comments" type="varchar(255)"/>
+        </createTable>
+
+    </changeSet>
+    <changeSet author="kinyua" id="20131010-4">
+        <comment>create the drug expired table</comment>
+        <createTable tableName="myExpiredDrug_myExpiredDrug">
+            <column autoIncrement="true" name="expiryId" type="int">
+                <constraints primaryKey="true" nullable="false" />
+            </column>
+            <column name="myDrugId" type="int"/>
+            <column name="unitsExpired" type="int"/>
+            <column name="dateOfExpiry" type="Date"/>
+            <column name="dateReported" type="Date"/>
+        </createTable>
+    </changeSet>
+
 </databaseChangeLog>

@@ -27,7 +27,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 @Controller
 public class  PharmacyManageController {
 	
-	protected final Log log = LogFactory.getLog(getClass());//jkkjkjkjk
+	protected final Log log = LogFactory.getLog(getClass());
 	
 	@RequestMapping(value = "/module/pharmacy/manage", method = RequestMethod.GET)
 	public void manage(ModelMap model) {

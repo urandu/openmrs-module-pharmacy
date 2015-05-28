@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+		"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+		"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+
+<hibernate-mapping package="org.openmrs.module.pharmacy.api.OtherModels">
+
+	<class name="DispenseDrug"
+		   table="${project.parent.artifactId}_myDispensedDrug">
+		<id name="id"  type="int" column="dispenseId" unsaved-value="0">
+			<generator class="native" />
+		</id>
+		<discriminator column="id" insert="false" />
+
+		<property name="patientID" type="java.lang.Integer" column="patient_id"/>
+		<property name="dateOfDispense" type="java.util.Date" column="dateOfDispense"/>
+        <property name="drugId" type="java.lang.Integer" column="myDrugId"/>
+        <property name="unitsDispensed" type="java.lang.Integer" column="unitsDispensed"/>
+        <property name="transactionId" type="java.lang.Integer" column="transactionId"/>
+        <property name="paymentStatus" type="java.lang.Boolean" column="paymentStatus"/>
+        <property name="comments" type="java.lang.String" column="comments"/>
+	</class>
+
+</hibernate-mapping>
