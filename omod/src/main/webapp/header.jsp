@@ -98,44 +98,7 @@
                     <i class="fa fa-reorder"></i>
                 </a>
             </li>
-            <li class="list-box dropdown hidden-xs">
-                <a id="drop7" href="#" role="button" class="dropdown-toggle" data-toggle="dropdown">
-                    <i class="fa fa-image"></i>
-                </a>
-                <span class="info-label info-bg animated rubberBand">7+</span>
-                <ul class="blog-gallery dropdown-menu fadeInDown animated clearfix recent-tweets">
-                    <li>
-                        <img src="/openmrs/moduleResources/pharmacy/assets/everest/img/user1.jpg" alt="User">
-                    </li>
-                    <li>
-                        <img src="/openmrs/moduleResources/pharmacy/assets/everest/img/user2.jpg" alt="User">
-                    </li>
-                    <li>
-                        <img src="/openmrs/moduleResources/pharmacy/assets/everest/img/user3.jpg" alt="User">
-                    </li>
-                    <li>
-                        <img src="/openmrs/moduleResources/pharmacy/assets/everest/img/user4.jpg" alt="User">
-                    </li>
-                    <li>
-                        <img src="/openmrs/moduleResources/pharmacy/assets/everest/img/user5.jpg" alt="User">
-                    </li>
-                    <li>
-                        <img src="/openmrs/moduleResources/pharmacy/assets/everest/img/user6.jpg" alt="User">
-                    </li>
-                    <li>
-                        <img src="/openmrs/moduleResources/pharmacy/assets/everest/img/user7.jpg" alt="User">
-                    </li>
-                    <li>
-                        <img src="/openmrs/moduleResources/pharmacy/assets/everest/img/user8.jpg" alt="User">
-                    </li>
-                    <li>
-                        <img src="/openmrs/moduleResources/pharmacy/assets/everest/img/user9.jpg" alt="User">
-                    </li>
-                    <li>
-                        <img src="/openmrs/moduleResources/pharmacy/assets/everest/img/user3.jpg" alt="User">
-                    </li>
-                </ul>
-            </li>
+
             <li class="list-box dropdown hidden-xs">
                 <a id="drop5" href="#" role="button" class="dropdown-toggle" data-toggle="dropdown">
                     <i class="fa fa-th"></i>
