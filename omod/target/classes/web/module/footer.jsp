@@ -69,5 +69,17 @@
 
 <openmrs:htmlInclude file="/moduleResources/pharmacy/assets/everest/js/custom-index.js" />
 
+<!-- Data tables -->
+
+<openmrs:htmlInclude file="/moduleResources/pharmacy/assets/everest/js/jquery.datatables.js" />
+
+
+
+<!-- Custom Index -->
+
+<openmrs:htmlInclude file="/moduleResources/pharmacy/assets/everest/js/custom.js" />
+
+<openmrs:htmlInclude file="/moduleResources/pharmacy/assets/everest/js/custom-datatables.js" />
+
 </body>
 </html>

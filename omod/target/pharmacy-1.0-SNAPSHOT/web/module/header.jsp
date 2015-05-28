@@ -244,6 +244,13 @@
 <div id='menu'>
     <ul>
 
+        <li class="highlight">
+            <a href='module/pharmacy/listDrugs.form'>
+                <i class="fa fa-desktop"></i>
+                <span>Drug List</span>
+                <%--<span class="current-page"></span>--%>
+            </a>
+        </li>
     </ul>
 </div>
 <!-- Menu End -->
