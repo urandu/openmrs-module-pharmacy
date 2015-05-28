@@ -254,7 +254,7 @@
     <!-- Sidebar Extras -->
     <div class="sidebar-addons">
         <ul class="views">
-            <li>
+            <%--<li>
                 <i class="fa fa-circle-o text-success"></i>
                 <div class="details">
                     <p>Signups</p>
@@ -274,7 +274,7 @@
                     <p>Images Uploaded</p>
                 </div>
                 <span class="label label-danger">4</span>
-            </li>
+            </li>--%>
         </ul>
     </div>
 

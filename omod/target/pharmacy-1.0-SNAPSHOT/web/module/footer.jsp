@@ -1,6 +1,6 @@
 <!-- Footer starts -->
 <footer>
-    Copyright Everest Admin Panel 2014.
+    Pharmacy Module.
 </footer>
 <!-- Footer ends -->
 <!-- Footer ends -->
