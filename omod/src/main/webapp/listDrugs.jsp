@@ -24,7 +24,7 @@
     <div class="col-md-12 col-sm-12 col-xs-12">
     <div class="panel">
     <div class="panel-heading">
-        <h4 class="panel-title">Drug List</h4>&NonBreakingSpace; &NonBreakingSpace; 
+        <h4 class="panel-title">Drug List</h4>&NonBreakingSpace; &NonBreakingSpace;  <button type="button" class="btn btn-info"><i class="fa fa-plus"></i> Add New Drug</button>
     </div>
     <div class="panel-body">
     <div class="table-responsive">
