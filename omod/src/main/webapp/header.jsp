@@ -245,7 +245,7 @@
     <ul>
 
         <li class="highlight">
-            <a href='module/pharmacy/listDrugs.form'>
+            <a href='listDrugs.form'>
                 <i class="fa fa-desktop"></i>
                 <span>Drug List</span>
                 <%--<span class="current-page"></span>--%>

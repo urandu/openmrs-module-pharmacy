@@ -35,8 +35,8 @@
 
         <th style="width:15%">Name(Generic)</th>
         <th style="width:15%">Brand Name</th>
-        <th style="width:40%">Units in Stock</th>
-        <th style="width:10%">D.O.A of Last Batch</th>
+        <th style="width:15%">Units in Stock</th>
+        <th style="width:20%">D.O.A of Last Batch</th>
         <th style="width:10%">Edit drug details</th>
         <th style="width:10%">Add Stock</th>
     </tr>
@@ -54,6 +54,10 @@
         </td>
         <td>
             <button type="button" class="btn btn-success"><i class="fa fa-edit"></i> Edit</button>
+
+        </td>
+        <td>
+
             <button type="button" class="btn btn-success"><i class="fa fa-plus"></i> Add Stock</button>
         </td>
 
