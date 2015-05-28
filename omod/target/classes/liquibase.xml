@@ -4,9 +4,9 @@
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog/1.9
                   http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-1.9.xsd">
-    <changeSet author="kinyua" id="20131010-1">
+    <changeSet author="Kinyua" id="29588214-1">
         <comment>Create the myDrug table</comment>
-        <createTable tableName="myDrug_myDrug">
+        <createTable tableName="pharmacy_myDrug">
             <column autoIncrement="true" name="myDrugId" type="int">
                 <constraints primaryKey="true" nullable="false" />
             </column>
@@ -18,9 +18,9 @@
         </createTable>
     </changeSet>
 
-    <changeSet author="kinyua1" id="20131010-2">
+    <changeSet author="Kinyua" id="29588214-2">
         <comment>Create the drug order table</comment>
-        <createTable tableName="mydrugOrder_myDrugOrder">
+        <createTable tableName="pharmacy_myDrugOrder">
             <column autoIncrement="true" name="myDrugOrderId" type="int">
                 <constraints primaryKey="true" nullable="false" />
             </column>
@@ -30,9 +30,9 @@
         </createTable>
     </changeSet>
 
-    <changeSet author="kinyua" id="20131010-3">
+    <changeSet author="Kinyua" id="29588214-3">
         <comment>create the drug dispensed table</comment>
-        <createTable tableName="myDispensedDrug_myDispensedDrug">
+        <createTable tableName="pharmacy_myDispensedDrug">
             <column autoIncrement="true" name="dispenseId" type="int">
                 <constraints primaryKey="true" nullable="false" />
             </column>
@@ -46,9 +46,9 @@
         </createTable>
 
     </changeSet>
-    <changeSet author="kinyua" id="20131010-4">
+    <changeSet author="Kinyua" id="29588214-4">
         <comment>create the drug expired table</comment>
-        <createTable tableName="myExpiredDrug_myExpiredDrug">
+        <createTable tableName="pharmacy_myExpiredDrug">
             <column autoIncrement="true" name="expiryId" type="int">
                 <constraints primaryKey="true" nullable="false" />
             </column>
@@ -59,9 +59,9 @@
         </createTable>
     </changeSet>
 
-    <changeSet author="kinyua" id="20131010-">
+    <changeSet author="Kinyua" id="29588214-5">
         <comment>create the payment table</comment>
-        <createTable tableName="payDrug_payDrug">
+        <createTable tableName="pharmacy_payDrug">
             <column autoIncrement="true" name="transactionId" type="int">
                 <constraints primaryKey="true" nullable="false" />
             </column>
