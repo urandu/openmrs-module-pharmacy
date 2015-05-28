@@ -10,7 +10,7 @@
 		<id name="id" type="int" column="transactionId" unsaved-value="0">
 			<generator class="native" />
 		</id>
-		<discriminator column="id" insert="false" />
+		<discriminator column="transactionId" insert="false" />
 		<property name="patientID" type="java.lang.Integer" column="patient_id" length="255" />
 		<property name="paid" type="java.lang.Boolean" column="isFullAmountPaid" length="255"  />
 		<property name="totalAmount" type="java.lang.Float" column="totalAmount"  />

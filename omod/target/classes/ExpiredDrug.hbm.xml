@@ -10,7 +10,7 @@
 		<id name="id" type="int" column="expiryId" unsaved-value="0">
 			<generator class="native" />
 		</id>
-		<discriminator column="id" insert="false" />
+		<discriminator column="expiryId" insert="false" />
 		<property name="drugId" type="java.lang.Integer" column="myDrugId"/>
 		<property name="unitsExpired" type="java.lang.Integer" column="unitsExpired"/>
         <property name="dateOfExpiry" type="java.util.Date" column="dateOfExpiry"/>

@@ -43,7 +43,7 @@ public class HibernatePharmacyDAO implements PharmacyDAO {
 	@Override
 	public List<Pharmacy> getAllMyDrugs() {
 		return sessionFactory.getCurrentSession().createCriteria(Pharmacy.class).list();
-	}
+    }
 
 	@Override
 	public Pharmacy getMyDrug(Integer myDrugId) {

@@ -10,7 +10,7 @@
 		<id name="id" type="int" column="myDrugOrderId" unsaved-value="0">
 			<generator class="native" />
 		</id>
-		<discriminator column="id" insert="false" />
+		<discriminator column="myDrugOrderId" insert="false" />
 		<property name="id" type="java.lang.String" column="myDrugId" length="38" />
 		<property name="unitsDelivered" type="java.lang.String" column="unitsDelivered" length="255" />
 		<property name="dateOfDelivery" type="java.util.Date" column="dateOfDelivery" length="255"  />
