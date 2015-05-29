@@ -56,10 +56,11 @@
             <option value="${drug.id}">${drug.genericName}</option>
         </c:forEach>
     </select><br>
+
     Brand Name:<br>
-    <input type="text" disabled value="${drug.brandName}" name="brandName" size="30" required><br>
+    <input type="text" disabled placeholder="${brand}" value="${brand}" name="brandName" size="30" required><br>
     Drug description:<br>
-    <input type="text"  disabled value="${drug.description}" name="description" size="30" required><br>
+    <input type="text"  disabled value="desc" name="description" size="30" required><br>
     price per unit:<br>
     <input type="text"  placeholder="price per unit" name="price" size="30" required><br>
     <input type="submit"  value="Update Drug">
