@@ -228,7 +228,7 @@
         <img src="/openmrs/moduleResources/pharmacy/assets/everest/img/user4.jpg" alt="Current User">
         <span class="busy"></span>
     </div>
-    <div class="user-name">Welcome ${user.familyName} (${user.systemId})</div>
+    <div class="user-name">Welcome, ${user.familyName} (${user.systemId})</div>
     <ul class="user-links">
 
         <li>
