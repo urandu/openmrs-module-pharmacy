@@ -109,7 +109,7 @@
             <a href="#">TGHD564</a>
         </td>
         <td>
-            <button type="button" data-toggle="modal" data-target="editDrug" class="btn btn-success"><i class="fa fa-edit"></i> Edit</button>
+            <button type="button" data-toggle="modal" data-target="#editDrug" class="btn btn-success"><i class="fa fa-edit"></i> Edit</button>
             <!-- Modal -->
             <div class="modal fade" id="editDrug" tabindex="-1" role="dialog" aria-labelledby="myModalLabel5" aria-hidden="true">
                 <div class="modal-dialog">
