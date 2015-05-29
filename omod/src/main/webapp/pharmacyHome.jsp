@@ -142,14 +142,7 @@
                                         </button>
 
                                     </td>
-                                    <td>
-
-                                        <button type="button" data-toggle="modal" data-target="#manageStock" class="btn btn-success"><i
-                                                class="fa fa-plus"></i> Manage Stock
-                                        </button>
-
-
-                                    </td>
+                                   
 
 
                                 </tr>
