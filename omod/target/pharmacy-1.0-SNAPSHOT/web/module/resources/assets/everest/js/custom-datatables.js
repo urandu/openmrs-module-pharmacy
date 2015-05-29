@@ -25,8 +25,8 @@ var $ruby_red = "#fa9c9b";
 
 //Data Tables
 $(document).ready(function () {
-  $('#data-table').dataTable({
-    "sPaginationType": "full_numbers"
-  });
-  $("#data-table_length").css("display","none")
+    $('#data-table').dataTable({
+        "sPaginationType": "full_numbers"
+    });
+    $("#data-table_length").css("display", "none")
 });

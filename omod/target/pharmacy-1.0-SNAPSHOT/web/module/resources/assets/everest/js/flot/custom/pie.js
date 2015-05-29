@@ -21,49 +21,49 @@ var $green_five = "#bedfd8";
 
 $(function () {
 
-	var data, chartOptions;
-	
-	data = [
-		{ label: "HTML", data: Math.floor (Math.random() * 100 + 190) }, 
-		{ label: "CSS", data: Math.floor (Math.random() * 100 + 220) }, 
-		{ label: "PHP", data: Math.floor (Math.random() * 100 + 370) }, 
-		{ label: "jQuery", data: Math.floor (Math.random() * 100 + 120) },
-		{ label: "RUBY", data: Math.floor (Math.random() * 100 + 430) }
-	];
+    var data, chartOptions;
 
-	chartOptions = {		
-		series: {
-			pie: {
-				show: true,  
-				innerRadius: 0, 
-				stroke: {
-					width: 1
-				}
-			}
-		},
-		grid:{
-      hoverable: true,
-      clickable: false,
-      borderWidth: 1,
-			tickColor: $border_color,
-      borderColor: $grid_color,
-    },
-		legend: {
-			position: 'nw'
-		},
-		shadowSize: 0,
-		tooltip: true,
-		
-		tooltipOpts: {
-			content: '%s: %y'
-		},
-		colors: [$green_one, $green_two, $green_three, $green_four, $green_five ],
-	};
+    data = [
+        { label: "HTML", data: Math.floor(Math.random() * 100 + 190) },
+        { label: "CSS", data: Math.floor(Math.random() * 100 + 220) },
+        { label: "PHP", data: Math.floor(Math.random() * 100 + 370) },
+        { label: "jQuery", data: Math.floor(Math.random() * 100 + 120) },
+        { label: "RUBY", data: Math.floor(Math.random() * 100 + 430) }
+    ];
 
-  var holder = $('#pie-chart');
+    chartOptions = {
+        series: {
+            pie: {
+                show: true,
+                innerRadius: 0,
+                stroke: {
+                    width: 1
+                }
+            }
+        },
+        grid: {
+            hoverable: true,
+            clickable: false,
+            borderWidth: 1,
+            tickColor: $border_color,
+            borderColor: $grid_color,
+        },
+        legend: {
+            position: 'nw'
+        },
+        shadowSize: 0,
+        tooltip: true,
 
-  if (holder.length) {
-      $.plot(holder, data, chartOptions );
-  }
-			
+        tooltipOpts: {
+            content: '%s: %y'
+        },
+        colors: [$green_one, $green_two, $green_three, $green_four, $green_five ],
+    };
+
+    var holder = $('#pie-chart');
+
+    if (holder.length) {
+        $.plot(holder, data, chartOptions);
+    }
+
 });
