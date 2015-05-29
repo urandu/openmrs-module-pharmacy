@@ -39,4 +39,9 @@ public class  PharmacyManageController {
         model.addAttribute("user", Context.getAuthenticatedUser());
     }
 
+    @RequestMapping(value = "/module/pharmacy/pharmacyHome", method = RequestMethod.GET)
+    public void pharmacyHome(ModelMap model) {
+        model.addAttribute("user", Context.getAuthenticatedUser());
+    }
+
 }
