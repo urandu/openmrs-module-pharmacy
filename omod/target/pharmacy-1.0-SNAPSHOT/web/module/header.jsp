@@ -84,12 +84,12 @@
     </div>
     <!-- Logo ends -->
 
-    <!-- Custom Search Starts -->
+   <%-- <!-- Custom Search Starts -->
     <div class="custom-search pull-left hidden-xs hidden-sm">
         <input type="text" class="search-query" placeholder="Search here">
         <i class="fa fa-search"></i>
     </div>
-    <!-- Custom Search Ends -->
+    <!-- Custom Search Ends -->--%>
 
     <!-- Mini right nav starts -->
     <div class="pull-right">
