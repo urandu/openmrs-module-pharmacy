@@ -38,7 +38,8 @@
 
                             <!-- Custom Search Starts -->
                             <div class="custom-search pull-left hidden-xs hidden-sm">
-                                <input type="text" id="patientSearch" class="search-query" placeholder="Enter Patient Name or ID Number">
+                                <input type="text" id="patientSearch" class="search-query"
+                                       placeholder="Enter Patient Name or ID Number">
 
                             </div>
                             <!-- Custom Search Ends -->
@@ -48,154 +49,87 @@
 
 
                 <div class="col-md-12 col-sm-12 col-xs-12">
-                <div class="panel">
-                <div class="panel-heading">
-                    <button type="button" data-toggle="modal" data-target="#newDrug" class="btn btn-info"><i class="fa fa-plus"></i> Add
-                        New Drug
-                    </button>
-                    <!-- Modal -->
-                    <div class="modal fade" id="newDrug" tabindex="-1" role="dialog" aria-labelledby="myModalLabel5" aria-hidden="true">
-                        <div class="modal-dialog">
-                            <div class="modal-content">
-                                <div class="modal-header">
-                                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                                    <h4 class="modal-title text-info" id="myModalLabel5">New Drug</h4>
-                                </div>
-                                <div class="modal-body">
+                    <div class="panel">
+                        <div class="panel-heading">
+
+                        </div>
+                    </div>
+                    <div id="patientListing" class="panel-body hide">
+                        <div class="table-responsive">
+                            <div id="dt_example" class="table-responsive example_alt_pagination clearfix">
+                                <table class="table table-condensed table-striped table-hover table-bordered pull-left"
+                                       id="data-table">
+                                    <thead>
+                                    <tr>
+
+                                        <th style="width:10%">Identifier</th>
+                                        <th style="width:10%">Given Name</th>
+                                        <th style="width:10%">Middle Name</th>
+                                        <th style="width:10%">Family Name</th>
+                                        <th style="width:10%">Age</th>
+                                        <th style="width:10%">Gender</th>
+                                        <th style="width:10%">Birth Date</th>
 
 
-                                    <form action="<c:url value='/module/pharmacy/newDrug.form' />" method="get">
+                                    </tr>
+                                    </thead>
+                                    <tbody>
 
-                                        <div class="form-group">
-                                            <label for="genericName">Generic Name:</label>
-                                            <input type="text" class="form-control" name="genericName" id="genericName" required>
-                                        </div>
+                                    <tr class="gradeC">
 
-                                        <div class="form-group">
-                                            <label for="brandName">Brand Name:</label>
-                                            <input type="text" class="form-control" name="brandName" id="brandName" required>
-                                        </div>
-
-                                        <div class="form-group">
-                                            <label for="description">Description:</label>
-                                            <input type="text" class="form-control" name="description" id="description" required>
-                                        </div>
-
-                                        <div class="form-group">
-                                            <label for="unitsInStock">Units in Stock:</label>
-                                            <input type="text" class="form-control" name="unitsInStock" id="unitsInStock" required>
-                                        </div>
-
-                                        <div class="form-group">
-                                            <label for="pricePerUnit">Price per Unit:</label>
-                                            <input type="text" class="form-control" name="pricePerUnit" id="pricePerUnit" required>
-                                        </div>
+                                        No patient found
 
 
-                                </div>
-
-                                <div class="modal-footer">
-                                    <button type="submit" class="btn btn-success"><i class="fa fa-save"></i> Save</button>
-                                    </form>
-                                    <button type="button" class="btn btn-danger" data-dismiss="modal"><i class="fa fa-times"></i> Close
-                                    </button>
-
-                                </div>
+                                    </tr>
+                                    </tbody>
+                                </table>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="panel-body">
-                    <div class="table-responsive">
-                        <div id="dt_example" class="table-responsive example_alt_pagination clearfix">
-                            <table class="table table-condensed table-striped table-hover table-bordered pull-left" id="data-table">
-                                <thead>
-                                <tr>
-
-                                    <th style="width:10%">Identifier</th>
-                                    <th style="width:10%">Given Name</th>
-                                    <th style="width:10%">Middle Name</th>
-                                    <th style="width:10%">Family Name</th>
-                                    <th style="width:10%">Age</th>
-                                    <th style="width:10%">Gender</th>
-                                    <th style="width:10%">Birth Date</th>
-
-
-                                </tr>
-                                </thead>
-                                <tbody>
-
-                                <tr class="gradeC">
-                                    <td>
-                                        paracetamol
-                                    </td>
-                                    <td>panadol</td>
-                                    <td>ksh.250</td>
-                                    <td>60,000</td>
-                                    <td>20,000</td>
-                                    <td>
-                                        <a href="#">TGHD564</a>
-                                    </td>
-                                    <td>
-                                        <button type="button" data-toggle="modal" data-target="#editDrug" class="btn btn-success"><i
-                                                class="fa fa-edit"></i> Edit
-                                        </button>
-
-                                    </td>
-                                   
-
-
-                                </tr>
-                                </tbody>
-                            </table>
-                        </div>
-                    </div>
-                </div>
-                </div>
-                </div>
-
             </div>
-
-
-            <!-- Spacer starts -->
-            <div class="spacer">
-
-
-                <!-- Row Start -->
-                <div class="row">
-                    <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
-
-
-
-                    </div>
-                    <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
-
-                    </div>
-                </div>
-                <!-- Row End -->
-
-                <!-- Row Starts -->
-                <div class="row">
-                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-
-                    </div>
-                </div>
-                <!-- Row Ends -->
-
-            </div>
-            <!-- Spacer ends -->
 
         </div>
-        <!-- Container fluid ends -->
+
+
+        <!-- Spacer starts -->
+        <div class="spacer">
+
+
+            <!-- Row Start -->
+            <div class="row">
+                <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+
+
+                </div>
+                <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+
+                </div>
+            </div>
+            <!-- Row End -->
+
+            <!-- Row Starts -->
+            <div class="row">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+
+                </div>
+            </div>
+            <!-- Row Ends -->
+
+        </div>
+        <!-- Spacer ends -->
+
     </div>
-    <!-- Main Container ends -->
+    <!-- Container fluid ends -->
+</div>
+<!-- Main Container ends -->
 
-    <%--<!-- Right sidebar starts -->
-    <div class="right-sidebar">
+<%--<!-- Right sidebar starts -->
+<div class="right-sidebar">
 
 
 
-    </div>
-    <!-- Right sidebar ends -->--%>
+</div>
+<!-- Right sidebar ends -->--%>
 
 <%@ include file="footer.jsp" %>
