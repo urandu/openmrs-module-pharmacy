@@ -15,10 +15,6 @@
 		<property name="unitsDelivered" type="java.lang.String" column="unitsDelivered" length="255" />
 		<property name="dateOfDelivery" type="java.util.Date" column="dateOfDelivery" length="255"  />
 		<property name="dateOfExpiry" type="java.util.Date" column="dateOfExpiry" length="255" />
-		<join table="pharmacy_myDrug" inverse="true">
-			<key column="myDrugId"/>
-			<many-to-one name="id" column="myDrugOrderId" not-null="true"/>
-		</join>
 	</class>
 
 </hibernate-mapping>

@@ -28,4 +28,20 @@
     </tbody>
 </table>
 
+<form role="form" action="<c:url value='/module/pharmacy/register.form' />" method='get'>
+
+    Generic Name:
+    <br>
+    <input type="text"  placeholder="generic name" name="genericName" size="30" required><br>
+    Brand Name:<br>
+    <input type="text" placeholder="brand name" name="brandName" size="30" required><br>
+    Drug description:<br>
+    <input type="text"  placeholder="brief description of drug" name="description" size="30" required><br>
+    price per unit:<br>
+    <input type="text"  placeholder="price per unit" name="price" size="30" required><br>
+
+    <input type="submit"  value="Register Drug">
+
+</form>
+
 <%@ include file="/WEB-INF/template/footer.jsp"%>

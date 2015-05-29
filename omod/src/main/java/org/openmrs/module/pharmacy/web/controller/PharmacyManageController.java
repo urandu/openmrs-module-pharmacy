@@ -18,11 +18,14 @@ import org.apache.commons.logging.LogFactory;
 import org.openmrs.api.context.Context;
 import org.openmrs.module.pharmacy.Pharmacy;
 import org.openmrs.module.pharmacy.api.PharmacyService;
+import org.openmrs.web.WebConstants;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 
+import javax.servlet.http.HttpSession;
 import java.util.List;
 
 /**
@@ -32,6 +35,7 @@ import java.util.List;
 public class  PharmacyManageController {
 	
 	protected final Log log = LogFactory.getLog(getClass());
+    private static final String PATH ="/module/pharmacy/register.form";
 	
 	@RequestMapping(value = "/module/pharmacy/manage", method = RequestMethod.GET)
 	public void manage(ModelMap model) {
@@ -39,5 +43,25 @@ public class  PharmacyManageController {
         List<Pharmacy> drugList=pharmacyService.getAllMyDrugs();
         model.addAttribute("drugList", drugList);
 
+	}
+	@RequestMapping(value = PATH , method = RequestMethod.GET)
+	public String registrationform(HttpSession httpSession,
+								   @RequestParam(value = "genericName", required = false) String genericName,
+								   @RequestParam(value = "brandName", required = false) String brandName,
+								   @RequestParam(value = "price", required = false) String price) {
+		try {
+            Pharmacy pharmacy=new Pharmacy();
+            pharmacy.setBrandName(brandName);
+            pharmacy.setGenericName(genericName);
+            pharmacy.setPricePerUnit(Float.parseFloat(price));
+
+            PharmacyService pharmacyService=Context.getService(PharmacyService.class);
+            pharmacyService.saveMyDrug(pharmacy);
+			httpSession.setAttribute(WebConstants.OPENMRS_MSG_ATTR, "Registered Successfully");
+			return "redirect:manage.form";
+		} catch (Exception ex) {
+			httpSession.setAttribute(WebConstants.OPENMRS_MSG_ATTR, ex.getLocalizedMessage());
+			return "redirect:manage.form";
+		}
 	}
 }
