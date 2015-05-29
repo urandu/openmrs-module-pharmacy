@@ -13,7 +13,7 @@
     <!-- Top Bar ends -->
     <script>
 
-        DWRPatientService.findPatients("mino", false, objectsFound);
+        DWRPatientService.findPatients("29364156", false, objectsFound);
 
         function objectsFound(patients) {
             alert("There are " + patients.length + " patients named john");
