@@ -29,9 +29,9 @@
                         <div class="panel-body">
 
                             <!-- Custom Search Starts -->
-                            <div class="custom-search pull-left hidden-xs hidden-sm">
+                            <div class="custom-search pull-left hidden-xs hidden-lg">
                                 <input type="text" id="patientSearch" class="search-query" placeholder="Enter Patient Name or ID Number">
-                                <i class="fa fa-search"></i>
+
                             </div>
                             <!-- Custom Search Ends -->
                         </div>
