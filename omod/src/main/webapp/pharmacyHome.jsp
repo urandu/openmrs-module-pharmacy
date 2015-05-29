@@ -21,7 +21,14 @@
 
 
         $(document).ready(function(){
-            
+            $('input#q').keyup( function() {
+                
+                if( this.value.length >2 ){
+                    /* code to run below */
+                    $('#output').val(this.value);
+                }
+
+            });
         });
 
     </script>
