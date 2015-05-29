@@ -65,4 +65,24 @@ public class  PharmacyManageController {
             return "redirect:manage.form";
         }
     }
+    @RequestMapping(value ="/module/pharmacy/update.form"  , method = RequestMethod.GET)
+    public String updateform(HttpSession httpSession,
+                                   @RequestParam(value = "genericName", required = false) int drugId,
+                                   @RequestParam(value = "brandName", required = false) String brandName,
+                                   @RequestParam(value = "price", required = false) String price) {
+        try {
+            Pharmacy pharmacy=new Pharmacy();
+            pharmacy.setBrandName(brandName);
+            pharmacy.setId(drugId);
+            pharmacy.setPricePerUnit(Float.parseFloat(price));
+
+            PharmacyService pharmacyService=Context.getService(PharmacyService.class);
+            pharmacyService.updateMyDrug(pharmacy);
+            httpSession.setAttribute(WebConstants.OPENMRS_MSG_ATTR, "Updated Successfully");
+            return "redirect:manage.form";
+        } catch (Exception ex) {
+            httpSession.setAttribute(WebConstants.OPENMRS_MSG_ATTR, ex.getLocalizedMessage());
+            return "redirect:manage.form";
+        }
+    }
 }

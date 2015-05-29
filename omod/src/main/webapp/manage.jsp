@@ -28,6 +28,9 @@
     </tbody>
 </table>
 
+<table>
+    <tr>
+        <td>
 <form role="form" action="<c:url value='/module/pharmacy/register.form' />" method='get'>
 
     Generic Name:
@@ -43,5 +46,26 @@
     <input type="submit"  value="Register Drug">
 
 </form>
+</td>
+<td>
+<form role="form" action="<c:url value='/module/pharmacy/update.form' />" method='get'>
 
+    <br>
+    <select name="genericName" required>
+        <c:forEach var ="drug" items="${drugList}">
+            <option value="${drug.id}">${drug.genericName}</option>
+        </c:forEach>
+    </select><br>
+    Brand Name:<br>
+    <input type="text" disabled value="${drug.brandName}" name="brandName" size="30" required><br>
+    Drug description:<br>
+    <input type="text"  disabled value="${drug.description}" name="description" size="30" required><br>
+    price per unit:<br>
+    <input type="text"  placeholder="price per unit" name="price" size="30" required><br>
+    <input type="submit"  value="Update Drug">
+
+</form>
+    </td>
+    </tr>
+</table>
 <%@ include file="/WEB-INF/template/footer.jsp"%>
