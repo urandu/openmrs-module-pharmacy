@@ -1,5 +1,5 @@
 <%@ include file="/WEB-INF/template/include.jsp" %>
-
+<script src="<openmrs:contextPath/>/dwr/interface/DWRPatientService.js"></script>
 <%--<openmrs:authentication>
     <c:if test="${authenticatedUser != null}">
 					<span id="userLoggedInAs" class="firstChild">
