@@ -80,7 +80,7 @@
                     </div>
                     <div id="patientListing" class="panel-body hide">
                         <div class="table-responsive">
-                            <div id="" class="table-responsive example_alt_pagination clearfix">
+                            <div id="dt_example" class="table-responsive example_alt_pagination clearfix">
                                 <table class="table table-condensed table-striped table-hover table-bordered pull-left"
                                        id="data-table">
                                     <thead>
@@ -101,7 +101,14 @@
 
                                     <tr class="gradeC">
 
-                                        No patient found
+                                        <td>No patient found</td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+
 
 
                                     </tr>
