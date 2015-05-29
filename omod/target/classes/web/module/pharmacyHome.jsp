@@ -24,15 +24,14 @@
                         // $('#output').val(this.value);
 
                         $("#patientListing").show();
-                        DWRPatientService.findPatients(this.value, false, objectsFound);
-
-                        function objectsFound(patients) {
+                        DWRPatientService.findPatients(this.value, false, function(patients){
                             if(patients.length >0)
                             {
                                 alert(patients);
                             }
-                            //alert("There are " + patients.length + " patients named john");
-                        }
+                        });
+
+
                     }
 
                 });
