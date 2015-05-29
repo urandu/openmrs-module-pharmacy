@@ -24,52 +24,52 @@ var $ruby_red = "#fa9c9b";
 
 
 $(document).ready(function () {
-  sparklineGraphs();
+    sparklineGraphs();
 });
 
 // Sparkline
 function sparklineGraphs() {
 
-  // Pie charts
-  $(function () {
+    // Pie charts
+    $(function () {
 
-    $("#spark_1").sparkline([1,1,4 ], {
-      type: 'pie',
-      sliceColors: [$blue, $green, $yellow],
-    });
+        $("#spark_1").sparkline([1, 1, 4 ], {
+            type: 'pie',
+            sliceColors: [$blue, $green, $yellow],
+        });
 
-    $("#spark_2").sparkline([2,3,2 ], {
-      type: 'pie',
-      sliceColors: [$blue, $green, $yellow],
-    });
+        $("#spark_2").sparkline([2, 3, 2 ], {
+            type: 'pie',
+            sliceColors: [$blue, $green, $yellow],
+        });
 
-    $("#spark_3").sparkline([3,1,4 ], {
-      type: 'pie',
-      sliceColors: [$blue, $green, $yellow],
-    });
+        $("#spark_3").sparkline([3, 1, 4 ], {
+            type: 'pie',
+            sliceColors: [$blue, $green, $yellow],
+        });
 
-    $("#spark_4").sparkline([5,1,2,1 ], {
-      type: 'pie',
-      sliceColors: [$blue, $green, $yellow, $blue_two],
-    });
+        $("#spark_4").sparkline([5, 1, 2, 1 ], {
+            type: 'pie',
+            sliceColors: [$blue, $green, $yellow, $blue_two],
+        });
 
-    $("#spark_5").sparkline([3,3,4,2 ], {
-      type: 'pie',
-      sliceColors: [$blue, $green, $yellow, $blue_five],
-    });
+        $("#spark_5").sparkline([3, 3, 4, 2 ], {
+            type: 'pie',
+            sliceColors: [$blue, $green, $yellow, $blue_five],
+        });
 
-    $("#spark_6").sparkline([5,1,1,3,7], {
-      type: 'pie',
-      sliceColors: [$blue_one, $blue_two, $blue_three, $blue_four, $blue_five],
-      width: '136px ',
-      height: '136px'
+        $("#spark_6").sparkline([5, 1, 1, 3, 7], {
+            type: 'pie',
+            sliceColors: [$blue_one, $blue_two, $blue_three, $blue_four, $blue_five],
+            width: '136px ',
+            height: '136px'
+        });
     });
-  });
 }
 
 //Resize charts and graphs on window resize
 $(document).ready(function () {
-  $(window).resize(function(){
-    sparklineGraphs();
-  });
+    $(window).resize(function () {
+        sparklineGraphs();
+    });
 });
