@@ -48,4 +48,9 @@ public class HibernatePayDrugDAO implements PayDrugDAO {
         sessionFactory.getCurrentSession().save(payDrug);
         return payDrug;
     }
+    @Override
+    public PayDrug updateMyPaidDrug(PayDrug payDrug) {
+        sessionFactory.getCurrentSession().update(payDrug);
+        return payDrug;
+    }
 }

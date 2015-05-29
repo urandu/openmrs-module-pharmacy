@@ -48,4 +48,10 @@ public class HibernateExpiredDrugDAO implements ExpiredDrugDAO{
         sessionFactory.getCurrentSession().save(expiredDrug);
         return expiredDrug;
     }
+
+    @Override
+    public ExpiredDrug updateMyExpiredDrug(ExpiredDrug expiredDrug) {
+        sessionFactory.getCurrentSession().update(expiredDrug);
+        return expiredDrug;
+    }
 }

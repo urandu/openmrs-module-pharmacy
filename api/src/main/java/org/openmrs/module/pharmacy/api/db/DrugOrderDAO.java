@@ -11,5 +11,6 @@ public interface DrugOrderDAO {
     List<DrugOrder> getAllMyDrugOrders();
     DrugOrder getMyDrugOrder(Integer drugId);
     DrugOrder saveMyDrugOrder(DrugOrder drugOrder);
+    DrugOrder updateMyDrugOrder(DrugOrder drugOrder);
     void purgeMyDrugOrder(DrugOrder drugOrder);
 }

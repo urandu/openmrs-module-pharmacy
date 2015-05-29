@@ -1,4 +1,5 @@
-package org.openmrs.module.drugOrder.api.impl;
+package org.openmrs.module.pharmacy.api.impl;
+
 
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
@@ -37,6 +38,11 @@ public class DrugOrderServiceImpl extends BaseOpenmrsService implements DrugOrde
     @Override
     public DrugOrder saveMyDrugOrder(DrugOrder drugOrder) {
         return dao.saveMyDrugOrder(drugOrder);
+    }
+
+    @Override
+    public DrugOrder updateMyDrugOrder(DrugOrder drugOrder) {
+        return dao.updateMyDrugOrder(drugOrder);
     }
 
     @Override

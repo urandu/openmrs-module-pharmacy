@@ -34,6 +34,11 @@ public class DispenseDrugServiceImpl implements DispenseDrugService {
     }
 
     @Override
+    public DispenseDrug updateMyDispensedDrug(DispenseDrug dispenseDrug) {
+        return dao.updateMyDispensedDrug(dispenseDrug);
+    }
+
+    @Override
     public DispenseDrug saveMyDispensedDrug(DispenseDrug dispenseDrug) {
         return dao.saveMyDispensedDrug(dispenseDrug);
     }

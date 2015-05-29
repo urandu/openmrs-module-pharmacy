@@ -12,4 +12,5 @@ public interface PayDrugDAO {
     PayDrug getMyPaidDrug(Integer drugId);
     PayDrug saveMyPaidDrug(PayDrug payDrug);
     void purgeMyPaidDrug(PayDrug payDrug);
+    PayDrug updateMyPaidDrug(PayDrug payDrug);
 }

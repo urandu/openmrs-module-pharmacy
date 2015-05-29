@@ -54,6 +54,11 @@ public class PharmacyServiceImpl extends BaseOpenmrsService implements PharmacyS
     }
 
     @Override
+    public Pharmacy updateMyDrug(Pharmacy pharmacy) {
+        return dao.updateMyDrug(pharmacy);
+    }
+
+    @Override
     public void purgeMyDrug(Pharmacy pharmacy){
         dao.purgeMyDrug(pharmacy);
     }

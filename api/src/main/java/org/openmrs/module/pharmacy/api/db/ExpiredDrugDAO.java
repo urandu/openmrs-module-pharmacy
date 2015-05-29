@@ -11,5 +11,6 @@ public interface ExpiredDrugDAO {
     List<ExpiredDrug> getAllMyExpiredDrugs();
     ExpiredDrug getMyExpiredDrug(Integer drugId);
     ExpiredDrug saveMyExpiredDrug(ExpiredDrug expiredDrug);
+    ExpiredDrug updateMyExpiredDrug(ExpiredDrug expiredDrug);
     void purgeMyExpiredDrug(ExpiredDrug expiredDrug);
 }

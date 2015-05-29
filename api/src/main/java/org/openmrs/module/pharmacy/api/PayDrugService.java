@@ -17,5 +17,7 @@ public interface PayDrugService {
 
     PayDrug saveMyPaidDrug(PayDrug payDrug);
 
+    PayDrug updateMyPaidDrug(PayDrug payDrug);
+
     void purgeMyPaidDrug(PayDrug payDrug);
 }

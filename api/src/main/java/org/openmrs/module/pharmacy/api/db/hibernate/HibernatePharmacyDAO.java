@@ -60,4 +60,10 @@ public class HibernatePharmacyDAO implements PharmacyDAO {
 		sessionFactory.getCurrentSession().save(pharmacy);
 		return pharmacy;
 	}
+
+	@Override
+	public Pharmacy updateMyDrug(Pharmacy pharmacy){
+		sessionFactory.getCurrentSession().update(pharmacy);
+		return pharmacy;
+	}
 }

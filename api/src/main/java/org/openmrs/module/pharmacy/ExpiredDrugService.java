@@ -17,6 +17,8 @@ public interface ExpiredDrugService {
 
     ExpiredDrug saveMyExpiredDrug(ExpiredDrug expiredDrug);
 
+    ExpiredDrug updateMyExpiredDrug(ExpiredDrug expiredDrug);
+
     void purgeMyExpiredDrug(ExpiredDrug expiredDrug);
 }
 

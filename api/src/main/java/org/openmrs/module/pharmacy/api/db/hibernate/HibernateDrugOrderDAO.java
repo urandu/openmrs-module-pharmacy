@@ -48,4 +48,10 @@ public class HibernateDrugOrderDAO implements DrugOrderDAO {
         sessionFactory.getCurrentSession().save(drugOrder);
         return drugOrder;
     }
+
+    @Override
+    public DrugOrder updateMyDrugOrder(DrugOrder drugOrder) {
+        sessionFactory.getCurrentSession().update(drugOrder);
+        return drugOrder;
+    }
 }

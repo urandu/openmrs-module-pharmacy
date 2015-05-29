@@ -27,4 +27,5 @@ public interface PharmacyDAO {
 	Pharmacy getMyDrug(Integer drugId);
 	Pharmacy saveMyDrug(Pharmacy Pharmacy);
 	void purgeMyDrug(Pharmacy Pharmacy);
+	Pharmacy updateMyDrug(Pharmacy pharmacy);
 }

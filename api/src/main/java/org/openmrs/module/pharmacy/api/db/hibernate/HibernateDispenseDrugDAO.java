@@ -48,4 +48,10 @@ public class HibernateDispenseDrugDAO implements DispenseDrugDAO {
         sessionFactory.getCurrentSession().save(dispenseDrug);
         return dispenseDrug;
     }
+
+    @Override
+    public DispenseDrug updateMyDispensedDrug(DispenseDrug dispenseDrug) {
+        sessionFactory.getCurrentSession().update(dispenseDrug);
+        return dispenseDrug;
+    }
 }

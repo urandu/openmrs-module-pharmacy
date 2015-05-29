@@ -18,5 +18,7 @@ public interface DispenseDrugService {
 
     DispenseDrug saveMyDispensedDrug(DispenseDrug dispenseDrug);
 
+    DispenseDrug updateMyDispensedDrug(DispenseDrug dispenseDrug);
+
     void purgeMyDispensedDrug(DispenseDrug dispenseDrug);
 }

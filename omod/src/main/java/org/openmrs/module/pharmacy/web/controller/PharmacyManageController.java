@@ -33,23 +33,24 @@ import java.util.List;
  */
 @Controller
 public class  PharmacyManageController {
-	
+
 	protected final Log log = LogFactory.getLog(getClass());
     private static final String PATH ="/module/pharmacy/register.form";
-	
+
 	@RequestMapping(value = "/module/pharmacy/manage", method = RequestMethod.GET)
 	public void manage(ModelMap model) {
 		PharmacyService pharmacyService=Context.getService(PharmacyService.class);
         List<Pharmacy> drugList=pharmacyService.getAllMyDrugs();
         model.addAttribute("drugList", drugList);
-
-	}
-	@RequestMapping(value = PATH , method = RequestMethod.GET)
-	public String registrationform(HttpSession httpSession,
-								   @RequestParam(value = "genericName", required = false) String genericName,
-								   @RequestParam(value = "brandName", required = false) String brandName,
-								   @RequestParam(value = "price", required = false) String price) {
-		try {
+        /*Drug drug=Context.getService(DrugOrder.class).getDrug();
+        model.addAttribute("drug", drugList);*/
+    }
+    @RequestMapping(value = PATH , method = RequestMethod.GET)
+    public String registrationform(HttpSession httpSession,
+                                   @RequestParam(value = "genericName", required = false) String genericName,
+                                   @RequestParam(value = "brandName", required = false) String brandName,
+                                   @RequestParam(value = "price", required = false) String price) {
+        try {
             Pharmacy pharmacy=new Pharmacy();
             pharmacy.setBrandName(brandName);
             pharmacy.setGenericName(genericName);
@@ -57,11 +58,11 @@ public class  PharmacyManageController {
 
             PharmacyService pharmacyService=Context.getService(PharmacyService.class);
             pharmacyService.saveMyDrug(pharmacy);
-			httpSession.setAttribute(WebConstants.OPENMRS_MSG_ATTR, "Registered Successfully");
-			return "redirect:manage.form";
-		} catch (Exception ex) {
-			httpSession.setAttribute(WebConstants.OPENMRS_MSG_ATTR, ex.getLocalizedMessage());
-			return "redirect:manage.form";
-		}
-	}
+            httpSession.setAttribute(WebConstants.OPENMRS_MSG_ATTR, "Registered Successfully");
+            return "redirect:manage.form";
+        } catch (Exception ex) {
+            httpSession.setAttribute(WebConstants.OPENMRS_MSG_ATTR, ex.getLocalizedMessage());
+            return "redirect:manage.form";
+        }
+    }
 }

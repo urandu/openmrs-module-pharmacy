@@ -17,6 +17,8 @@ public interface DrugOrderService {
 
     DrugOrder saveMyDrugOrder(DrugOrder drugOrder);
 
+    DrugOrder updateMyDrugOrder(DrugOrder drugOrder);
+
     void purgeMyDrugOrder(DrugOrder drugOrder);
 }
 

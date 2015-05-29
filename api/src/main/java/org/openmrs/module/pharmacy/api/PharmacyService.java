@@ -41,4 +41,6 @@ public interface PharmacyService extends OpenmrsService {
 	Pharmacy saveMyDrug(Pharmacy pharmacy);
 
 	void purgeMyDrug(Pharmacy pharmacy);
+
+	Pharmacy updateMyDrug(Pharmacy pharmacy);
 }

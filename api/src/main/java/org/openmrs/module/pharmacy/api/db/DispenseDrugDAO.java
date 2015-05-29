@@ -11,5 +11,6 @@ public interface DispenseDrugDAO {
     List<DispenseDrug> getAllMyDispensedDrugs();
     DispenseDrug getMyDispensedDrug(Integer drugId);
     DispenseDrug saveMyDispensedDrug(DispenseDrug dispenseDrug);
+    DispenseDrug updateMyDispensedDrug(DispenseDrug dispenseDrug);
     void purgeMyDispensedDrug(DispenseDrug dispenseDrug);
 }

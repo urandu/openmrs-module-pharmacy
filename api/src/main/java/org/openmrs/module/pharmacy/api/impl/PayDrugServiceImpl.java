@@ -34,6 +34,11 @@ public class PayDrugServiceImpl implements PayDrugService {
     }
 
     @Override
+    public PayDrug updateMyPaidDrug(PayDrug payDrug) {
+        return dao.updateMyPaidDrug(payDrug);
+    }
+
+    @Override
     public PayDrug saveMyPaidDrug(PayDrug payDrug) {
         return dao.saveMyPaidDrug(payDrug);
     }

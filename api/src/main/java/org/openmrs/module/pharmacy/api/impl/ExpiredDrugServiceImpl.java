@@ -34,10 +34,14 @@ public class ExpiredDrugServiceImpl implements ExpiredDrugService {
     }
 
     @Override
+    public ExpiredDrug updateMyExpiredDrug(ExpiredDrug expiredDrug) {
+        return dao.updateMyExpiredDrug(expiredDrug);
+    }
+
+    @Override
     public ExpiredDrug saveMyExpiredDrug(ExpiredDrug expiredDrug) {
         return dao.saveMyExpiredDrug(expiredDrug);
     }
-
     @Override
     public void purgeMyExpiredDrug(ExpiredDrug expiredDrug){
         dao.purgeMyExpiredDrug(expiredDrug);
