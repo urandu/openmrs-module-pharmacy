@@ -36,6 +36,7 @@
     <link rel="shortcut icon" href="openmrs/moduleResources/pharmacy/assets/everest/img/favicon.ico">
     <title>Pharmacy Admin Panel</title>
 
+    <openmrs:htmlInclude file="/moduleResources/pharmacy/assets/everest/js/jquery.js"/>
     <!-- Bootstrap CSS -->
 
     <openmrs:htmlInclude file="/moduleResources/pharmacy/assets/everest/css/bootstrap.css"/>
