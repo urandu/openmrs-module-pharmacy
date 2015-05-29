@@ -58,7 +58,7 @@
     </select><br>
 
     Brand Name:<br>
-    <input type="text" disabled placeholder="${brand}" value="${brand}" name="brandName" size="30" required><br>
+    <input type="text" disabled placeholder="brand" value="brand" name="brandName" size="30" required><br>
     Drug description:<br>
     <input type="text"  disabled value="desc" name="description" size="30" required><br>
     price per unit:<br>
