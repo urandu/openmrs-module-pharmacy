@@ -13,11 +13,30 @@
     <!-- Top Bar ends -->
     <script>
 
-        DWRPatientService.findPatients("29364156", false, objectsFound);
 
-        function objectsFound(patients) {
-            alert("There are " + patients.length + " patients named john");
-        }
+
+
+        $(document).ready(function(){
+            $('#patientSearch').keyup( function() {
+
+                if( this.value.length >2 ){
+                    /* code to run below */
+                   // $('#output').val(this.value);
+
+                    $("#patientListing").show();
+                    DWRPatientService.findPatients(this.value, false, objectsFound);
+
+                    function objectsFound(patients) {
+                        if(patients.length >0)
+                        {
+                           alert(patients);
+                        }
+                        //alert("There are " + patients.length + " patients named john");
+                    }
+                }
+
+            });
+        });
 
     </script>
     <!-- Main Container starts -->

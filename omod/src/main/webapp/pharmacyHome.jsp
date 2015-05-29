@@ -21,16 +21,17 @@
 
                 if( this.value.length >2 ){
                     /* code to run below */
-                    $('#output').val(this.value);
+                   // $('#output').val(this.value);
 
+                    $("#patientListing").show();
                     DWRPatientService.findPatients(this.value, false, objectsFound);
 
                     function objectsFound(patients) {
                         if(patients.length >0)
                         {
-                            patients.each()
+                           alert(patients);
                         }
-                        alert("There are " + patients.length + " patients named john");
+                        //alert("There are " + patients.length + " patients named john");
                     }
                 }
 
