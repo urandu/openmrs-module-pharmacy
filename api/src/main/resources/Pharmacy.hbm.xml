@@ -16,5 +16,9 @@
 		<property name="description" type="java.lang.String" column="description" length="255" />
 		<property name="unitsInStock" type="java.lang.Integer" column="unitsInStock" length="255"  />
 		<property name="pricePerUnit" type="java.lang.Float" column="pricePerUnit" length="255"/>
+        <set name="myDrugs" table="pharmacy_myDrug" cascade="all">
+            <key column="CATEGORY_ID" not-null="true" />
+            <many-to-many column="myDrugId" class="Pharmacy" unique="true"/>
+        </set>
 	</class>
 </hibernate-mapping>

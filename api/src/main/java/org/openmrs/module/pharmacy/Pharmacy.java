@@ -17,6 +17,7 @@ import org.openmrs.BaseOpenmrsMetadata;
 import org.openmrs.BaseOpenmrsObject;
 
 import java.io.Serializable;
+import java.util.Set;
 
 /**
  * It is a model class. It should extend either {@link BaseOpenmrsObject} or {@link BaseOpenmrsMetadata}.
@@ -30,6 +31,15 @@ public class Pharmacy extends BaseOpenmrsObject implements Serializable {
     private String description;
     private int unitsInStock;
     private float pricePerUnit;
+    private Set<Pharmacy> myDrugs;
+
+    public Set<Pharmacy> getMyDrugs() {
+        return myDrugs;
+    }
+
+    public void setMyDrugs(Set<Pharmacy> myDrugs) {
+        this.myDrugs = myDrugs;
+    }
 
     public float getPricePerUnit() {
         return pricePerUnit;
