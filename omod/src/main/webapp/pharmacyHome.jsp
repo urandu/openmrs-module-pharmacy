@@ -19,6 +19,11 @@
             alert("There are " + patients.length + " patients named john");
         }
 
+
+        $(document).ready(function(){
+            
+        });
+
     </script>
     <!-- Main Container starts -->
     <div class="main-container-full">
