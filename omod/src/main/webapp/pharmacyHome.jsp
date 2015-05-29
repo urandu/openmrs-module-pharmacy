@@ -41,7 +41,7 @@
                 <!-- Row Start -->
                 <div class="row">
                     <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
-
+                        <openmrs:portlet id="findPatient" url="findPatient" parameters="size=full|postURL=patientDashboard.form|showIncludeVoided=false|viewType=shortEdit" />
                     </div>
                     <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
 

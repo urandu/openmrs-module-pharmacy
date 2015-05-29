@@ -260,6 +260,13 @@
         <ul>
 
             <li class="highlight">
+                <a href='pharmacyHome.form'>
+                    <i class="fa fa-home"></i>
+                    <span>Pharmacy Home</span>
+                    <%--<span class="current-page"></span>--%>
+                </a>
+            </li>
+            <li class="highlight">
                 <a href='listDrugs.form'>
                     <i class="fa fa-desktop"></i>
                     <span>Drug List</span>
