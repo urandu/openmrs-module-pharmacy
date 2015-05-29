@@ -1,4 +1,4 @@
-<%@ include file="/WEB-INF/template/include.jsp"%>
+<%@ include file="/WEB-INF/template/include.jsp" %>
 
 <%--<openmrs:authentication>
     <c:if test="${authenticatedUser != null}">
@@ -25,44 +25,45 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8" />
+    <meta charset="UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Everest Admin Panel" />
-    <meta name="keywords" content="Admin, Dashboard, Bootstrap3, Sass, transform, CSS3, HTML5, Web design, UI Design, Responsive Dashboard, Responsive Admin, Admin Theme, Best Admin UI, Bootstrap Theme, Wrapbootstrap, Bootstrap" />
-    <meta name="author" content="Bootstrap Gallery" />
+    <meta name="description" content="Everest Admin Panel"/>
+    <meta name="keywords"
+          content="Admin, Dashboard, Bootstrap3, Sass, transform, CSS3, HTML5, Web design, UI Design, Responsive Dashboard, Responsive Admin, Admin Theme, Best Admin UI, Bootstrap Theme, Wrapbootstrap, Bootstrap"/>
+    <meta name="author" content="Bootstrap Gallery"/>
     <link rel="shortcut icon" href="/moduleResources/pharmacy/assets/everest/img/favicon.ico">
     <title>Pharmacy Admin Panel</title>
 
     <!-- Bootstrap CSS -->
 
-    <openmrs:htmlInclude file="/moduleResources/pharmacy/assets/everest/css/bootstrap.css" />
+    <openmrs:htmlInclude file="/moduleResources/pharmacy/assets/everest/css/bootstrap.css"/>
 
     <!-- Animate CSS -->
 
-    <openmrs:htmlInclude file="/moduleResources/pharmacy/assets/everest/css/animate.css" />
+    <openmrs:htmlInclude file="/moduleResources/pharmacy/assets/everest/css/animate.css"/>
 
     <!-- Alertify CSS -->
 
-    <openmrs:htmlInclude file="/moduleResources/pharmacy/assets/everest/css/alertify/alertify.core.css" />
+    <openmrs:htmlInclude file="/moduleResources/pharmacy/assets/everest/css/alertify/alertify.core.css"/>
 
-    <openmrs:htmlInclude file="/moduleResources/pharmacy/assets/everest/css/alertify/alertify.default.css" />
+    <openmrs:htmlInclude file="/moduleResources/pharmacy/assets/everest/css/alertify/alertify.default.css"/>
 
     <!-- Main CSS -->
 
 
-    <openmrs:htmlInclude file="/moduleResources/pharmacy/assets/everest/css/main.css" />
+    <openmrs:htmlInclude file="/moduleResources/pharmacy/assets/everest/css/main.css"/>
     <!-- Datepicker CSS -->
 
-    <openmrs:htmlInclude file="/moduleResources/pharmacy/assets/everest/css/datepicker.css" />
+    <openmrs:htmlInclude file="/moduleResources/pharmacy/assets/everest/css/datepicker.css"/>
     <!-- Font Awesome -->
 
-    <openmrs:htmlInclude file="/moduleResources/pharmacy/assets/everest/fonts/font-awesome.min.css" />
+    <openmrs:htmlInclude file="/moduleResources/pharmacy/assets/everest/fonts/font-awesome.min.css"/>
     <!-- HTML5 shiv and Respond.js IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
 
-    <openmrs:htmlInclude file="/moduleResources/pharmacy/assets/everest/js/html5shiv.js" />
+    <openmrs:htmlInclude file="/moduleResources/pharmacy/assets/everest/js/html5shiv.js"/>
 
-    <openmrs:htmlInclude file="/moduleResources/pharmacy/assets/everest/js/respond.min.js" />
+    <openmrs:htmlInclude file="/moduleResources/pharmacy/assets/everest/js/respond.min.js"/>
     <![endif]-->
 
 </head>
@@ -109,36 +110,42 @@
                     <li>
                         <a href="profile.html">
                             <i class="fa fa-file-word-o text-success"></i>
+
                             <p>Profile</p>
                         </a>
                     </li>
                     <li>
                         <a href="gallery.html">
                             <i class="fa fa-image text-danger"></i>
+
                             <p>Gallery</p>
                         </a>
                     </li>
                     <li>
                         <a href="timeline.html">
                             <i class="fa fa-list-ol text-info"></i>
+
                             <p>Timeline</p>
                         </a>
                     </li>
                     <li>
                         <a href="graphs.html">
                             <i class="fa fa-map-marker text-warning"></i>
+
                             <p>Charts</p>
                         </a>
                     </li>
                     <li>
                         <a href="editor.html">
                             <i class="fa fa-pencil text-danger"></i>
+
                             <p>Editor</p>
                         </a>
                     </li>
                     <li>
                         <a href="blog.html">
                             <i class="fa fa-file-text text-success"></i>
+
                             <p>Blog</p>
                         </a>
                     </li>
@@ -160,8 +167,10 @@
                         <div class="details">
                             <strong class="text-danger">Wilson</strong>
                             <span>Uploaded 28 new files yesterday.</span>
+
                             <div class="progress progress-xs no-margin">
-                                <div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100" style="width: 90%;">
+                                <div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="90"
+                                     aria-valuemin="0" aria-valuemax="100" style="width: 90%;">
                                 </div>
                             </div>
                         </div>
@@ -173,8 +182,10 @@
                         <div class="details">
                             <strong class="text-danger">Adams</strong>
                             <span>Got 12 new messages.</span>
+
                             <div class="progress progress-xs no-margin">
-                                <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" style="width: 50%;">
+                                <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="50"
+                                     aria-valuemin="0" aria-valuemax="100" style="width: 50%;">
                                 </div>
                             </div>
                         </div>
@@ -186,8 +197,10 @@
                         <div class="details">
                             <strong class="text-info">Sam</strong>
                             <span>Uploaded new project files today.</span>
+
                             <div class="progress progress-xs no-margin">
-                                <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100" style="width: 70%;">
+                                <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="70"
+                                     aria-valuemin="0" aria-valuemax="100" style="width: 70%;">
                                 </div>
                             </div>
                         </div>
@@ -199,8 +212,10 @@
                         <div class="details">
                             <strong class="text-info">Jennifer</strong>
                             <span>128 new purchases last 3 hours.</span>
+
                             <div class="progress progress-xs no-margin">
-                                <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100" style="width: 30%;">
+                                <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="30"
+                                     aria-valuemin="0" aria-valuemax="100" style="width: 30%;">
                                 </div>
                             </div>
                         </div>
@@ -222,71 +237,78 @@
 <!-- Left sidebar starts -->
 <aside id="sidebar">
 
-<!-- Current User Starts -->
-<div class="current-user">
-    <div class="user-avatar animated rubberBand">
-        <img src="/openmrs/moduleResources/pharmacy/assets/everest/img/user4.jpg" alt="Current User">
-        <span class="busy"></span>
-    </div>
-    <div class="user-name">Welcome Mr. James</div>
-    <ul class="user-links">
+    <!-- Current User Starts -->
+    <div class="current-user">
+        <div class="user-avatar animated rubberBand">
+            <img src="/openmrs/moduleResources/pharmacy/assets/everest/img/user4.jpg" alt="Current User">
+            <span class="busy"></span>
+        </div>
+        <div class="user-name">Welcome, ${user.familyName} (${user.systemId})</div>
+        <ul class="user-links">
 
-        <li>
-            <a href="login.html">
-                <i class="fa fa-sign-out text-danger"></i>
-            </a>
-        </li>
-    </ul>
-</div>
-<!-- Current User Ends -->
-
-<!-- Menu start -->
-<div id='menu'>
-    <ul>
-
-        <li class="highlight">
-            <a href='listDrugs.form'>
-                <i class="fa fa-desktop"></i>
-                <span>Drug List</span>
-                <%--<span class="current-page"></span>--%>
-            </a>
-        </li>
-    </ul>
-</div>
-<!-- Menu End -->
-
-<!-- Freebies Starts -->
-<div class="freebies">
-
-    <!-- Sidebar Extras -->
-    <div class="sidebar-addons">
-        <ul class="views">
-            <%--<li>
-                <i class="fa fa-circle-o text-success"></i>
-                <div class="details">
-                    <p>Signups</p>
-                </div>
-                <span class="label label-success">8</span>
-            </li>
             <li>
-                <i class="fa fa-circle-o text-info"></i>
-                <div class="details">
-                    <p>Users Online</p>
-                </div>
-                <span class="label label-info">7</span>
+                <a href="login.html">
+                    <i class="fa fa-sign-out text-danger"></i>
+                </a>
             </li>
-            <li>
-                <i class="fa fa-circle-o text-danger"></i>
-                <div class="details">
-                    <p>Images Uploaded</p>
-                </div>
-                <span class="label label-danger">4</span>
-            </li>--%>
         </ul>
     </div>
+    <!-- Current User Ends -->
 
-</div>
-<!-- Freebies Starts -->
+    <!-- Menu start -->
+    <div id='menu'>
+        <ul>
+
+            <li class="highlight">
+                <a href='pharmacyHome.form'>
+                    <i class="fa fa-home"></i>
+                    <span>Pharmacy Home</span>
+                    <%--<span class="current-page"></span>--%>
+                </a>
+            </li>
+            <li class="highlight">
+                <a href='listDrugs.form'>
+                    <i class="fa fa-desktop"></i>
+                    <span>Drug List</span>
+                    <%--<span class="current-page"></span>--%>
+                </a>
+            </li>
+        </ul>
+    </div>
+    <!-- Menu End -->
+
+    <!-- Freebies Starts -->
+    <div class="freebies">
+
+        <!-- Sidebar Extras -->
+        <div class="sidebar-addons">
+            <ul class="views">
+                <%--<li>
+                    <i class="fa fa-circle-o text-success"></i>
+                    <div class="details">
+                        <p>Signups</p>
+                    </div>
+                    <span class="label label-success">8</span>
+                </li>
+                <li>
+                    <i class="fa fa-circle-o text-info"></i>
+                    <div class="details">
+                        <p>Users Online</p>
+                    </div>
+                    <span class="label label-info">7</span>
+                </li>
+                <li>
+                    <i class="fa fa-circle-o text-danger"></i>
+                    <div class="details">
+                        <p>Images Uploaded</p>
+                    </div>
+                    <span class="label label-danger">4</span>
+                </li>--%>
+            </ul>
+        </div>
+
+    </div>
+    <!-- Freebies Starts -->
 
 </aside>
 <!-- Left sidebar ends -->

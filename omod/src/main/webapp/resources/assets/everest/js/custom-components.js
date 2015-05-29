@@ -15,16 +15,16 @@ var $blue_five = "#badff2";
 
 
 $(document).ready(function () {
-	// Modal Window
-	$('.modal-large').modal('show');
+    // Modal Window
+    $('.modal-large').modal('show');
 
-	// Tooltips
-	$('a').tooltip('hide')
+    // Tooltips
+    $('a').tooltip('hide')
 
-	// Dropdown
-	$('.dropdown-toggle').dropdown();
-	
-	// Popovers
-	$('.btn').popover('hide');
-		
+    // Dropdown
+    $('.dropdown-toggle').dropdown();
+
+    // Popovers
+    $('.btn').popover('hide');
+
 });
