@@ -39,7 +39,7 @@
                                         patient.familyName,
                                         patient.age,
                                         patient.gender,
-                                        patient.birthdate]);
+                                        patient.birthdateString]);
 
                                 });
 
