@@ -28,7 +28,7 @@
                             if(patients.length >0)
                             {
                                 alert(patients);
-                                $("#data-table").addRow()
+                                $("#data-table").row.add()
                             }
                         });
 
