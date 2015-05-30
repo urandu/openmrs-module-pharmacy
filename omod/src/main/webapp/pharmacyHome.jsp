@@ -30,6 +30,7 @@
                                 alert(patients);
                                 patients.forEach(function(patient){
 
+                                    $("#data-table").r
                                     $("#data-table").row.add([patient.identifier,patient.givenName,patient.middleName,patient.familyName, patient.age,patient.gender,patient.birthdate]).draw();
 
                                 });
