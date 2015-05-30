@@ -1,5 +1,6 @@
 <%@ include file="header.jsp" %>
 
+<openmrs:require privilege="View Patients" otherwise="/login.htm" redirect="/index.htm" />
 <!-- Dashboard Wrapper starts -->
 <div class="dashboard-wrapper">
 
