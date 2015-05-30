@@ -23,12 +23,17 @@
                         /* code to run below */
                         // $('#output').val(this.value);
 
-                        $("#patientListing").show();
+                        //$("#patientListing").show();
                         DWRPatientService.findPatients(this.value, false, function(patients){
                             if(patients.length >0)
                             {
                                 alert(patients);
-                                $("#data-table").row.add()
+                                patients.forEach(function(patient){
+
+                                    $("#data-table").row.add([patient.identifier,patient.givenName,patient.middleName,patient.familyName, patient.age,patient.gender,patient.birthdate]).draw();
+
+                                });
+
                             }
                         });
 

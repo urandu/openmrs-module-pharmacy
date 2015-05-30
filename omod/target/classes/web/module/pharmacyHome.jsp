@@ -23,11 +23,17 @@
                         /* code to run below */
                         // $('#output').val(this.value);
 
-                        $("#patientListing").show();
+                        //$("#patientListing").show();
                         DWRPatientService.findPatients(this.value, false, function(patients){
                             if(patients.length >0)
                             {
                                 alert(patients);
+                                patients.forEach(function(patient){
+
+                                    $("#data-table").row.add([patient.identifier,patient.givenName,patient.middleName,patient.familyName, patient.age,patient.gender,patient.birthdate]).draw();
+
+                                });
+
                             }
                         });
 
@@ -73,12 +79,12 @@
 
 
                 <div class="col-md-12 col-sm-12 col-xs-12">
-                    <div class="panel">
+                    <div class="panel hidden">
                         <div class="panel-heading">
 
                         </div>
                     </div>
-                    <div id="patientListing" class="panel-body hide">
+                    <div id="patientListing" class="panel-body ">
                         <div class="table-responsive">
                             <div id="dt_example" class="table-responsive example_alt_pagination clearfix">
                                 <table class="table table-condensed table-striped table-hover table-bordered pull-left"
