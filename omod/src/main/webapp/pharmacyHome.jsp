@@ -33,7 +33,7 @@
 
 
                                     $("#data-table").dataTable().fnAddData([
-                                        patient.identifier,
+                                        "<a"+patient.identifier,
                                         patient.givenName,
                                         patient.middleName,
                                         patient.familyName,
