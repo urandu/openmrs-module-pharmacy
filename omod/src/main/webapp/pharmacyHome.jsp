@@ -33,13 +33,13 @@
 
 
                                     $("#data-table").dataTable().fnAddData([
-                                        "<a"+patient.identifier,
+                                        "<a href='/manage.form'>"+patient.identifier,
                                         patient.givenName,
                                         patient.middleName,
                                         patient.familyName,
                                         patient.age,
                                         patient.gender,
-                                        patient.birthdateString]);
+                                        patient.birthdateString+"</a>"]);
 
                                 });
 
