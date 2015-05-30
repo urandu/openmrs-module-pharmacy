@@ -25,9 +25,10 @@
 
                         //$("#patientListing").show();
                         DWRPatientService.findPatients(this.value, false, function(patients){
+                            $("#data-table").dataTable().fnClearTable();
                             if(patients.length >0)
                             {
-                                alert(patients);
+
                                 patients.forEach(function(patient){
 
 
