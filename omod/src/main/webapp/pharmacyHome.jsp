@@ -114,7 +114,7 @@
                                     </thead>
                                     <tbody>
 
-                                    <tr class="gradeC">
+                                    <%--<tr class="gradeC">
 
                                         <td>No patient found</td>
                                         <td></td>
@@ -126,7 +126,7 @@
 
 
 
-                                    </tr>
+                                    </tr>--%>
                                     </tbody>
                                 </table>
                             </div>

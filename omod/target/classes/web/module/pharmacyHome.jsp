@@ -25,9 +25,10 @@
 
                         //$("#patientListing").show();
                         DWRPatientService.findPatients(this.value, false, function(patients){
+                            $("#data-table").dataTable().fnClearTable();
                             if(patients.length >0)
                             {
-                                alert(patients);
+
                                 patients.forEach(function(patient){
 
 
@@ -113,7 +114,7 @@
                                     </thead>
                                     <tbody>
 
-                                    <tr class="gradeC">
+                                    <%--<tr class="gradeC">
 
                                         <td>No patient found</td>
                                         <td></td>
@@ -125,7 +126,7 @@
 
 
 
-                                    </tr>
+                                    </tr>--%>
                                     </tbody>
                                 </table>
                             </div>
