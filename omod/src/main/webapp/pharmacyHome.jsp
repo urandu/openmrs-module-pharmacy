@@ -52,8 +52,10 @@
 
                 });
 
-                $('#example tbody').on('click', 'tr', function () {
-                    var data = $("#data-table").dataTable().row(this).data();
+                var table = $("#data-table").dataTable();
+
+                $('#data-table tbody').on('click', 'tr', function () {
+                    var data = table.row(this).data();
                     console.log(data);
                 });
 

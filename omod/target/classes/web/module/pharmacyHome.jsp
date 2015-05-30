@@ -1,5 +1,6 @@
 <%@ include file="header.jsp" %>
 
+<openmrs:require privilege="View Patients" otherwise="/login.htm" redirect="/index.htm" />
 <!-- Dashboard Wrapper starts -->
 <div class="dashboard-wrapper">
 
@@ -33,13 +34,13 @@
 
 
                                     $("#data-table").dataTable().fnAddData([
-                                        "<a href='/manage.form'>"+patient.identifier,
+                                        patient.identifier,
                                         patient.givenName,
                                         patient.middleName,
                                         patient.familyName,
                                         patient.age,
                                         patient.gender,
-                                        patient.birthdateString+"</a>"]);
+                                        patient.birthdateString]);
 
                                 });
 
@@ -51,7 +52,17 @@
 
                 });
 
+                var table = $("#data-table").dataTable();
+
+                $('#data-table tbody').on('click', 'tr', function () {
+                    var data = table.row(this).data();
+                    console.log(data);
+                });
+
+
+
             } );
+
         } ) ( jQuery );
 
 
