@@ -52,7 +52,15 @@
 
                 });
 
+                $('#example tbody').on('click', 'tr', function () {
+                    var data = $("#data-table").dataTable().row(this).data();
+                    console.log(data);
+                });
+
+
+
             } );
+
         } ) ( jQuery );
 
 
