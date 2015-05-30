@@ -56,7 +56,7 @@
 
                 $('#data-table tbody').on('click', 'tr', function () {
                     var data = table.row(this).data();
-                    console.log(data);
+                    console.log(data)//error occured but will fix it tomorrow
                 });
 
 
