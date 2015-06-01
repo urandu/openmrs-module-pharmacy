@@ -1,5 +1,7 @@
 <%@ include file="/WEB-INF/template/include.jsp" %>
-
+<script src="<openmrs:contextPath/>/dwr/interface/DWRPatientService.js"></script>
+<openmrs:htmlInclude file="/dwr/engine.js" ></openmrs:htmlInclude>
+<openmrs:htmlInclude file="/dwr/util.js" ></openmrs:htmlInclude>
 <%--<openmrs:authentication>
     <c:if test="${authenticatedUser != null}">
 					<span id="userLoggedInAs" class="firstChild">
@@ -31,9 +33,10 @@
     <meta name="keywords"
           content="Admin, Dashboard, Bootstrap3, Sass, transform, CSS3, HTML5, Web design, UI Design, Responsive Dashboard, Responsive Admin, Admin Theme, Best Admin UI, Bootstrap Theme, Wrapbootstrap, Bootstrap"/>
     <meta name="author" content="Bootstrap Gallery"/>
-    <link rel="shortcut icon" href="/moduleResources/pharmacy/assets/everest/img/favicon.ico">
+    <link rel="shortcut icon" href="openmrs/moduleResources/pharmacy/assets/everest/img/favicon.ico">
     <title>Pharmacy Admin Panel</title>
 
+    <openmrs:htmlInclude file="/moduleResources/pharmacy/assets/everest/js/jquery.js"/>
     <!-- Bootstrap CSS -->
 
     <openmrs:htmlInclude file="/moduleResources/pharmacy/assets/everest/css/bootstrap.css"/>
@@ -84,12 +87,12 @@
     </div>
     <!-- Logo ends -->
 
-    <!-- Custom Search Starts -->
+   <%-- <!-- Custom Search Starts -->
     <div class="custom-search pull-left hidden-xs hidden-sm">
         <input type="text" class="search-query" placeholder="Search here">
         <i class="fa fa-search"></i>
     </div>
-    <!-- Custom Search Ends -->
+    <!-- Custom Search Ends -->--%>
 
     <!-- Mini right nav starts -->
     <div class="pull-right">
