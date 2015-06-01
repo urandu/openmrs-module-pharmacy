@@ -52,11 +52,24 @@
 
                 });
 
-                var table = $("#data-table").dataTable();
+                /*var table = $("#data-table").dataTable();
 
                 $('#data-table tbody').on('click', 'tr', function () {
                     var data = table.row(this).data();
                     console.log(data)//error occurred but will fix it tomorrow
+                });*/
+                var oTable = $('#data-table').dataTable({
+                    "fnRowCallback": function (nRow, aData, iDisplayIndex) {
+
+                        // Bind click event
+                        $(nRow).click(function() {
+
+                            alert( 'You clicked on '+aData.name+'\'s row' );
+
+                        });
+
+                        return nRow;
+                    }
                 });
 
 
