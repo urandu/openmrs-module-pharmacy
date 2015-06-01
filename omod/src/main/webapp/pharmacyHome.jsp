@@ -59,7 +59,7 @@
                         // Bind click event
                         $(nRow).click(function() {
 
-                            alert( 'You clicked on '+aData.name+'\'s row' );
+                            alert( 'You clicked on '+aData+'\'s row' );
 
                         });
 
