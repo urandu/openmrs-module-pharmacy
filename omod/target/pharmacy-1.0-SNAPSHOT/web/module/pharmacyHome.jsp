@@ -26,7 +26,7 @@
 
                         //$("#patientListing").show();
                         DWRPatientService.findPatients(this.value, false, function(patients){
-                            $("#data-table").dataTable().fnClearTable();
+                            //$("#data-table").dataTable().fnClearTable();
                             if(patients.length >0)
                             {
 
@@ -59,7 +59,8 @@
                         // Bind click event
                         $(nRow).click(function() {
 
-                            alert( 'You clicked on '+aData+'\'s row' );
+                            //alert( 'You clicked on '+aData+'\'s row' );
+                            window.location="/pharmacy/patientPanel?patientId="+aData[0];
 
                         });
 
