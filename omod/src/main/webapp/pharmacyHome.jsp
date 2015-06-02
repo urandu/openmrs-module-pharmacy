@@ -60,6 +60,7 @@
                         $(nRow).click(function() {
 
                             alert( 'You clicked on '+aData+'\'s row' );
+                            window.location.href=
 
                         });
 
