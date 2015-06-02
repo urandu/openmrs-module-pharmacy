@@ -2,6 +2,8 @@ package org.openmrs.module.pharmacy.api.db.hibernate;
 
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
+import org.hibernate.Criteria;
+import org.hibernate.FetchMode;
 import org.hibernate.SessionFactory;
 import org.openmrs.module.pharmacy.api.OtherModels.DispenseDrug;
 import org.openmrs.module.pharmacy.api.db.DispenseDrugDAO;
@@ -53,5 +55,13 @@ public class HibernateDispenseDrugDAO implements DispenseDrugDAO {
     public DispenseDrug updateMyDispensedDrug(DispenseDrug dispenseDrug) {
         sessionFactory.getCurrentSession().update(dispenseDrug);
         return dispenseDrug;
+    }
+
+    @Override
+    public List<DispenseDrug> showDrugOrderByTime(){
+        Criteria criteria = sessionFactory.getCurrentSession().createCriteria(DispenseDrug.class);
+        criteria.setFetchMode("Pharmacy", FetchMode.JOIN);
+        List list = criteria.list();
+        return list;
     }
 }

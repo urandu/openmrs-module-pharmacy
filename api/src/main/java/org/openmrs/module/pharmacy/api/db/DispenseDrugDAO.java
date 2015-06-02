@@ -13,4 +13,5 @@ public interface DispenseDrugDAO {
     DispenseDrug saveMyDispensedDrug(DispenseDrug dispenseDrug);
     DispenseDrug updateMyDispensedDrug(DispenseDrug dispenseDrug);
     void purgeMyDispensedDrug(DispenseDrug dispenseDrug);
+    List<DispenseDrug> showDrugOrderByTime();
 }
