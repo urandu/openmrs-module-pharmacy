@@ -31,7 +31,7 @@
     <tr>
         <th>drug</th>
     </tr>
-<c:forEach var="dispense" items="${dispenseDrugList}" varStatus="status">
+<c:forEach var="dispensed" items="${dispenseDrugList}" varStatus="status">
 
     <tr>
         <td>${dispense.myDrugId}</td>
