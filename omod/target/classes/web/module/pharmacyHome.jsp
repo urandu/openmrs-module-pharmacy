@@ -26,7 +26,7 @@
 
                         //$("#patientListing").show();
                         DWRPatientService.findPatients(this.value, false, function(patients){
-                            //$("#data-table").dataTable().fnClearTable();
+                            $("#data-table").dataTable().fnClearTable();
                             if(patients.length >0)
                             {
 
@@ -53,14 +53,14 @@
                 });
 
 
-                var oTable = $('#data-table').dataTable({
+                 $('#data-table').dataTable({
                     "fnRowCallback": function (nRow, aData, iDisplayIndex) {
 
                         // Bind click event
                         $(nRow).click(function() {
 
                             //alert( 'You clicked on '+aData+'\'s row' );
-                            window.location="/pharmacy/patientPanel?patientId="+aData[0];
+                            window.location="/openmrs/pharmacy/patientPanel?patientId="+aData[0];
 
                         });
 
