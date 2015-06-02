@@ -1,5 +1,6 @@
 package org.openmrs.module.pharmacy.api;
 
+import org.openmrs.api.OpenmrsService;
 import org.openmrs.module.pharmacy.api.OtherModels.DispenseDrug;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -8,8 +9,8 @@ import java.util.List;
 /**
  * Created by kinyua on 5/28/15.
  */
-
-public interface DispenseDrugService {
+@Transactional
+public interface DispenseDrugService extends OpenmrsService{
     @Transactional(readOnly = true)
     List<DispenseDrug> getAllMyDispensedDrugs();
 

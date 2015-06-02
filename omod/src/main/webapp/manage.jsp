@@ -34,7 +34,7 @@
 <c:forEach var="dispensed" items="${dispenseDrugList}" varStatus="status">
 
     <tr>
-        <td>${dispense.myDrugId}</td>
+        <td>${dispensed.drugId}</td>
     </tr>
 </c:forEach>
     </table>

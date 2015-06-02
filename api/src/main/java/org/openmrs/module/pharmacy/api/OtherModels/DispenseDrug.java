@@ -16,6 +16,8 @@ public class DispenseDrug extends BaseOpenmrsObject implements Serializable {
     private Integer drugId;
     private int unitsDispensed;
     private Integer transactionId;
+    private boolean paymentStatus;
+    private String comments;
 
     public Integer getPatientID() {
         return patientID;
@@ -72,9 +74,6 @@ public class DispenseDrug extends BaseOpenmrsObject implements Serializable {
     public void setComments(String comments) {
         this.comments = comments;
     }
-
-    private boolean paymentStatus;
-    private String comments;
 
     @Override
     public Integer getId() {

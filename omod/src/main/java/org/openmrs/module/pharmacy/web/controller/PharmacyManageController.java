@@ -46,10 +46,9 @@ public class  PharmacyManageController {
         model.addAttribute("drugList", drugList);
 
         DispenseDrugService dispenseDrugService=Context.getService(DispenseDrugService.class);
-        List<DispenseDrug> dispenseDrugList=dispenseDrugService.showDrugOrderByTime();
+        List<DispenseDrug> dispenseDrugList=dispenseDrugService.getAllMyDispensedDrugs();
         model.addAttribute("dispenseDrugList",dispenseDrugList);
-        /*Drug drug=Context.getService(DrugOrder.class).getDrug();
-        model.addAttribute("drug", drugList);*/
+
     }
     @RequestMapping(value = PATH , method = RequestMethod.GET)
     public String registrationform(HttpSession httpSession,

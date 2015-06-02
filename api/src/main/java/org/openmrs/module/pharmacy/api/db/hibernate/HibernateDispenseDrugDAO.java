@@ -39,6 +39,7 @@ public class HibernateDispenseDrugDAO implements DispenseDrugDAO {
         return (DispenseDrug) sessionFactory.getCurrentSession().get(DispenseDrug.class, myDispensedDrugId);
     }
 
+    @Override
     public void purgeMyDispensedDrug(DispenseDrug dispenseDrug)
     {
         sessionFactory.getCurrentSession().delete(dispenseDrug);
