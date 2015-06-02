@@ -27,7 +27,17 @@
     </c:forEach>
     </tbody>
 </table>
+<table>
+    <tr>
+        <th>drug</th>
+    </tr>
+<c:forEach var="dispense" items="${dispenseDrugList}" varStatus="status">
 
+    <tr>
+        <td>${dispense.myDrugId}</td>
+    </tr>
+</c:forEach>
+    </table>
 <table>
     <tr>
         <td>

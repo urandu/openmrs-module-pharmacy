@@ -17,6 +17,8 @@ import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.openmrs.api.context.Context;
 import org.openmrs.module.pharmacy.Pharmacy;
+import org.openmrs.module.pharmacy.api.DispenseDrugService;
+import org.openmrs.module.pharmacy.api.OtherModels.DispenseDrug;
 import org.openmrs.module.pharmacy.api.PharmacyService;
 import org.openmrs.web.WebConstants;
 import org.springframework.stereotype.Controller;
@@ -42,6 +44,10 @@ public class  PharmacyManageController {
 		PharmacyService pharmacyService=Context.getService(PharmacyService.class);
         List<Pharmacy> drugList=pharmacyService.getAllMyDrugs();
         model.addAttribute("drugList", drugList);
+
+        DispenseDrugService dispenseDrugService=Context.getService(DispenseDrugService.class);
+        List<DispenseDrug> dispenseDrugList=dispenseDrugService.showDrugOrderByTime();
+        model.addAttribute("dispensed",dispenseDrugList);
         /*Drug drug=Context.getService(DrugOrder.class).getDrug();
         model.addAttribute("drug", drugList);*/
     }

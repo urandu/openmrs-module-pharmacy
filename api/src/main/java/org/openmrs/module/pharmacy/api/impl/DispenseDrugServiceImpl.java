@@ -47,4 +47,10 @@ public class DispenseDrugServiceImpl implements DispenseDrugService {
     public void purgeMyDispensedDrug(DispenseDrug dispenseDrug){
         dao.purgeMyDispensedDrug(dispenseDrug);
     }
+
+    @Override
+    public List<DispenseDrug> showDrugOrderByTime(){
+        return dao.showDrugOrderByTime();
+    }
+
 }

@@ -21,4 +21,7 @@ public interface DispenseDrugService {
     DispenseDrug updateMyDispensedDrug(DispenseDrug dispenseDrug);
 
     void purgeMyDispensedDrug(DispenseDrug dispenseDrug);
+
+    @Transactional(readOnly = true)
+    List<DispenseDrug> showDrugOrderByTime();
 }
