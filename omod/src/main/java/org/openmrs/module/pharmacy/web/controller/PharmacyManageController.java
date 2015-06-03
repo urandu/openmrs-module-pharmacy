@@ -48,10 +48,11 @@ public class  PharmacyManageController {
     }
 
     @RequestMapping(value = "/module/pharmacy/patientPanel", method = RequestMethod.GET)
-    public void patientPanel(ModelMap model,@RequestParam(required = false, value="patientId") Integer ptId) {
+    public String patientPanel(ModelMap model,@RequestParam(required = false, value="patientId") Integer ptId) {
         model.addAttribute("user", Context.getAuthenticatedUser());
         Person person= Context.getPatientService().getPatient(ptId);
         model.addAttribute("patient",person);
+        return "patientPanel";
     }
 
 }

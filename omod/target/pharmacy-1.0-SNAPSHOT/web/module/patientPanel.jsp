@@ -1,3 +1,4 @@
+<%--@elvariable id="patient" type="org.openmrs.Patient"--%>
 <%@ include file="header.jsp" %>
 
 <openmrs:require privilege="View Patients" otherwise="/login.htm" redirect="/index.htm" />
@@ -26,9 +27,9 @@
 
             <!-- Row starts -->
             <div class="row">
-                <div class="col-lg-4 col-md-4 col-sm-6 col-sx-12">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-sx-12">
                     <div class="panel-blue">
-                        <h4 class="heading">Panel Blue</h4>
+                        <h4 class="heading">${patient}</h4>
                     </div>
                 </div>
 
