@@ -24,6 +24,16 @@
         <!-- Container fluid Starts -->
         <div class="container-fluid">
 
+            <!-- Row starts -->
+            <div class="row">
+                <div class="col-lg-4 col-md-4 col-sm-6 col-sx-12">
+                    <div class="panel-blue">
+                        <h4 class="heading">Panel Blue</h4>
+                    </div>
+                </div>
+
+            </div>
+            <!-- Row ends -->
 
             <!-- Row Starts -->
             <div class="row">
