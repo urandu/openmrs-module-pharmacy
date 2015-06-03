@@ -20,6 +20,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 
 /**
  * The main controller.
@@ -45,8 +46,9 @@ public class  PharmacyManageController {
     }
 
     @RequestMapping(value = "/module/pharmacy/patientPanel", method = RequestMethod.GET)
-    public void patientPanel(ModelMap model) {
+    public void patientPanel(ModelMap model,@RequestParam(required = false, value="patientId") Integer ptId) {
         model.addAttribute("user", Context.getAuthenticatedUser());
+        
     }
 
 }
