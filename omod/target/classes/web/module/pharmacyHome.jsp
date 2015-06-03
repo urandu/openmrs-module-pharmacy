@@ -60,7 +60,7 @@
                         $(nRow).click(function() {
 
                             //alert( 'You clicked on '+aData+'\'s row' );
-                            window.location="/openmrs/pharmacy/patientPanel?patientId="+aData[0];
+                            window.location="/openmrs/module/pharmacy/patientPanel?patientId="+aData[0];
 
                         });
 
