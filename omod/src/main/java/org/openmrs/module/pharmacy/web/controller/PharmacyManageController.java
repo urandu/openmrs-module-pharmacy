@@ -52,7 +52,7 @@ public class  PharmacyManageController {
         model.addAttribute("user", Context.getAuthenticatedUser());
         Person person= Context.getPatientService().getPatient(ptId);
         model.addAttribute("patient",person);
-        return "patientPanel";
+        return "module/pharmacy/patientPanel";
     }
 
 }
