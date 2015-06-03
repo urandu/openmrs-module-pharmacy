@@ -44,4 +44,9 @@ public class  PharmacyManageController {
         model.addAttribute("user", Context.getAuthenticatedUser());
     }
 
+    @RequestMapping(value = "/module/pharmacy/patientPanel", method = RequestMethod.GET)
+    public void patientPanel(ModelMap model) {
+        model.addAttribute("user", Context.getAuthenticatedUser());
+    }
+
 }
