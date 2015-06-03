@@ -25,88 +25,66 @@
         <div class="container-fluid">
 
 
-            <div class="row">
-
-
-
-
-                <div class="col-md-12 col-sm-12 col-xs-12">
-                    <div class="panel ">
-                        <div class="panel-heading">
-
-                        </div>
-                    </div>
-                    <div id="patientListing" class="panel-body ">
-                        <div class="table-responsive">
-                            <div id="dt_example" class="table-responsive example_alt_pagination clearfix">
-                                <table class="table table-condensed table-striped table-hover table-bordered pull-left"
-                                       id="data-table">
-                                    <thead>
-                                    <tr>
-
-                                        <th style="width:10%">Identifier</th>
-                                        <th style="width:10%">Given Name</th>
-                                        <th style="width:10%">Middle Name</th>
-                                        <th style="width:10%">Family Name</th>
-                                        <th style="width:10%">Age</th>
-                                        <th style="width:10%">Gender</th>
-                                        <th style="width:10%">Birth Date</th>
-
-
-                                    </tr>
-                                    </thead>
-                                    <tbody>
-
-                                    <%--<tr class="gradeC">
-
-                                        <td>No patient found</td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-
-
-
-                                    </tr>--%>
-                                    </tbody>
-                                </table>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-        </div>
-
-
-        <!-- Spacer starts -->
-        <div class="spacer">
-
-
-            <!-- Row Start -->
-            <div class="row">
-                <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
-
-
-                </div>
-                <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
-
-                </div>
-            </div>
-            <!-- Row End -->
-
             <!-- Row Starts -->
             <div class="row">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-
+                    <div class="blog">
+                        <div class="blog-header">
+                            <h5 class="blog-title">Contextual classes</h5>
+                        </div>
+                        <div class="blog-body">
+                            <table class="table no-margin">
+                                <thead>
+                                <tr>
+                                    <th>#</th>
+                                    <th>Column heading</th>
+                                    <th>Column heading</th>
+                                    <th>Column heading</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr class="active">
+                                    <td>1</td>
+                                    <td>Column content</td>
+                                    <td>Column content</td>
+                                    <td>Column content</td>
+                                </tr>
+                                <tr class="success">
+                                    <td>3</td>
+                                    <td>Column content</td>
+                                    <td>Column content</td>
+                                    <td>Column content</td>
+                                </tr>
+                                <tr class="info">
+                                    <td>5</td>
+                                    <td>Column content</td>
+                                    <td>Column content</td>
+                                    <td>Column content</td>
+                                </tr>
+                                <tr class="warning">
+                                    <td>7</td>
+                                    <td>Column content</td>
+                                    <td>Column content</td>
+                                    <td>Column content</td>
+                                </tr>
+                                <tr class="danger">
+                                    <td>9</td>
+                                    <td>Column content</td>
+                                    <td>Column content</td>
+                                    <td>Column content</td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
                 </div>
             </div>
             <!-- Row Ends -->
 
         </div>
-        <!-- Spacer ends -->
+
+
+
 
     </div>
     <!-- Container fluid ends -->
