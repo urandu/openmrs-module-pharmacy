@@ -15,6 +15,8 @@ package org.openmrs.module.pharmacy.web.controller;
 
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
+import org.hibernate.SessionFactory;
+import org.openmrs.Person;
 import org.openmrs.api.context.Context;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
@@ -27,7 +29,7 @@ import org.springframework.web.bind.annotation.RequestParam;
  */
 @Controller
 public class  PharmacyManageController {
-	
+	SessionFactory sessionFactory;
 	protected final Log log = LogFactory.getLog(getClass());
 	
 	@RequestMapping(value = "/module/pharmacy/manage", method = RequestMethod.GET)
@@ -48,7 +50,8 @@ public class  PharmacyManageController {
     @RequestMapping(value = "/module/pharmacy/patientPanel", method = RequestMethod.GET)
     public void patientPanel(ModelMap model,@RequestParam(required = false, value="patientId") Integer ptId) {
         model.addAttribute("user", Context.getAuthenticatedUser());
-        
+        Person person= Context.getPatientService().getPatient(ptId);
+        model.addAttribute("patient",person);
     }
 
 }
