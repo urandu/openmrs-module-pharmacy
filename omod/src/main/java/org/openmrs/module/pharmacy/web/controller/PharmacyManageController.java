@@ -15,18 +15,20 @@ package org.openmrs.module.pharmacy.web.controller;
 
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
+import org.openmrs.Patient;
+import org.openmrs.api.PatientService;
 import org.openmrs.api.context.Context;
 import org.openmrs.module.pharmacy.Pharmacy;
 import org.openmrs.module.pharmacy.api.DispenseDrugService;
 import org.openmrs.module.pharmacy.api.OtherModels.DispenseDrug;
 import org.openmrs.module.pharmacy.api.PharmacyService;
 import org.openmrs.web.WebConstants;
+import org.springframework.orm.ObjectRetrievalFailureException;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
-
 
 import javax.servlet.http.HttpSession;
 import java.util.List;
@@ -115,10 +117,28 @@ public class  PharmacyManageController {
     }
 
     @RequestMapping(value = "/module/pharmacy/patientPanel", method = RequestMethod.GET)
-    public String patientPanel(ModelMap model,@RequestParam(required = false, value="patientId") Integer ptId) {
+    public String patientPanel(ModelMap model,@RequestParam(required = true, value="patientId") Integer patientId) {
         model.addAttribute("user", Context.getAuthenticatedUser());
         //Person person= Context.getPatientService().getPatient(ptId);
-        model.addAttribute("patient",Context.getPatientService().getPatient(ptId));
+
+
+
+        PatientService ps = Context.getPatientService();
+        Patient patient = null;
+
+        try {
+            patient = ps.getPatient(patientId);
+        }
+        catch (ObjectRetrievalFailureException noPatientEx) {
+            log.warn("There is no patient with id: '" + patientId + "'", noPatientEx);
+        }
+
+
+
+        log.debug("patient: '" + patient + "'");
+
+
+        model.addAttribute("patient",patient);
         return "module/pharmacy/patientPanel";
     }
 
