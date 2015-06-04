@@ -16,7 +16,6 @@ package org.openmrs.module.pharmacy.web.controller;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.hibernate.SessionFactory;
-import org.openmrs.Person;
 import org.openmrs.api.context.Context;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
@@ -50,8 +49,8 @@ public class  PharmacyManageController {
     @RequestMapping(value = "/module/pharmacy/patientPanel", method = RequestMethod.GET)
     public String patientPanel(ModelMap model,@RequestParam(required = false, value="patientId") Integer ptId) {
         model.addAttribute("user", Context.getAuthenticatedUser());
-        Person person= Context.getPatientService().getPatient(ptId);
-        model.addAttribute("patient",person);
+        //Person person= Context.getPatientService().getPatient(ptId);
+        model.addAttribute("patient",Context.getPatientService().getPatient(ptId));
         return "module/pharmacy/patientPanel";
     }
 
