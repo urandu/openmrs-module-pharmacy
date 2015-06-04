@@ -8,6 +8,7 @@
         </fileset>
       </configuration>
     </facet>
+<<<<<<< HEAD
     <facet type="hibernate" name="Hibernate">
       <configuration>
         <datasource-map>
@@ -17,6 +18,8 @@
         <deploymentDescriptor name="hibernate.cfg.xml" url="file://$MODULE_DIR$/src/main/resources/hibernate.cfg.xml" />
       </configuration>
     </facet>
+=======
+>>>>>>> master
   </component>
   <component name="NewModuleRootManager" LANGUAGE_LEVEL="JDK_1_6" inherit-compiler-output="false">
     <output url="file://$MODULE_DIR$/target/classes" />
@@ -116,3 +119,4 @@
     <orderEntry type="library" scope="TEST" name="Maven: xmlunit:xmlunit:1.3" level="project" />
   </component>
 </module>
+

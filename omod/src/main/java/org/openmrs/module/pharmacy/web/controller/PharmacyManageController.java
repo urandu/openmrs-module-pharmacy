@@ -26,9 +26,12 @@ import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+<<<<<<< HEAD
 
 import javax.servlet.http.HttpSession;
 import java.util.List;
+=======
+>>>>>>> master
 
 /**
  * The main controller.
@@ -36,6 +39,7 @@ import java.util.List;
 @Controller
 public class  PharmacyManageController {
 
+<<<<<<< HEAD
 	protected final Log log = LogFactory.getLog(getClass());
     private static final String PATH ="/module/pharmacy/register.form";
 
@@ -91,3 +95,33 @@ public class  PharmacyManageController {
         }
     }
 }
+=======
+	
+	protected final Log log = LogFactory.getLog(getClass());//jkkjkjkjk
+
+	
+	@RequestMapping(value = "/module/pharmacy/manage", method = RequestMethod.GET)
+	public void manage(ModelMap model) {
+		model.addAttribute("user", Context.getAuthenticatedUser());
+	}
+
+    @RequestMapping(value = "/module/pharmacy/listDrugs", method = RequestMethod.GET)
+    public void listDrugs(ModelMap model) {
+        model.addAttribute("user", Context.getAuthenticatedUser());
+    }
+
+    @RequestMapping(value = "/module/pharmacy/pharmacyHome", method = RequestMethod.GET)
+    public void pharmacyHome(ModelMap model) {
+        model.addAttribute("user", Context.getAuthenticatedUser());
+    }
+
+    @RequestMapping(value = "/module/pharmacy/patientPanel", method = RequestMethod.GET)
+    public String patientPanel(ModelMap model,@RequestParam(required = false, value="patientId") Integer ptId) {
+        model.addAttribute("user", Context.getAuthenticatedUser());
+        //Person person= Context.getPatientService().getPatient(ptId);
+        model.addAttribute("patient",Context.getPatientService().getPatient(ptId));
+        return "module/pharmacy/patientPanel";
+    }
+
+}
+>>>>>>> master

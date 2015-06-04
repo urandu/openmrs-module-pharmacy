@@ -4,6 +4,7 @@
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog/1.9
                   http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-1.9.xsd">
+<<<<<<< HEAD
     <!--<changeSet author="Kinyua" id="29588214-1">
         <comment>Create the myDrug table</comment>
         <createTable tableName="pharmacy_myDrug">
@@ -71,4 +72,11 @@
             <column name="dateOfPayment" type="Date"/>
         </createTable>
     </changeSet>-->
+=======
+    <!--
+        See http://www.liquibase.org/manual/home#available_database_refactorings
+        for a list of supported elements and attributes
+    -->
+    
+>>>>>>> master
 </databaseChangeLog>
