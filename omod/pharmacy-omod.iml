@@ -5,6 +5,8 @@
       <configuration>
         <fileset id="fileset" name="Spring Application Context" removed="false">
           <file>file://$MODULE_DIR$/src/main/resources/webModuleApplicationContext.xml</file>
+          <file>file://$MODULE_DIR$/src/main/webapp/WEB-INF/openmrs_static_content-servlet.xml</file>
+          <file>file://$MODULE_DIR$/src/main/webapp/WEB-INF/openmrs_static_content-servlet.xml</file>
         </fileset>
       </configuration>
     </facet>
