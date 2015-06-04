@@ -5,6 +5,20 @@
 
 <hibernate-mapping package="org.openmrs.module.pharmacy">
 
+<<<<<<< HEAD
+	<class name="Pharmacy"
+		   table="pharmacy_myDrug">
+		<id name="id" type="int" column="myDrugId" unsaved-value="0">
+			<generator class="native" />
+		</id>
+		<discriminator column="myDrugId" insert="false" />
+		<property name="brandName" type="java.lang.String" column="brandName" length="255" />
+		<property name="genericName" type="java.lang.String" column="genericName" length="255"  />
+		<property name="description" type="java.lang.String" column="description" length="255" />
+		<property name="unitsInStock" type="java.lang.Integer" column="unitsInStock" length="255"  />
+		<property name="pricePerUnit" type="java.lang.Float" column="pricePerUnit" length="255"/>
+	</class>
+=======
 <!--
 	<class name="Pharmacy"
 		table="pharmacy_Pharmacy">
@@ -17,4 +31,5 @@
 	</class>
 -->
 
+>>>>>>> master
 </hibernate-mapping>
