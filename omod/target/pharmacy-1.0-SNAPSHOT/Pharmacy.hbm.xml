@@ -5,7 +5,7 @@
 
 <hibernate-mapping package="org.openmrs.module.pharmacy">
 
-	<class name="org.openmrs.module.pharmacy.Pharmacy"
+	<class name="org.openmrs.module.pharmacy.api.OtherModels.Pharmacy"
 		   table="pharmacy_myDrug">
 		<id name="id" type="int" column="myDrugId" unsaved-value="0">
 			<generator class="native" />

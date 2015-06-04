@@ -12,7 +12,7 @@
 		</id>
 		<discriminator column="expiryId" insert="false" />
 
-		<!--<many-to-one name="drugId" class="org.openmrs.module.pharmacy.Pharmacy" fetch="select">
+		<!--<many-to-one name="drugId" class="org.openmrs.module.pharmacy.api.OtherModels.Pharmacy" fetch="select">
 			<column name="myDrugId" not-null="true" />
 		</many-to-one>-->
 

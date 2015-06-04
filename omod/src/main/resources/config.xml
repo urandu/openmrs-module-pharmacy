@@ -28,11 +28,15 @@
 	
 	<!-- Maps hibernate file's, if present -->
 	<mappingFiles>
-				
-		Pharmacy.hbm.xml
-				
-	</mappingFiles>
 
+		Pharmacy.hbm.xml
+
+    </mappingFiles>
+
+    <!--<packagesWithMappedClasses>
+        org.openmrs.module.pharmacy
+    </packagesWithMappedClasses>-->
+    
 	<!-- Internationalization -->
 	<!-- All message codes should start with ${project.parent.artifactId}. -->
 	<messages>

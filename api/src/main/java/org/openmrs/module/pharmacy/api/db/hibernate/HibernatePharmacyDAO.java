@@ -16,7 +16,7 @@ package org.openmrs.module.pharmacy.api.db.hibernate;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.hibernate.SessionFactory;
-import org.openmrs.module.pharmacy.Pharmacy;
+import org.openmrs.module.pharmacy.api.OtherModels.Pharmacy;
 import org.openmrs.module.pharmacy.api.db.PharmacyDAO;
 
 import java.util.List;

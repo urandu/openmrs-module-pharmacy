@@ -15,8 +15,10 @@ package org.openmrs.module.pharmacy.web.controller;
 
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
+import org.openmrs.Patient;
+import org.openmrs.api.PatientService;
 import org.openmrs.api.context.Context;
-import org.openmrs.module.pharmacy.Pharmacy;
+import org.openmrs.module.pharmacy.api.OtherModels.Pharmacy;
 import org.openmrs.module.pharmacy.api.DispenseDrugService;
 import org.openmrs.module.pharmacy.api.OtherModels.DispenseDrug;
 import org.openmrs.module.pharmacy.api.PharmacyService;
@@ -28,6 +30,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import javax.servlet.http.HttpSession;
+import java.util.Date;
 import java.util.List;
 
 /**
@@ -45,6 +48,10 @@ public class  PharmacyManageController {
         List<Pharmacy> drugList=pharmacyService.getAllMyDrugs();
         model.addAttribute("drugList", drugList);
 
+        PatientService patientService = Context.getPatientService();
+        List<Patient> patientList=patientService.getAllPatients();
+        model.addAttribute("patientList",patientList);
+
         DispenseDrugService dispenseDrugService= Context.getService(DispenseDrugService.class);
         List<DispenseDrug> dispenseDrugList=dispenseDrugService.getAllMyDispensedDrugs();
         model.addAttribute("dispenseDrugList",dispenseDrugList);
@@ -54,11 +61,13 @@ public class  PharmacyManageController {
     public String registrationform(HttpSession httpSession,
                                    @RequestParam(value = "genericName", required = false) String genericName,
                                    @RequestParam(value = "brandName", required = false) String brandName,
-                                   @RequestParam(value = "price", required = false) String price) {
+                                   @RequestParam(value = "price", required = false) String price,
+                                   @RequestParam(value = "description", required = false) String description) {
         try {
             Pharmacy pharmacy=new Pharmacy();
             pharmacy.setBrandName(brandName);
             pharmacy.setGenericName(genericName);
+            pharmacy.setDescription(description);
             pharmacy.setPricePerUnit(Float.parseFloat(price));
 
             PharmacyService pharmacyService=Context.getService(PharmacyService.class);
@@ -84,6 +93,31 @@ public class  PharmacyManageController {
             PharmacyService pharmacyService=Context.getService(PharmacyService.class);
             pharmacyService.updateMyDrug(pharmacy);
             httpSession.setAttribute(WebConstants.OPENMRS_MSG_ATTR, "Updated Successfully");
+            return "redirect:manage.form";
+        } catch (Exception ex) {
+            httpSession.setAttribute(WebConstants.OPENMRS_MSG_ATTR, ex.getLocalizedMessage());
+            return "redirect:manage.form";
+        }
+    }
+
+    @RequestMapping(value ="/module/pharmacy/dispense.form"  , method = RequestMethod.GET)
+    public String dispenseform(HttpSession httpSession,
+                             @RequestParam(value = "patient", required = false) String patient,
+                             @RequestParam(value = "drug", required = false) String drug,
+                             @RequestParam(value = "units", required = false) String units,
+                               @RequestParam(value = "comments", required = false) String comments) {
+        try {
+            DispenseDrug dispenseDrug=new DispenseDrug();
+            dispenseDrug.setPatientID(Integer.parseInt(patient));
+            dispenseDrug.setDrugId(Integer.parseInt(drug));
+            dispenseDrug.setComments(comments);
+            dispenseDrug.setUnitsDispensed(Integer.parseInt(units));
+            dispenseDrug.setDateOfDispense(new Date());
+
+            DispenseDrugService dispenseDrugService= Context.getService(DispenseDrugService.class);
+            dispenseDrugService.saveMyDispensedDrug(dispenseDrug);
+
+            httpSession.setAttribute(WebConstants.OPENMRS_MSG_ATTR, "drug dispensed");
             return "redirect:manage.form";
         } catch (Exception ex) {
             httpSession.setAttribute(WebConstants.OPENMRS_MSG_ATTR, ex.getLocalizedMessage());

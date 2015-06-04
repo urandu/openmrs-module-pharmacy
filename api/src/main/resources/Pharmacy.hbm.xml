@@ -5,7 +5,7 @@
 
 <hibernate-mapping package="org.openmrs.module.pharmacy">
 
-	<class name="org.openmrs.module.pharmacy.Pharmacy"
+	<class name="org.openmrs.module.pharmacy.api.OtherModels.Pharmacy"
 		   table="${project.parent.artifactId}_myDrug">
 		<id name="id" type="int" column="myDrugId" unsaved-value="0">
 			<generator class="native" />
@@ -18,7 +18,7 @@
 
 		<!-- Associations -->
 
-	<!--	<set name="myDrugs" table="pharmacy_myDispensedDrug"
+		<set name="myDrugs" table="pharmacy_myDispensedDrug"
 			 inverse="true" lazy="true" fetch="select" cascade="all-delete-orphan">
 			<key>
 				<column name="myDrugId" not-null="true" />
@@ -39,6 +39,5 @@
             </key>
             <one-to-many class="org.openmrs.module.pharmacy.api.OtherModels.DispenseDrug" />
         </set>
--->
     </class>
 </hibernate-mapping>

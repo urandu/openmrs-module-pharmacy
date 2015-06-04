@@ -75,6 +75,30 @@
 
 </form>
     </td>
+
+        <td>
+            <form role="form" action="<c:url value='/module/pharmacy/dispense.form' />" method='get'>
+
+                <br>
+                <select name="patient" required>
+                    <c:forEach var ="patient" items="${patientList}">
+                        <option value="${patient.patientId}">${patient.givenName}</option>
+                    </c:forEach>
+                </select><br>
+                <select name="drug" required>
+                    <c:forEach var ="drug" items="${drugList}">
+                        <option value="${drug.id}">${drug.genericName}</option>
+                    </c:forEach>
+                </select><br>
+
+                units dispensed:<br>
+                <input type="text"   name="units"  size="30" required><br>
+                doctor comments:<br>
+                <input type="text"  name="comments" size="255" required><br>
+                <input type="submit"  value="dispense drug">
+
+            </form>
+        </td>
     </tr>
 </table>
 <%@ include file="/WEB-INF/template/footer.jsp"%>

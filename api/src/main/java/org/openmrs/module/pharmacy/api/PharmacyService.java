@@ -14,7 +14,7 @@
 package org.openmrs.module.pharmacy.api;
 
 import org.openmrs.api.OpenmrsService;
-import org.openmrs.module.pharmacy.Pharmacy;
+import org.openmrs.module.pharmacy.api.OtherModels.Pharmacy;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
