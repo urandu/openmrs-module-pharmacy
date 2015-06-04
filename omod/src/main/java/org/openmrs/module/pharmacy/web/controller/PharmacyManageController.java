@@ -15,22 +15,43 @@ package org.openmrs.module.pharmacy.web.controller;
 
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
+import org.hibernate.SessionFactory;
 import org.openmrs.api.context.Context;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 
 /**
  * The main controller.
  */
 @Controller
 public class  PharmacyManageController {
-	
+	SessionFactory sessionFactory;
 	protected final Log log = LogFactory.getLog(getClass());
 	
 	@RequestMapping(value = "/module/pharmacy/manage", method = RequestMethod.GET)
 	public void manage(ModelMap model) {
 		model.addAttribute("user", Context.getAuthenticatedUser());
 	}
+
+    @RequestMapping(value = "/module/pharmacy/listDrugs", method = RequestMethod.GET)
+    public void listDrugs(ModelMap model) {
+        model.addAttribute("user", Context.getAuthenticatedUser());
+    }
+
+    @RequestMapping(value = "/module/pharmacy/pharmacyHome", method = RequestMethod.GET)
+    public void pharmacyHome(ModelMap model) {
+        model.addAttribute("user", Context.getAuthenticatedUser());
+    }
+
+    @RequestMapping(value = "/module/pharmacy/patientPanel", method = RequestMethod.GET)
+    public String patientPanel(ModelMap model,@RequestParam(required = false, value="patientId") Integer ptId) {
+        model.addAttribute("user", Context.getAuthenticatedUser());
+        //Person person= Context.getPatientService().getPatient(ptId);
+        model.addAttribute("patient",Context.getPatientService().getPatient(ptId));
+        return "module/pharmacy/patientPanel";
+    }
+
 }
