@@ -51,7 +51,6 @@
 			</list>
 		</property>
 	</bean>
-<<<<<<< HEAD
 
     <bean parent="serviceContext">
         <property name="moduleService">
@@ -83,7 +82,4 @@
             </list>
         </property>
     </bean>
-=======
-	
->>>>>>> master
 </beans>

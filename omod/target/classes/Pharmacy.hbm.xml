@@ -5,7 +5,6 @@
 
 <hibernate-mapping package="org.openmrs.module.pharmacy">
 
-<<<<<<< HEAD
 	<class name="Pharmacy"
 		   table="pharmacy_myDrug">
 		<id name="id" type="int" column="myDrugId" unsaved-value="0">
@@ -17,19 +16,16 @@
 		<property name="description" type="java.lang.String" column="description" length="255" />
 		<property name="unitsInStock" type="java.lang.Integer" column="unitsInStock" length="255"  />
 		<property name="pricePerUnit" type="java.lang.Float" column="pricePerUnit" length="255"/>
-	</class>
-=======
-<!--
-	<class name="Pharmacy"
-		table="pharmacy_Pharmacy">
-		<id name="id" type="int" column="id" unsaved-value="0">
-			<generator class="native" />
-		</id>
-		<discriminator column="id" insert="false" />
-		<property name="uuid" type="java.lang.String" column="uuid"
-			length="38" unique="true" />
-	</class>
--->
 
->>>>>>> master
+        <one-to-one name="genericName" class="org.openmrs.Drug" constrained="true" ></one-to-one>
+
+
+        <set name="" table="inpatient_admission"
+             inverse="true" lazy="true" fetch="select" cascade="all-delete-orphan">
+            <key>
+                <column name="inpatient_id" not-null="true" />
+            </key>
+            <one-to-many class="Admission" />
+        </set>
+	</class>
 </hibernate-mapping>

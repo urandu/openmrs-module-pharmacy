@@ -4,8 +4,7 @@
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog/1.9
                   http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-1.9.xsd">
-<<<<<<< HEAD
-    <!--<changeSet author="Kinyua" id="29588214-1">
+    <changeSet author="Kinyua" id="29588214-1">
         <comment>Create the myDrug table</comment>
         <createTable tableName="pharmacy_myDrug">
             <column autoIncrement="true" name="myDrugId" type="int">
@@ -14,7 +13,6 @@
             <column name="brandName" type="varchar(255)" />
             <column name="genericName" type="varchar(255)"/>
             <column name="description" type="varchar(255)" />
-            <column name="unitsInStock" type="int"/>
             <column name="pricePerUnit" type="numeric"/>
         </createTable>
     </changeSet>
@@ -25,6 +23,7 @@
             <column autoIncrement="true" name="myDrugOrderId" type="int">
                 <constraints primaryKey="true" nullable="false" />
             </column>
+            <column name="myDrugId" type="int"/>
             <column name="unitsDelivered" type="varchar(255)" />
             <column name="dateOfDelivery" type="date"/>
             <column name="dateOfExpiry" type="date" />
@@ -47,6 +46,8 @@
         </createTable>
 
     </changeSet>
+
+
     <changeSet author="Kinyua" id="29588214-4">
         <comment>create the drug expired table</comment>
         <createTable tableName="pharmacy_myExpiredDrug">
@@ -71,12 +72,5 @@
             <column name="totalAmount" type="numeric"/>
             <column name="dateOfPayment" type="Date"/>
         </createTable>
-    </changeSet>-->
-=======
-    <!--
-        See http://www.liquibase.org/manual/home#available_database_refactorings
-        for a list of supported elements and attributes
-    -->
-    
->>>>>>> master
+    </changeSet>
 </databaseChangeLog>

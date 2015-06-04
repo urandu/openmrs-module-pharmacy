@@ -1,8 +1,8 @@
-<<<<<<< HEAD
-<%@ include file="/WEB-INF/template/include.jsp"%>
-<%@ include file="/WEB-INF/template/header.jsp"%>
+<%@ include file="header.jsp" %>
 
-<%@ include file="template/localHeader.jsp"%>
+<!-- Dashboard Wrapper starts -->
+<div class="dashboard-wrapper">
+
 
 <table >
     <thead>
@@ -80,12 +80,7 @@
     </td>
     </tr>
 </table>
-<%@ include file="/WEB-INF/template/footer.jsp"%>
-=======
-<%@ include file="header.jsp" %>
 
-<!-- Dashboard Wrapper starts -->
-<div class="dashboard-wrapper">
 
     <!-- Top Bar starts -->
     <div class="top-bar">
@@ -181,4 +176,4 @@
     <!-- Right sidebar ends -->
 
 <%@ include file="footer.jsp" %>
->>>>>>> master
+
