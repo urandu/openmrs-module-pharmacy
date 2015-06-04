@@ -29,7 +29,6 @@ public class Pharmacy extends BaseOpenmrsObject implements Serializable {
     private String brandName;
     private String genericName;
     private String description;
-    private int unitsInStock;
     private float pricePerUnit;
     private Set<Pharmacy> myDrugs;
 
@@ -47,14 +46,6 @@ public class Pharmacy extends BaseOpenmrsObject implements Serializable {
 
     public void setPricePerUnit(float pricePerUnit) {
         this.pricePerUnit = pricePerUnit;
-    }
-
-    public int getUnitsInStock() {
-        return unitsInStock;
-    }
-
-    public void setUnitsInStock(int unitsInStock) {
-        this.unitsInStock = unitsInStock;
     }
 
     public String getDescription() {

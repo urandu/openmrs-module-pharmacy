@@ -8,6 +8,7 @@ import java.util.List;
 /**
  * Created by kinyua on 5/27/15.
  */
+@Transactional
 public interface DrugOrderService {
     @Transactional(readOnly = true)
     List<DrugOrder> getAllMyDrugOrders();
