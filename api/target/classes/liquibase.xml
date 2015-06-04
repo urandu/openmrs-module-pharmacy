@@ -4,7 +4,7 @@
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog/1.9
                   http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-1.9.xsd">
-    <changeSet author="Kinyua" id="29588214-1">
+  <!--  <changeSet author="Kinyua" id="29588214-1">
         <comment>Create the myDrug table</comment>
         <createTable tableName="pharmacy_myDrug">
             <column autoIncrement="true" name="myDrugId" type="int">
@@ -72,5 +72,5 @@
             <column name="totalAmount" type="numeric"/>
             <column name="dateOfPayment" type="Date"/>
         </createTable>
-    </changeSet>
+    </changeSet>-->
 </databaseChangeLog>
