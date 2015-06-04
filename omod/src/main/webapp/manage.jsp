@@ -3,7 +3,7 @@
 <!-- Dashboard Wrapper starts -->
 <div class="dashboard-wrapper">
 
-<<<<<<< HEAD
+
 <table >
     <thead>
     <tr>
@@ -80,8 +80,8 @@
     </td>
     </tr>
 </table>
-<%@ include file="/WEB-INF/template/footer.jsp"%>
-=======
+
+
     <!-- Top Bar starts -->
     <div class="top-bar">
         <div class="page-title">
@@ -176,4 +176,4 @@
     <!-- Right sidebar ends -->
 
 <%@ include file="footer.jsp" %>
->>>>>>> master
+

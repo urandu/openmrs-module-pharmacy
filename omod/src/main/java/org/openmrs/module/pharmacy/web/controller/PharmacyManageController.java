@@ -26,12 +26,11 @@ import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
-<<<<<<< HEAD
+
 
 import javax.servlet.http.HttpSession;
 import java.util.List;
-=======
->>>>>>> master
+
 
 /**
  * The main controller.
@@ -39,7 +38,7 @@ import java.util.List;
 @Controller
 public class  PharmacyManageController {
 
-<<<<<<< HEAD
+
 	protected final Log log = LogFactory.getLog(getClass());
     private static final String PATH ="/module/pharmacy/register.form";
 
@@ -94,16 +93,16 @@ public class  PharmacyManageController {
             return "redirect:manage.form";
         }
     }
-}
-=======
+
+
 	
-	protected final Log log = LogFactory.getLog(getClass());//jkkjkjkjk
+	/*protected final Log log = LogFactory.getLog(getClass());//jkkjkjkjk
 
 	
 	@RequestMapping(value = "/module/pharmacy/manage", method = RequestMethod.GET)
 	public void manage(ModelMap model) {
 		model.addAttribute("user", Context.getAuthenticatedUser());
-	}
+	}*/
 
     @RequestMapping(value = "/module/pharmacy/listDrugs", method = RequestMethod.GET)
     public void listDrugs(ModelMap model) {
@@ -124,4 +123,4 @@ public class  PharmacyManageController {
     }
 
 }
->>>>>>> master
+
