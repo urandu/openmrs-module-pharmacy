@@ -4,7 +4,7 @@
 <div class="dashboard-wrapper">
 
 
-<table >
+<<%--table >
     <thead>
     <tr>
         <th>Generic Name</th>
@@ -81,7 +81,7 @@
     </tr>
 </table>
 
-
+--%>
     <!-- Top Bar starts -->
     <div class="top-bar">
         <div class="page-title">
