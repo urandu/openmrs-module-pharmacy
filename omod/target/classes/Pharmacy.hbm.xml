@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+
+<hibernate-mapping package="org.openmrs.module.pharmacy">
+
+	<class name="Pharmacy"
+		   table="pharmacy_myDrug">
+		<id name="id" type="int" column="myDrugId" unsaved-value="0">
+			<generator class="native" />
+		</id>
+		<discriminator column="myDrugId" insert="false" />
+		<property name="brandName" type="java.lang.String" column="brandName" length="255" />
+		<property name="genericName" type="java.lang.String" column="genericName" length="255"  />
+		<property name="description" type="java.lang.String" column="description" length="255" />
+		<property name="unitsInStock" type="java.lang.Integer" column="unitsInStock" length="255"  />
+		<property name="pricePerUnit" type="java.lang.Float" column="pricePerUnit" length="255"/>
+
+        <one-to-one name="genericName" class="org.openmrs.Drug" constrained="true" ></one-to-one>
+
+
+        <set name="" table="inpatient_admission"
+             inverse="true" lazy="true" fetch="select" cascade="all-delete-orphan">
+            <key>
+                <column name="inpatient_id" not-null="true" />
+            </key>
+            <one-to-many class="Admission" />
+        </set>
+	</class>
+</hibernate-mapping>

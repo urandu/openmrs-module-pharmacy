@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE dwr
+  PUBLIC "-//GetAhead Limited//DTD Direct Web Remoting 2.0//EN" "http://directwebremoting.org/schema/dwr20.dtd">
+<dwr>
+   <allow moduleId="htmlformentry">
+			   <create creator="new" javascript="DWRHtmlFormEntryService">
+				     <param name="class"
+                value="org.openmrs.module.htmlformentry.web.DWRHtmlFormEntryService"/>
+				     <include method="checkIfLoggedIn"/>
+				     <include method="authenticate"/>
+			   </create>
+		</allow>
+   <signatures moduleId="htmlformentry">
+			
+				import org.openmrs.module.htmlformentry.web.DWRHtmlFormEntryService;
+				DWRHtmlFormEntryService.checkIfLoggedIn();
+				DWRHtmlFormEntryService.authenticate(String user, String pass);
+			
+		</signatures>
+</dwr>
