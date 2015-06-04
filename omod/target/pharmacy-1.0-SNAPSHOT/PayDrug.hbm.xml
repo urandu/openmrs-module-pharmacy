@@ -15,6 +15,7 @@
 		<property name="paid" type="java.lang.Boolean" column="isFullAmountPaid" length="255"  />
 		<property name="totalAmount" type="java.lang.Float" column="totalAmount"  />
 		<property name="dateOfPayment" type="java.util.Date" column="dateOfPayment"  />
+
 	</class>
 
 </hibernate-mapping>

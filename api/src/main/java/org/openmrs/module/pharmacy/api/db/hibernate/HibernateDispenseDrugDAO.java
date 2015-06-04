@@ -58,11 +58,11 @@ public class HibernateDispenseDrugDAO implements DispenseDrugDAO {
         return dispenseDrug;
     }
 
-    @Override
+ /*   @Override
     public List<DispenseDrug> showDrugOrderByTime(){
         Criteria criteria = sessionFactory.getCurrentSession().createCriteria(DispenseDrug.class);
         criteria.setFetchMode("Pharmacy", FetchMode.JOIN);
         List list = criteria.list();
         return list;
-    }
+    }*/
 }

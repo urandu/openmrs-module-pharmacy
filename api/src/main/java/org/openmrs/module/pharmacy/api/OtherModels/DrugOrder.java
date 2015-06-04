@@ -4,6 +4,7 @@ import org.openmrs.BaseOpenmrsObject;
 
 import java.io.Serializable;
 import java.util.Date;
+import java.util.Set;
 
 /**
  * Created by kinyua on 5/27/15.
@@ -15,6 +16,25 @@ public class DrugOrder extends BaseOpenmrsObject implements Serializable {
     private String unitsDelivered;
     private Date dateOfDelivery;
     private Date dateOfExpiry;
+    private  Integer myDrugId;
+
+    public Set<DrugOrder> getMyDrugOrders() {
+        return myDrugOrders;
+    }
+
+    public void setMyDrugOrders(Set<DrugOrder> myDrugOrders) {
+        this.myDrugOrders = myDrugOrders;
+    }
+
+    private Set<DrugOrder> myDrugOrders;
+
+    public Integer getMyDrugId() {
+        return myDrugId;
+    }
+
+    public void setMyDrugId(Integer myDrugId) {
+        this.myDrugId = myDrugId;
+    }
 
     public String getUnitsDelivered() {
         return unitsDelivered;

@@ -1,3 +1,4 @@
+<%--
 <%@ include file="/WEB-INF/template/include.jsp"%>
 <%@ include file="/WEB-INF/template/header.jsp"%>
 
@@ -79,4 +80,4 @@
     </td>
     </tr>
 </table>
-<%@ include file="/WEB-INF/template/footer.jsp"%>
+<%@ include file="/WEB-INF/template/footer.jsp"%>--%>

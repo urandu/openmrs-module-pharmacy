@@ -49,9 +49,9 @@ public class DispenseDrugServiceImpl extends BaseOpenmrsService implements Dispe
         dao.purgeMyDispensedDrug(dispenseDrug);
     }
 
-    @Override
+    /*@Override
     public List<DispenseDrug> showDrugOrderByTime(){
         return dao.showDrugOrderByTime();
     }
-
+*/
 }

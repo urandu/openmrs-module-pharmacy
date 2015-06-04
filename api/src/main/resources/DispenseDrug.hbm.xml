@@ -14,7 +14,11 @@
 
 		<property name="patientID" type="java.lang.Integer" column="patient_id"/>
 		<property name="dateOfDispense" type="java.util.Date" column="dateOfDispense"/>
-        <property name="drugId" type="java.lang.Integer" column="myDrugId"/>
+
+		<many-to-one name="drugId" class="org.openmrs.module.pharmacy.Pharmacy" fetch="select">
+			<column name="myDrugId" not-null="true" />
+		</many-to-one>
+
         <property name="unitsDispensed" type="java.lang.Integer" column="unitsDispensed"/>
         <property name="transactionId" type="java.lang.Integer" column="transactionId"/>
         <property name="paymentStatus" type="java.lang.Boolean" column="paymentStatus"/>

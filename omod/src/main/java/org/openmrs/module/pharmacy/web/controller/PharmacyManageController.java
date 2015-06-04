@@ -45,7 +45,7 @@ public class  PharmacyManageController {
         List<Pharmacy> drugList=pharmacyService.getAllMyDrugs();
         model.addAttribute("drugList", drugList);
 
-        DispenseDrugService dispenseDrugService=Context.getService(DispenseDrugService.class);
+        DispenseDrugService dispenseDrugService= Context.getService(DispenseDrugService.class);
         List<DispenseDrug> dispenseDrugList=dispenseDrugService.getAllMyDispensedDrugs();
         model.addAttribute("dispenseDrugList",dispenseDrugList);
 

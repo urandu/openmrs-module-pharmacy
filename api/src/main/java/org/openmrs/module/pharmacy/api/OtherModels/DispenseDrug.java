@@ -4,6 +4,7 @@ import org.openmrs.BaseOpenmrsObject;
 
 import java.io.Serializable;
 import java.util.Date;
+import java.util.Set;
 
 /**
  * Created by kinyua on 5/27/15.
@@ -18,6 +19,15 @@ public class DispenseDrug extends BaseOpenmrsObject implements Serializable {
     private Integer transactionId;
     private boolean paymentStatus;
     private String comments;
+    private Set<DispenseDrug> myDispensedDrugs;
+
+    public Set<DispenseDrug> getMyDispensedDrugs() {
+        return myDispensedDrugs;
+    }
+
+    public void setMyDispensedDrugs(Set<DispenseDrug> myDispensedDrugs) {
+        this.myDispensedDrugs = myDispensedDrugs;
+    }
 
     public Integer getPatientID() {
         return patientID;

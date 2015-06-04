@@ -4,6 +4,7 @@ import org.openmrs.BaseOpenmrsObject;
 
 import java.io.Serializable;
 import java.util.Date;
+import java.util.Set;
 
 /**
  * Created by kinyua on 5/28/15.
@@ -16,6 +17,16 @@ public class ExpiredDrug extends BaseOpenmrsObject implements Serializable {
     private Integer unitsExpired;
     private Date dateOfExpiry;
     private Date dateReported;
+
+    public Set<ExpiredDrug> getMyExpiredDrugs() {
+        return myExpiredDrugs;
+    }
+
+    public void setMyExpiredDrugs(Set<ExpiredDrug> myExpiredDrugs) {
+        this.myExpiredDrugs = myExpiredDrugs;
+    }
+
+    private Set<ExpiredDrug> myExpiredDrugs;
 
     @Override
     public Integer getId() {

@@ -10,8 +10,11 @@
 		<id name="id" type="int" column="myDrugOrderId" unsaved-value="0">
 			<generator class="native" />
 		</id>
+		
 		<discriminator column="myDrugOrderId" insert="false" />
-		<property name="id" type="java.lang.String" column="myDrugId" length="38" />
+		<many-to-one name="myDrugId" class="org.openmrs.module.pharmacy.Pharmacy" fetch="select">
+			<column name="myDrugId" not-null="true" />
+		</many-to-one>
 		<property name="unitsDelivered" type="java.lang.String" column="unitsDelivered" length="255" />
 		<property name="dateOfDelivery" type="java.util.Date" column="dateOfDelivery" length="255"  />
 		<property name="dateOfExpiry" type="java.util.Date" column="dateOfExpiry" length="255" />
