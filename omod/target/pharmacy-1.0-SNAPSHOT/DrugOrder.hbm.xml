@@ -12,9 +12,10 @@
 		</id>
 		
 		<discriminator column="myDrugOrderId" insert="false" />
-		<!--<many-to-one name="myDrugId" class="org.openmrs.module.pharmacy.Pharmacy" fetch="select">
+	<!--	<many-to-one name="myDrugId" class="org.openmrs.module.pharmacy.Pharmacy" fetch="select">
 			<column name="myDrugId" not-null="true" />
 		</many-to-one>-->
+
 		<property name="myDrugId" type="java.lang.Integer" column="myDrugId"/>
 		<property name="unitsDelivered" type="java.lang.String" column="unitsDelivered" length="255" />
 		<property name="dateOfDelivery" type="java.util.Date" column="dateOfDelivery" length="255"  />

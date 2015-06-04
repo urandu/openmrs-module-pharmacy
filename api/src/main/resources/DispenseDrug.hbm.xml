@@ -18,6 +18,7 @@
 		<!--<many-to-one name="drugId" class="org.openmrs.module.pharmacy.Pharmacy" fetch="select">
 			<column name="myDrugId" not-null="true" />
 		</many-to-one>-->
+
 		<property name="drugId" type="java.lang.Integer" column="myDrugId"/>
         <property name="unitsDispensed" type="java.lang.Integer" column="unitsDispensed"/>
         <property name="transactionId" type="java.lang.Integer" column="transactionId"/>

@@ -15,6 +15,7 @@
 		<!--<many-to-one name="drugId" class="org.openmrs.module.pharmacy.Pharmacy" fetch="select">
 			<column name="myDrugId" not-null="true" />
 		</many-to-one>-->
+
 		<property name="drugId" type="java.lang.Integer" column="myDrugId"/>
 		<property name="unitsExpired" type="java.lang.Integer" column="unitsExpired"/>
         <property name="dateOfExpiry" type="java.util.Date" column="dateOfExpiry"/>
