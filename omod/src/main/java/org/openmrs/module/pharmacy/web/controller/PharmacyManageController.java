@@ -79,7 +79,7 @@ public class  PharmacyManageController {
             return "redirect:listDrugs.form";
         }
     }
-    @RequestMapping(value ="/module/pharmacy/update.form"  , method = RequestMethod.GET)
+    @RequestMapping(value ="/module/pharmacy/editDrug.form"  , method = RequestMethod.GET)
     public String updateform(HttpSession httpSession,
                                    @RequestParam(value = "genericName", required = false) int drugId,
                                    @RequestParam(value = "brandName", required = false) String brandName,
