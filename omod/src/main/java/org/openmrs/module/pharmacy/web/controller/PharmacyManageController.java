@@ -16,11 +16,11 @@ package org.openmrs.module.pharmacy.web.controller;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.openmrs.Patient;
+import org.openmrs.Person;
 import org.openmrs.api.PatientService;
+import org.openmrs.api.PersonService;
 import org.openmrs.api.context.Context;
 import org.openmrs.module.pharmacy.Pharmacy;
-import org.openmrs.module.pharmacy.api.DispenseDrugService;
-import org.openmrs.module.pharmacy.api.OtherModels.DispenseDrug;
 import org.openmrs.module.pharmacy.api.PharmacyService;
 import org.openmrs.web.WebConstants;
 import org.springframework.orm.ObjectRetrievalFailureException;
@@ -31,7 +31,6 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import javax.servlet.http.HttpSession;
-import java.util.List;
 
 
 /**
@@ -46,13 +45,13 @@ public class  PharmacyManageController {
 
 	@RequestMapping(value = "/module/pharmacy/manage", method = RequestMethod.GET)
 	public void manage(ModelMap model) {
-		PharmacyService pharmacyService=Context.getService(PharmacyService.class);
+		/*PharmacyService pharmacyService=Context.getService(PharmacyService.class);
         List<Pharmacy> drugList=pharmacyService.getAllMyDrugs();
         model.addAttribute("drugList", drugList);
 
         DispenseDrugService dispenseDrugService=Context.getService(DispenseDrugService.class);
         List<DispenseDrug> dispenseDrugList=dispenseDrugService.getAllMyDispensedDrugs();
-        model.addAttribute("dispenseDrugList",dispenseDrugList);
+        model.addAttribute("dispenseDrugList",dispenseDrugList);*/
 
     }
     @RequestMapping(value = PATH , method = RequestMethod.GET)
@@ -117,7 +116,8 @@ public class  PharmacyManageController {
     }
 
     @RequestMapping(value = "/module/pharmacy/patientPanel", method = RequestMethod.GET)
-    public String patientPanel(ModelMap model,@RequestParam(required = true, value="patientId") Integer patientId) {
+    public void patientPanel(ModelMap model,@RequestParam( value="patientId",required = true) Integer patientId,
+                               @RequestParam( value="patientUuid",required = false) String patientUuid) {
         model.addAttribute("user", Context.getAuthenticatedUser());
         //Person person= Context.getPatientService().getPatient(ptId);
 
@@ -125,6 +125,12 @@ public class  PharmacyManageController {
 
         PatientService ps = Context.getPatientService();
         Patient patient = null;
+
+        PersonService personService=Context.getPersonService();
+
+        Person person=null;
+
+        person=personService.getPerson(patientId);
 
         try {
             patient = ps.getPatient(patientId);
@@ -139,7 +145,10 @@ public class  PharmacyManageController {
 
 
         model.addAttribute("patient",patient);
-        return "module/pharmacy/patientPanel";
+        model.addAttribute("patientId",patientId);
+        model.addAttribute("person",person);
+
+
     }
 
 }

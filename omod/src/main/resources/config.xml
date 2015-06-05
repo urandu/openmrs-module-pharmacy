@@ -30,6 +30,7 @@
 	<mappingFiles>
 				
 		Pharmacy.hbm.xml
+        DispenseDrug.hbm.xml
 				
 	</mappingFiles>
 

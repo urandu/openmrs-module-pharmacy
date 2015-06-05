@@ -8,7 +8,7 @@
     <!-- Top Bar starts -->
     <div class="top-bar">
         <div class="page-title">
-            Patient-Panel
+            Patient-Panel (${patient.names})
         </div>
 
     </div>
@@ -29,7 +29,7 @@
             <div class="row">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-sx-12">
                     <div class="panel-blue">
-                        <h4 class="heading">${patient.familyName},</h4>
+                        <h4 class="heading ">${patient.familyName},${patient.givenName} | ID: ${patient.patientId} | Age</h4>
                     </div>
                 </div>
 
