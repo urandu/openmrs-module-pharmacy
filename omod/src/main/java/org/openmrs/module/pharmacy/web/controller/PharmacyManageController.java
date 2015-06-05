@@ -44,7 +44,7 @@ public class  PharmacyManageController {
 
 
 	protected final Log log = LogFactory.getLog(getClass());
-    private static final String PATH ="/module/pharmacy/register.form";
+    private static final String PATH ="/module/pharmacy/newDrug.form";
 
 	@RequestMapping(value = "/module/pharmacy/manage", method = RequestMethod.GET)
 	public void manage(ModelMap model) {
@@ -71,10 +71,10 @@ public class  PharmacyManageController {
             PharmacyService pharmacyService=Context.getService(PharmacyService.class);
             pharmacyService.saveMyDrug(pharmacy);
             httpSession.setAttribute(WebConstants.OPENMRS_MSG_ATTR, "Registered Successfully");
-            return "redirect:manage.form";
+            return "redirect:listDrugs.form";
         } catch (Exception ex) {
             httpSession.setAttribute(WebConstants.OPENMRS_MSG_ATTR, ex.getLocalizedMessage());
-            return "redirect:manage.form";
+            return "redirect:listDrugs.form";
         }
     }
     @RequestMapping(value ="/module/pharmacy/update.form"  , method = RequestMethod.GET)
