@@ -128,6 +128,11 @@ public class  PharmacyManageController {
         model.addAttribute("user", Context.getAuthenticatedUser());
     }
 
+    @RequestMapping(value = "/module/pharmacy/cashierHome", method = RequestMethod.GET)
+    public void cashierHome(ModelMap model) {
+        model.addAttribute("user", Context.getAuthenticatedUser());
+    }
+
     @RequestMapping(value = "/module/pharmacy/patientPanel", method = RequestMethod.GET)
     public void patientPanel(ModelMap model,@RequestParam( value="patientId",required = true) Integer patientId,
                                @RequestParam( value="patientUuid",required = false) String patientUuid) {
@@ -168,6 +173,48 @@ public class  PharmacyManageController {
 
 
     }
+
+    @RequestMapping(value = "/module/pharmacy/cashierPatientPanel", method = RequestMethod.GET)
+    public void cashierPatientPanel(ModelMap model,@RequestParam( value="patientId",required = true) Integer patientId,
+                             @RequestParam( value="patientUuid",required = false) String patientUuid) {
+        model.addAttribute("user", Context.getAuthenticatedUser());
+        //Person person= Context.getPatientService().getPatient(ptId);
+
+
+
+        PatientService ps = Context.getPatientService();
+        Patient patient = null;
+
+        PersonService personService=Context.getPersonService();
+
+        Person person=null;
+
+        person=personService.getPerson(patientId);
+
+        try {
+            patient = ps.getPatient(patientId);
+        }
+        catch (ObjectRetrievalFailureException noPatientEx) {
+            log.warn("There is no patient with id: '" + patientId + "'", noPatientEx);
+        }
+
+
+
+        log.debug("patient: '" + patient + "'");
+
+
+
+        DispenseDrugService dispenseDrugService=Context.getService(DispenseDrugService.class);
+        List<DispenseDrug> dispenseDrugList=dispenseDrugService.getDispensedDrugForPatient(patientId);
+        model.addAttribute("dispenseDrugList",dispenseDrugList);
+
+        model.addAttribute("patient",patient);
+        model.addAttribute("patientId",patientId);
+        model.addAttribute("person",person);
+
+
+    }
+
 
 }
 
