@@ -21,6 +21,8 @@ import org.openmrs.api.PatientService;
 import org.openmrs.api.PersonService;
 import org.openmrs.api.context.Context;
 import org.openmrs.module.pharmacy.Pharmacy;
+import org.openmrs.module.pharmacy.api.DispenseDrugService;
+import org.openmrs.module.pharmacy.api.OtherModels.DispenseDrug;
 import org.openmrs.module.pharmacy.api.PharmacyService;
 import org.openmrs.web.WebConstants;
 import org.springframework.orm.ObjectRetrievalFailureException;
@@ -31,6 +33,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import javax.servlet.http.HttpSession;
+import java.util.List;
 
 
 /**
@@ -143,6 +146,11 @@ public class  PharmacyManageController {
 
         log.debug("patient: '" + patient + "'");
 
+
+
+        DispenseDrugService dispenseDrugService=Context.getService(DispenseDrugService.class);
+        List<DispenseDrug> dispenseDrugList=dispenseDrugService.getDispensedDrugForPatient(patientId);
+        model.addAttribute("dispenseDrugList",dispenseDrugList);
 
         model.addAttribute("patient",patient);
         model.addAttribute("patientId",patientId);
