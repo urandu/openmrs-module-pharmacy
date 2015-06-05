@@ -16,7 +16,6 @@
 			<column name="myDrugId" not-null="true" />
 		</many-to-one>
 
-		<!--<property name="myDrugId" type="java.lang.Integer" column="myDrugId"/>-->
 		<property name="unitsDelivered" type="java.lang.String" column="unitsDelivered" length="255" />
 		<property name="dateOfDelivery" type="java.util.Date" column="dateOfDelivery" length="255"  />
 		<property name="dateOfExpiry" type="java.util.Date" column="dateOfExpiry" length="255" />

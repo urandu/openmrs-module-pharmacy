@@ -16,6 +16,14 @@
 		<property name="totalAmount" type="java.lang.Float" column="totalAmount"  />
 		<property name="dateOfPayment" type="java.util.Date" column="dateOfPayment"  />
 
+        <set name="myPaidDrugs" table="pharmacy_myDispensedDrug"
+             inverse="true" lazy="true" fetch="select" cascade="all-delete-orphan">
+            <key>
+                <column name="transactionId" not-null="true" />
+            </key>
+            <one-to-many class="org.openmrs.module.pharmacy.api.OtherModels.DispenseDrug" />
+        </set>
+
 	</class>
 
 </hibernate-mapping>

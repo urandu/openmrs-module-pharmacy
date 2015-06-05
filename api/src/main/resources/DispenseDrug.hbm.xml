@@ -19,8 +19,12 @@
 			<column name="myDrugId" not-null="true" />
 		</many-to-one>
 
-		<!--<property name="drugId" type="java.lang.Integer" column="myDrugId"/>-->
-        <property name="unitsDispensed" type="java.lang.Integer" column="unitsDispensed"/>
+
+		<many-to-one name="transactionId" class="org.openmrs.module.pharmacy.api.OtherModels.PayDrug" fetch="select">
+			<column name="transactionId" not-null="true" />
+		</many-to-one>
+
+		<property name="unitsDispensed" type="java.lang.Integer" column="unitsDispensed"/>
         <property name="transactionId" type="java.lang.Integer" column="transactionId"/>
         <property name="paymentStatus" type="java.lang.Boolean" column="paymentStatus"/>
         <property name="comments" type="java.lang.String" column="comments"/>
