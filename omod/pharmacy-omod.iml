@@ -50,7 +50,7 @@
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
-    <orderEntry type="module" module-name="pharmacy-api" />
+    <orderEntry type="module" module-name="pharmacy-api (1)" />
     <orderEntry type="library" scope="PROVIDED" name="Maven: org.openmrs.api:openmrs-api:1.8.2" level="project" />
     <orderEntry type="library" scope="PROVIDED" name="Maven: commons-collections:commons-collections:3.2" level="project" />
     <orderEntry type="library" scope="PROVIDED" name="Maven: commons-beanutils:commons-beanutils:1.7.0" level="project" />

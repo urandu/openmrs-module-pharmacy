@@ -36,6 +36,7 @@
     <!--<packagesWithMappedClasses>
         org.openmrs.module.pharmacy
     </packagesWithMappedClasses>-->
+    
 	<!-- Internationalization -->
 	<!-- All message codes should start with pharmacy. -->
 	<messages>
