@@ -42,7 +42,7 @@ public class  PharmacyManageController {
 
 
 	protected final Log log = LogFactory.getLog(getClass());
-    private static final String PATH ="/module/pharmacy/register.form";
+    private static final String PATH ="/module/pharmacy/newDrug.form";
 
 	@RequestMapping(value = "/module/pharmacy/manage", method = RequestMethod.GET)
 	public void manage(ModelMap model) {
@@ -56,7 +56,7 @@ public class  PharmacyManageController {
 
     }
     @RequestMapping(value = PATH , method = RequestMethod.GET)
-    public String registrationform(HttpSession httpSession,
+    public String newDrug(HttpSession httpSession,
                                    @RequestParam(value = "genericName", required = false) String genericName,
                                    @RequestParam(value = "brandName", required = false) String brandName,
                                    @RequestParam(value = "price", required = false) String price) {
