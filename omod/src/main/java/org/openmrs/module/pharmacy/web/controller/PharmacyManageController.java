@@ -61,12 +61,14 @@ public class  PharmacyManageController {
     public String registrationform(HttpSession httpSession,
                                    @RequestParam(value = "genericName", required = false) String genericName,
                                    @RequestParam(value = "brandName", required = false) String brandName,
-                                   @RequestParam(value = "price", required = false) String price) {
+                                   @RequestParam(value = "description", required = false) String description,
+                                   @RequestParam(value = "pricePerUnit", required = false) String price) {
         try {
             Pharmacy pharmacy=new Pharmacy();
             pharmacy.setBrandName(brandName);
             pharmacy.setGenericName(genericName);
             pharmacy.setPricePerUnit(Float.parseFloat(price));
+            pharmacy.setDescription(description);
 
             PharmacyService pharmacyService=Context.getService(PharmacyService.class);
             pharmacyService.saveMyDrug(pharmacy);
