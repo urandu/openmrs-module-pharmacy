@@ -23,6 +23,9 @@ public interface DispenseDrugService extends OpenmrsService{
 
     void purgeMyDispensedDrug(DispenseDrug dispenseDrug);
 
+    @Transactional
+    List <DispenseDrug> getDispensedDrugForPatient(Integer patientId);
+
     /*@Transactional(readOnly = true)
     List<DispenseDrug> showDrugOrderByTime();*/
 }
