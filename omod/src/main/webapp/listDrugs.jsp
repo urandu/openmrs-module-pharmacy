@@ -139,31 +139,31 @@
 
                                                 <div class="form-group">
                                                     <label for="genericName">Generic Name:</label>
-                                                    <input type="text" value="${drug}" class="form-control" name="genericName"
+                                                    <input type="text" value="${drug.genericName}" class="form-control" name="genericName"
                                                            id="edit_genericName_${drug.id}" required>
                                                 </div>
 
                                                 <div class="form-group">
                                                     <label for="brandName">Brand Name:</label>
-                                                    <input type="text" value="${drug}" class="form-control" name="brandName"
+                                                    <input type="text" value="${drug.brandName}" class="form-control" name="brandName"
                                                            id="edit_brandName_${drug.id}" required>
                                                 </div>
 
                                                 <div class="form-group">
                                                     <label for="description">Description:</label>
-                                                    <input type="text" value="${drug}" class="form-control" name="description"
+                                                    <input type="text" value="${drug.description}" class="form-control" name="description"
                                                            id="edit_description_${drug.id}" required>
                                                 </div>
 
                                                 <div class="form-group">
                                                     <label for="unitsInStock">Units in Stock:</label>
-                                                    <input type="text" value="${drug}" class="form-control" name="unitsInStock"
+                                                    <input type="text" value="${drug.unitsInStock}" class="form-control" name="unitsInStock"
                                                            id="edit_unitsInStock_${drug.id}" required>
                                                 </div>
 
                                                 <div class="form-group">
                                                     <label for="pricePerUnit">Price per Unit:</label>
-                                                    <input type="text" value="${drug}" class="form-control" name="pricePerUnit"
+                                                    <input type="text" value="${drug.pricePerUnit}" class="form-control" name="pricePerUnit"
                                                            id="edit_pricePerUnit_${drug.id}" required>
                                                 </div>
 
@@ -198,9 +198,13 @@
                                         <div class="modal-header">
                                             <button type="button" class="close" data-dismiss="modal"
                                                     aria-hidden="true">&times;</button>
-                                            <h4 class="modal-title text-info" id="myModalLabel2">Edit Drug(Brand Name)
-                                                Details</h4>
+                                            <h4 class="modal-title text-info" id="myModalLabel2">Manage Stock for (${drug.brandName})
+                                                </h4>
                                         </div>
+                                        <%-- private  Integer id;
+    private String unitsDelivered;
+    private Date dateOfDelivery;
+    private Date dateOfExpiry;--%>
                                         <div class="modal-body">
 
 
@@ -209,15 +213,15 @@
 
 
                                                 <div class="form-group">
-                                                    <label for="noOfUnits">Number of Units:</label>
-                                                    <input type="text" class="form-control" name="noOfUnits" id="noOfUnits"
+                                                    <label for="unitsDelivered">Number of Units:</label>
+                                                    <input type="text" class="form-control" name="unitsDelivered" id="unitsDelivered"
                                                            required>
                                                 </div>
 
                                                 <div class="form-group">
-                                                    <label for="dateOfArrival">Date of arrival:</label>
-                                                    <input type="text" class="form-control" name="dateOfArrival"
-                                                           id="dateOfArrival" required>
+                                                    <label for="dateOfDelivery">Date of Delivery:</label>
+                                                    <input type="text" class="form-control" name="dateOfDelivery"
+                                                           id="dateOfDelivery" required>
                                                 </div>
 
                                                 <div class="form-group">
