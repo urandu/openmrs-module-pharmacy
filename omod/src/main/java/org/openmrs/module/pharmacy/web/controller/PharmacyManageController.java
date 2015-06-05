@@ -82,11 +82,15 @@ public class  PharmacyManageController {
     @RequestMapping(value ="/module/pharmacy/editDrug.form"  , method = RequestMethod.GET)
     public String updateform(HttpSession httpSession,
                                    @RequestParam(value = "genericName", required = false) int drugId,
+                                   @RequestParam(value = "genericName", required = false) String genericName,
                                    @RequestParam(value = "brandName", required = false) String brandName,
-                                   @RequestParam(value = "price", required = false) String price) {
+                                   @RequestParam(value = "description", required = false) String description,
+                                   @RequestParam(value = "pricePerUnit", required = false) String price)  {
         try {
             Pharmacy pharmacy=new Pharmacy();
             pharmacy.setBrandName(brandName);
+            pharmacy.setGenericName(genericName);
+            pharmacy.setDescription(description);
             pharmacy.setId(drugId);
             pharmacy.setPricePerUnit(Float.parseFloat(price));
 
