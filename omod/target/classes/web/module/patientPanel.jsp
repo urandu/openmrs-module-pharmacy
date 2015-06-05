@@ -8,7 +8,7 @@
     <!-- Top Bar starts -->
     <div class="top-bar">
         <div class="page-title">
-            Patient-Panel (${patient.names})
+            Patient-Panel (${patient.familyName},${patient.middleName} ${patient.givenName})
         </div>
 
     </div>
@@ -29,7 +29,7 @@
             <div class="row">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-sx-12">
                     <div class="panel-blue">
-                        <h4 class="heading ">${patient.familyName},${patient.givenName} | ID: ${patient.patientId} | Age</h4>
+                        <h4 class="heading "> NAME:${patient.familyName},${patient.middleName} ${patient.givenName} || ID: ${patient.patientId} || Age: ${patient.age}</h4>
                     </div>
                 </div>
 
@@ -41,49 +41,32 @@
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                     <div class="blog">
                         <div class="blog-header">
-                            <h5 class="blog-title">Contextual classes</h5>
+                            <h5 class="blog-title">Dispensed drugs</h5>
                         </div>
                         <div class="blog-body">
                             <table class="table no-margin">
                                 <thead>
                                 <tr>
-                                    <th>#</th>
-                                    <th>Column heading</th>
-                                    <th>Column heading</th>
-                                    <th>Column heading</th>
+                                    <th>Drug Id</th>
+                                    <th>Units To issue</th>
+                                    <th>Payment status</th>
+                                    <th>Transaction ID</th>
+                                    <th>Comment</th>
                                 </tr>
                                 </thead>
                                 <tbody>
-                                <tr class="active">
-                                    <td>1</td>
-                                    <td>Column content</td>
-                                    <td>Column content</td>
-                                    <td>Column content</td>
-                                </tr>
-                                <tr class="success">
-                                    <td>3</td>
-                                    <td>Column content</td>
-                                    <td>Column content</td>
-                                    <td>Column content</td>
-                                </tr>
-                                <tr class="info">
-                                    <td>5</td>
-                                    <td>Column content</td>
-                                    <td>Column content</td>
-                                    <td>Column content</td>
-                                </tr>
-                                <tr class="warning">
-                                    <td>7</td>
-                                    <td>Column content</td>
-                                    <td>Column content</td>
-                                    <td>Column content</td>
-                                </tr>
-                                <tr class="danger">
-                                    <td>9</td>
-                                    <td>Column content</td>
-                                    <td>Column content</td>
-                                    <td>Column content</td>
-                                </tr>
+                                <c:forEach var="drug" items="${dispenseDrugList}" varStatus="status">
+                                    <tr>
+                                        <td>${drug.drugID}</td>
+                                        <td>${drug.dateOfDispense}</td>
+                                        <td>${drug.paymentStatus}</td>
+                                        <td>${drug.transactionId}</td>
+                                        <td>${drug.comments}</td>
+                                    </tr>
+                                </c:forEach>
+
+
+
                                 </tbody>
                             </table>
                         </div>
