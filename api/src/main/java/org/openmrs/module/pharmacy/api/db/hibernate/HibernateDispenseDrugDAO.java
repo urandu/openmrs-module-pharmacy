@@ -59,6 +59,12 @@ public class HibernateDispenseDrugDAO implements DispenseDrugDAO {
     }
 
     @Override
+        public List <DispenseDrug> getDispensedDrugForPatient(Integer patientId){
+
+                          return (List<DispenseDrug>) sessionFactory.getCurrentSession().get(DispenseDrug.class, patientId);
+        }
+
+    @Override
     public List<DispenseDrug> showDrugOrderByTime(){
         Criteria criteria = sessionFactory.getCurrentSession().createCriteria(DispenseDrug.class);
         criteria.setFetchMode("Pharmacy", FetchMode.JOIN);
