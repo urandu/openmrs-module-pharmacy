@@ -135,7 +135,7 @@
                                         <div class="modal-body">
 
 
-                                            <form action="<c:url value='/module/pharmacy/editDrug.form' />" method="post">
+                                            <form action="<c:url value='/module/pharmacy/editDrug.form' />" method="get">
 
                                                 <div class="form-group">
                                                     <label for="genericName">Generic Name:</label>
