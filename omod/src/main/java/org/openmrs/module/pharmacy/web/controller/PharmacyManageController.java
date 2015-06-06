@@ -58,7 +58,7 @@ public class  PharmacyManageController {
 
     }
     @RequestMapping(value = PATH , method = RequestMethod.GET)
-    public String registrationform(HttpSession httpSession,
+    public String newDrug(HttpSession httpSession,
                                    @RequestParam(value = "genericName", required = false) String genericName,
                                    @RequestParam(value = "brandName", required = false) String brandName,
                                    @RequestParam(value = "description", required = false) String description,
