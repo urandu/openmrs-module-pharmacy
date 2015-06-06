@@ -34,7 +34,7 @@
 
 
                                     $("#data-table").dataTable().fnAddData([
-                                        patient.identifier,
+                                        patient.personId,
                                         patient.givenName,
                                         patient.middleName,
                                         patient.familyName,
@@ -59,8 +59,8 @@
                         // Bind click event
                         $(nRow).click(function() {
 
-                            //alert( 'You clicked on '+aData+'\'s row' );
-                            window.location="/openmrs/module/pharmacy/patientPanel.form?patientId="+aData[0];
+                           // alert( 'You clicked on '+aData+'\'s row' );
+                            window.location="/openmrs/module/pharmacy/patientPanel.form?patientId="+aData[0]+"&patientUuid=";
 
                         });
 
@@ -121,7 +121,7 @@
                                     <thead>
                                     <tr>
 
-                                        <th style="width:10%">Identifier</th>
+                                        <th style="width:10%">ID</th>
                                         <th style="width:10%">Given Name</th>
                                         <th style="width:10%">Middle Name</th>
                                         <th style="width:10%">Family Name</th>

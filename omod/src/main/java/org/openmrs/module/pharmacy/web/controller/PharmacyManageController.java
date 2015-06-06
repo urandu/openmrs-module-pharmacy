@@ -16,7 +16,9 @@ package org.openmrs.module.pharmacy.web.controller;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.openmrs.Patient;
+import org.openmrs.Person;
 import org.openmrs.api.PatientService;
+import org.openmrs.api.PersonService;
 import org.openmrs.api.context.Context;
 import org.openmrs.module.pharmacy.Pharmacy;
 import org.openmrs.module.pharmacy.api.DispenseDrugService;
@@ -46,43 +48,51 @@ public class  PharmacyManageController {
 
 	@RequestMapping(value = "/module/pharmacy/manage", method = RequestMethod.GET)
 	public void manage(ModelMap model) {
-		PharmacyService pharmacyService=Context.getService(PharmacyService.class);
+		/*PharmacyService pharmacyService=Context.getService(PharmacyService.class);
         List<Pharmacy> drugList=pharmacyService.getAllMyDrugs();
         model.addAttribute("drugList", drugList);
 
         DispenseDrugService dispenseDrugService=Context.getService(DispenseDrugService.class);
         List<DispenseDrug> dispenseDrugList=dispenseDrugService.getAllMyDispensedDrugs();
-        model.addAttribute("dispenseDrugList",dispenseDrugList);
+        model.addAttribute("dispenseDrugList",dispenseDrugList);*/
 
     }
     @RequestMapping(value = PATH , method = RequestMethod.GET)
     public String newDrug(HttpSession httpSession,
                                    @RequestParam(value = "genericName", required = false) String genericName,
                                    @RequestParam(value = "brandName", required = false) String brandName,
-                                   @RequestParam(value = "price", required = false) String price) {
+                                   @RequestParam(value = "description", required = false) String description,
+                                   @RequestParam(value = "pricePerUnit", required = false) String price,
+                          @RequestParam(value = "pricePerUnit", required = false) String units) {
         try {
             Pharmacy pharmacy=new Pharmacy();
             pharmacy.setBrandName(brandName);
             pharmacy.setGenericName(genericName);
             pharmacy.setPricePerUnit(Float.parseFloat(price));
+            pharmacy.setDescription(description);
+            pharmacy.setUnitsInStock(Integer.parseInt(units));
 
             PharmacyService pharmacyService=Context.getService(PharmacyService.class);
             pharmacyService.saveMyDrug(pharmacy);
             httpSession.setAttribute(WebConstants.OPENMRS_MSG_ATTR, "Registered Successfully");
-            return "redirect:manage.form";
+            return "redirect:listDrugs.form";
         } catch (Exception ex) {
             httpSession.setAttribute(WebConstants.OPENMRS_MSG_ATTR, ex.getLocalizedMessage());
-            return "redirect:manage.form";
+            return "redirect:listDrugs.form";
         }
     }
-    @RequestMapping(value ="/module/pharmacy/update.form"  , method = RequestMethod.GET)
+    @RequestMapping(value ="/module/pharmacy/editDrug.form"  , method = RequestMethod.GET)
     public String updateform(HttpSession httpSession,
                                    @RequestParam(value = "genericName", required = false) int drugId,
+                                   @RequestParam(value = "genericName", required = false) String genericName,
                                    @RequestParam(value = "brandName", required = false) String brandName,
-                                   @RequestParam(value = "price", required = false) String price) {
+                                   @RequestParam(value = "description", required = false) String description,
+                                   @RequestParam(value = "pricePerUnit", required = false) String price)  {
         try {
             Pharmacy pharmacy=new Pharmacy();
             pharmacy.setBrandName(brandName);
+            pharmacy.setGenericName(genericName);
+            pharmacy.setDescription(description);
             pharmacy.setId(drugId);
             pharmacy.setPricePerUnit(Float.parseFloat(price));
 
@@ -108,6 +118,10 @@ public class  PharmacyManageController {
 
     @RequestMapping(value = "/module/pharmacy/listDrugs", method = RequestMethod.GET)
     public void listDrugs(ModelMap model) {
+
+        PharmacyService pharmacyService=Context.getService(PharmacyService.class);
+        List<Pharmacy> drugList=pharmacyService.getAllMyDrugs();
+        model.addAttribute("drugList", drugList);
         model.addAttribute("user", Context.getAuthenticatedUser());
     }
 
@@ -116,8 +130,14 @@ public class  PharmacyManageController {
         model.addAttribute("user", Context.getAuthenticatedUser());
     }
 
+    @RequestMapping(value = "/module/pharmacy/cashierHome", method = RequestMethod.GET)
+    public void cashierHome(ModelMap model) {
+        model.addAttribute("user", Context.getAuthenticatedUser());
+    }
+
     @RequestMapping(value = "/module/pharmacy/patientPanel", method = RequestMethod.GET)
-    public String patientPanel(ModelMap model,@RequestParam(required = true, value="patientId") Integer patientId) {
+    public void patientPanel(ModelMap model,@RequestParam( value="patientId",required = true) Integer patientId,
+                               @RequestParam( value="patientUuid",required = false) String patientUuid) {
         model.addAttribute("user", Context.getAuthenticatedUser());
         //Person person= Context.getPatientService().getPatient(ptId);
 
@@ -125,6 +145,12 @@ public class  PharmacyManageController {
 
         PatientService ps = Context.getPatientService();
         Patient patient = null;
+
+        PersonService personService=Context.getPersonService();
+
+        Person person=null;
+
+        person=personService.getPerson(patientId);
 
         try {
             patient = ps.getPatient(patientId);
@@ -138,9 +164,59 @@ public class  PharmacyManageController {
         log.debug("patient: '" + patient + "'");
 
 
+
+        DispenseDrugService dispenseDrugService=Context.getService(DispenseDrugService.class);
+        List<DispenseDrug> dispenseDrugList=dispenseDrugService.getDispensedDrugForPatient(patientId);
+        model.addAttribute("dispenseDrugList",dispenseDrugList);
+
         model.addAttribute("patient",patient);
-        return "module/pharmacy/patientPanel";
+        model.addAttribute("patientId",patientId);
+        model.addAttribute("person",person);
+
+
     }
+
+    @RequestMapping(value = "/module/pharmacy/cashierPatientPanel", method = RequestMethod.GET)
+    public void cashierPatientPanel(ModelMap model,@RequestParam( value="patientId",required = true) Integer patientId,
+                             @RequestParam( value="patientUuid",required = false) String patientUuid) {
+        model.addAttribute("user", Context.getAuthenticatedUser());
+        //Person person= Context.getPatientService().getPatient(ptId);
+
+
+
+        PatientService ps = Context.getPatientService();
+        Patient patient = null;
+
+        PersonService personService=Context.getPersonService();
+
+        Person person=null;
+
+        person=personService.getPerson(patientId);
+
+        try {
+            patient = ps.getPatient(patientId);
+        }
+        catch (ObjectRetrievalFailureException noPatientEx) {
+            log.warn("There is no patient with id: '" + patientId + "'", noPatientEx);
+        }
+
+
+
+        log.debug("patient: '" + patient + "'");
+
+
+
+        DispenseDrugService dispenseDrugService=Context.getService(DispenseDrugService.class);
+        List<DispenseDrug> dispenseDrugList=dispenseDrugService.getDispensedDrugForPatient(patientId);
+        model.addAttribute("dispenseDrugList",dispenseDrugList);
+
+        model.addAttribute("patient",patient);
+        model.addAttribute("patientId",patientId);
+        model.addAttribute("person",person);
+
+
+    }
+
 
 }
 

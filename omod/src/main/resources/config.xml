@@ -30,7 +30,11 @@
 	<mappingFiles>
 				
 		Pharmacy.hbm.xml
-				
+        DispenseDrug.hbm.xml
+        DrugOrder.hbm.xml
+        ExpiredDrug.hbm.xml
+        PayDrug.hbm.xml
+
 	</mappingFiles>
 
 	<!-- Internationalization -->

@@ -90,8 +90,8 @@
                     <th style="width:10%">Brand Name</th>
                     <th style="width:10%">Price of drug</th>
                     <th style="width:10%">Units in Stock</th>
-                    <th style="width:10%">Units dispensed</th>
-                    <th style="width:10%">Last Batch</th>
+                    <%--<th style="width:10%">Units dispensed</th>--%>
+                    <%--<th style="width:10%">Last Batch</th>--%>
                     <th style="width:10%">Edit drug details</th>
                     <th style="width:10%">Manage Stock</th>
 
@@ -99,152 +99,166 @@
                 </thead>
                 <tbody>
 
-                <tr class="gradeC">
-                    <td>
-                        paracetamol
-                    </td>
-                    <td>panadol</td>
-                    <td>ksh.250</td>
-                    <td>60,000</td>
-                    <td>20,000</td>
-                    <td>
-                        <a href="#">TGHD564</a>
-                    </td>
-                    <td>
-                        <button type="button" data-toggle="modal" data-target="#editDrug" class="btn btn-success"><i
-                                class="fa fa-edit"></i> Edit
-                        </button>
-                        <!-- Modal -->
-                        <div class="modal fade" id="editDrug" tabindex="-1" role="dialog"
-                             aria-labelledby="myModalLabel5" aria-hidden="true">
-                            <div class="modal-dialog">
-                                <div class="modal-content">
-                                    <div class="modal-header">
-                                        <button type="button" class="close" data-dismiss="modal"
-                                                aria-hidden="true">&times;</button>
-                                        <h4 class="modal-title text-info" id="myModalLabel1">Edit Drug(Brand Name)
-                                            Details</h4>
-                                    </div>
-                                    <div class="modal-body">
+<!--private Integer id;
+    private String brandName;
+    private String genericName;
+    private String description;
+    private int unitsInStock;
+    private float pricePerUnit; -->
+                <c:forEach var="drug" items="${drugList}" varStatus="status">
+                    <tr class="gradeC">
+                        <td>
+                            ${drug.genericName}
+                        </td>
+                        <td>${drug.brandName}</td>
+                        <td>${drug.pricePerUnit}</td>
+                        <td>${drug.unitsInStock}</td>
+                        <%--<td>20,000</td>--%>
+                        <%--<td>
+                            <a href="#">TGHD564</a>
+                        </td>--%>
+                        <td>
+                            <button type="button" data-toggle="modal" data-target="#editDrug_${drug.id}" class="btn btn-success"><i
+                                    class="fa fa-edit"></i> Edit
+                            </button>
+                            <!-- Modal -->
+                            <div class="modal fade" id="editDrug_${drug.id}" tabindex="-1" role="dialog"
+                                 aria-labelledby="myModalLabel5" aria-hidden="true">
+                                <div class="modal-dialog">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <button type="button" class="close" data-dismiss="modal"
+                                                    aria-hidden="true">&times;</button>
+                                            <h4 class="modal-title text-info" id="myModalLabel1">Edit Drug(${drug.brandName})
+                                                Details</h4>
+                                        </div>
+                                        <div class="modal-body">
 
 
-                                        <form action="<c:url value='/module/pharmacy/editDrug.form' />" method="get">
+                                            <form action="<c:url value='/module/pharmacy/editDrug.form' />" method="get">
 
-                                            <div class="form-group">
-                                                <label for="genericName">Generic Name:</label>
-                                                <input type="text" class="form-control" name="genericName"
-                                                       id="edit_genericName" required>
-                                            </div>
+                                                <div class="form-group">
+                                                    <label for="genericName">Generic Name:</label>
+                                                    <input type="text" value="${drug.genericName}" class="form-control" name="genericName"
+                                                           id="edit_genericName_${drug.id}" required>
+                                                </div>
 
-                                            <div class="form-group">
-                                                <label for="brandName">Brand Name:</label>
-                                                <input type="text" class="form-control" name="brandName"
-                                                       id="edit_brandName" required>
-                                            </div>
+                                                <div class="form-group">
+                                                    <label for="brandName">Brand Name:</label>
+                                                    <input type="text" value="${drug.brandName}" class="form-control" name="brandName"
+                                                           id="edit_brandName_${drug.id}" required>
+                                                </div>
 
-                                            <div class="form-group">
-                                                <label for="description">Description:</label>
-                                                <input type="text" class="form-control" name="description"
-                                                       id="edit_description" required>
-                                            </div>
+                                                <div class="form-group">
+                                                    <label for="description">Description:</label>
+                                                    <input type="text" value="${drug.description}" class="form-control" name="description"
+                                                           id="edit_description_${drug.id}" required>
+                                                </div>
 
-                                            <div class="form-group">
-                                                <label for="unitsInStock">Units in Stock:</label>
-                                                <input type="text" class="form-control" name="unitsInStock"
-                                                       id="edit_unitsInStock" required>
-                                            </div>
+                                                <div class="form-group">
+                                                    <label for="unitsInStock">Units in Stock:</label>
+                                                    <input type="text" value="${drug.unitsInStock}" class="form-control" name="unitsInStock"
+                                                           id="edit_unitsInStock_${drug.id}" required>
+                                                </div>
 
-                                            <div class="form-group">
-                                                <label for="pricePerUnit">Price per Unit:</label>
-                                                <input type="text" class="form-control" name="pricePerUnit"
-                                                       id="edit_pricePerUnit" required>
-                                            </div>
-
-
-                                    </div>
-
-                                    <div class="modal-footer">
-                                        <button type="submit" class="btn btn-success"><i class="fa fa-save"></i> Save
-                                        </button>
-                                        </form>
-                                        <button type="button" class="btn btn-danger" data-dismiss="modal"><i
-                                                class="fa fa-times"></i> Close
-                                        </button>
-
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                    </td>
-                    <td>
-
-                        <button type="button" data-toggle="modal" data-target="#manageStock" class="btn btn-success"><i
-                                class="fa fa-plus"></i> Manage Stock
-                        </button>
-
-                        <!-- Modal -->
-                        <div class="modal fade" id="manageStock" tabindex="-1" role="dialog"
-                             aria-labelledby="myModalLabel5" aria-hidden="true">
-                            <div class="modal-dialog">
-                                <div class="modal-content">
-                                    <div class="modal-header">
-                                        <button type="button" class="close" data-dismiss="modal"
-                                                aria-hidden="true">&times;</button>
-                                        <h4 class="modal-title text-info" id="myModalLabel2">Edit Drug(Brand Name)
-                                            Details</h4>
-                                    </div>
-                                    <div class="modal-body">
+                                                <div class="form-group">
+                                                    <label for="pricePerUnit">Price per Unit:</label>
+                                                    <input type="text" value="${drug.pricePerUnit}" class="form-control" name="pricePerUnit"
+                                                           id="edit_pricePerUnit_${drug.id}" required>
+                                                </div>
 
 
-                                        <form action="<c:url value='/module/pharmacy/editDrugStock.form' />"
-                                              method="get">
+                                        </div>
 
+                                        <div class="modal-footer">
+                                            <button type="submit" class="btn btn-success"><i class="fa fa-save"></i> Save
+                                            </button>
+                                            </form>
+                                            <button type="button" class="btn btn-danger" data-dismiss="modal"><i
+                                                    class="fa fa-times"></i> Close
+                                            </button>
 
-                                            <div class="form-group">
-                                                <label for="noOfUnits">Number of Units:</label>
-                                                <input type="text" class="form-control" name="noOfUnits" id="noOfUnits"
-                                                       required>
-                                            </div>
-
-                                            <div class="form-group">
-                                                <label for="dateOfArrival">Date of arrival:</label>
-                                                <input type="text" class="form-control" name="dateOfArrival"
-                                                       id="dateOfArrival" required>
-                                            </div>
-
-                                            <div class="form-group">
-                                                <label for="batchId">Batch ID:</label>
-                                                <input type="text" class="form-control" name="batchId" id="batchId"
-                                                       required>
-                                            </div>
-
-                                            <div class="form-group">
-                                                <label for="batchExpirationDate">Batch expiration date:</label>
-                                                <input type="text" class="form-control" name="batchExpirationDate"
-                                                       id="batchExpirationDate" required>
-                                            </div>
-
-
-                                    </div>
-
-                                    <div class="modal-footer">
-                                        <button type="submit" class="btn btn-success"><i class="fa fa-save"></i> Save
-                                        </button>
-                                        </form>
-                                        <button type="button" class="btn btn-danger" data-dismiss="modal"><i
-                                                class="fa fa-times"></i> Close
-                                        </button>
-
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
 
-                    </td>
+                        </td>
+                        <td>
+
+                            <button type="button" data-toggle="modal" data-target="#manageStock" class="btn btn-success"><i
+                                    class="fa fa-plus"></i> Manage Stock
+                            </button>
+
+                            <!-- Modal -->
+                            <div class="modal fade" id="manageStock" tabindex="-1" role="dialog"
+                                 aria-labelledby="myModalLabel5" aria-hidden="true">
+                                <div class="modal-dialog">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <button type="button" class="close" data-dismiss="modal"
+                                                    aria-hidden="true">&times;</button>
+                                            <h4 class="modal-title text-info" id="myModalLabel2">Manage Stock for (${drug.brandName})
+                                                </h4>
+                                        </div>
+                                        <%-- private  Integer id;
+    private String unitsDelivered;
+    private Date dateOfDelivery;
+    private Date dateOfExpiry;--%>
+                                        <div class="modal-body">
 
 
-                </tr>
+                                            <form action="<c:url value='/module/pharmacy/editDrugStock.form' />"
+                                                  method="get">
+
+
+                                                <div class="form-group">
+                                                    <label for="unitsDelivered">Number of Units:</label>
+                                                    <input type="text" class="form-control" name="unitsDelivered" id="unitsDelivered"
+                                                           required>
+                                                </div>
+
+                                                <div class="form-group">
+                                                    <label for="dateOfDelivery">Date of Delivery:</label>
+                                                    <input type="text" class="form-control" name="dateOfDelivery"
+                                                           id="dateOfDelivery" required>
+                                                </div>
+
+                                                <div class="form-group">
+                                                    <label for="batchId">Batch ID:</label>
+                                                    <input type="text" class="form-control" name="batchId" id="batchId"
+                                                           required>
+                                                </div>
+
+                                                <div class="form-group">
+                                                    <label for="batchExpirationDate">Batch expiration date:</label>
+                                                    <input type="text" class="form-control" name="batchExpirationDate"
+                                                           id="batchExpirationDate" required>
+                                                </div>
+
+
+                                        </div>
+
+                                        <div class="modal-footer">
+                                            <button type="submit" class="btn btn-success"><i class="fa fa-save"></i> Save
+                                            </button>
+                                            </form>
+                                            <button type="button" class="btn btn-danger" data-dismiss="modal"><i
+                                                    class="fa fa-times"></i> Close
+                                            </button>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </td>
+
+
+                    </tr>
+                </c:forEach>
+
+
                 </tbody>
             </table>
         </div>
