@@ -7,7 +7,7 @@
     <!-- Top Bar starts -->
     <div class="top-bar">
         <div class="page-title">
-            Pharmacy-Home
+            Cashier Home
         </div>
 
     </div>
