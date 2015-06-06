@@ -62,13 +62,15 @@ public class  PharmacyManageController {
                                    @RequestParam(value = "genericName", required = false) String genericName,
                                    @RequestParam(value = "brandName", required = false) String brandName,
                                    @RequestParam(value = "description", required = false) String description,
-                                   @RequestParam(value = "pricePerUnit", required = false) String price) {
+                                   @RequestParam(value = "pricePerUnit", required = false) String price,
+                          @RequestParam(value = "pricePerUnit", required = false) String units) {
         try {
             Pharmacy pharmacy=new Pharmacy();
             pharmacy.setBrandName(brandName);
             pharmacy.setGenericName(genericName);
             pharmacy.setPricePerUnit(Float.parseFloat(price));
             pharmacy.setDescription(description);
+            pharmacy.setUnitsInStock(Integer.parseInt(units));
 
             PharmacyService pharmacyService=Context.getService(PharmacyService.class);
             pharmacyService.saveMyDrug(pharmacy);
@@ -214,6 +216,7 @@ public class  PharmacyManageController {
 
 
     }
+
 
 
 }
