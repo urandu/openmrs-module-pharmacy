@@ -49,19 +49,17 @@
                                 <tr>
                                     <th>Drug Id</th>
                                     <th>Units To issue</th>
-                                    <th>Payment status</th>
-                                    <th>Transaction ID</th>
-                                    <th>Comment</th>
+                                    <th>price per unit</th>
+                                    <th>unit total</th>
                                 </tr>
                                 </thead>
                                 <tbody>
                                 <c:forEach var="drug" items="${dispenseDrugList}" varStatus="status">
                                     <tr>
                                         <td>${drug.drugId}</td>
-                                        <td>${drug.dateOfDispense}</td>
+                                        <td>${drug.unitsDispensed}</td>
                                         <td>${drug.paymentStatus}</td>
                                         <td>${drug.transactionId}</td>
-                                        <td>${drug.comments}</td>
                                     </tr>
                                 </c:forEach>
 
