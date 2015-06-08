@@ -5,6 +5,7 @@ import org.apache.commons.logging.LogFactory;
 import org.hibernate.Criteria;
 import org.hibernate.FetchMode;
 import org.hibernate.SessionFactory;
+import org.hibernate.criterion.Restrictions;
 import org.openmrs.module.pharmacy.api.OtherModels.DispenseDrug;
 import org.openmrs.module.pharmacy.api.db.DispenseDrugDAO;
 
@@ -58,16 +59,16 @@ public class HibernateDispenseDrugDAO implements DispenseDrugDAO {
         return dispenseDrug;
     }
 
-    @Override
+    /*@Override
         public List <DispenseDrug> getDispensedDrugForPatient(Integer patientId){
 
-                          return (List<DispenseDrug>) sessionFactory.getCurrentSession().get(DispenseDrug.class, patientId);
-        }
+          return (List<DispenseDrug>) sessionFactory.getCurrentSession().get(DispenseDrug.class, patientId);
+        }*/
 
     @Override
-    public List<DispenseDrug> showDrugOrderByTime(){
+    public List<DispenseDrug> getDispensedDrugForPatient(Integer patientId){
         Criteria criteria = sessionFactory.getCurrentSession().createCriteria(DispenseDrug.class);
-        criteria.setFetchMode("Pharmacy", FetchMode.JOIN);
+        criteria.setFetchMode("Patient", FetchMode.JOIN).add(Restrictions.eq("patientID",patientId));
         List list = criteria.list();
         return list;
     }

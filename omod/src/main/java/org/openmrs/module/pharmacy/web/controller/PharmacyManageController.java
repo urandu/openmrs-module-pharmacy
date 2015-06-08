@@ -216,8 +216,5 @@ public class  PharmacyManageController {
 
 
     }
-
-
-
 }
 
