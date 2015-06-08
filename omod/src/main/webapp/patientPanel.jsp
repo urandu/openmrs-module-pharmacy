@@ -47,7 +47,7 @@
                             <table class="table no-margin">
                                 <thead>
                                 <tr>
-                                    <th>Drug Id</th>
+                                    <th>Drug</th>
                                     <th>Units To issue</th>
                                     <th>price per unit</th>
                                     <th>unit total</th>
