@@ -56,29 +56,42 @@
                                 </thead>
                                 <tbody>
                                 <c:set var="total" value="${0}"/>
+                                <c:set var="balance" value="${0}"/>
                                 <c:forEach var="drug" items="${dispenseDrugList}" varStatus="status">
                                     <tr>
                                         <td>${drug.pharmacy.genericName}</td>
                                         <td>${drug.unitsDispensed}</td>
                                         <td>${drug.pharmacy.pricePerUnit}</td>
                                         <td>${(drug.unitsDispensed)*(drug.pharmacy.pricePerUnit)}</td>
-                                       <%-- <td>${drug.paymentStatus}</td>--%>
-                                        <c:if test="${drug.paymentStatus = false}">
-                                            <td>NOT PAID</td>>
+                                        <%--<td>${drug.paymentStatus}</td>--%>
+                                        <c:if test="${drug.paymentStatus == false}">
+                                            <c:set var="balance" value="${balance + drug.unitsDispensed*drug.pharmacy.pricePerUnit}" />
+                                            <td>NOT PAID</td>
                                         </c:if>
-                                        <%--<c:if test="${drug.paymentStatus = true}">
-                                            <td>PAID</td>>
-                                        </c:if>--%>
+                                        <c:if test="${drug.paymentStatus == true}">
+                                            <td>PAID</td>
+                                        </c:if>
                                     </tr>
                                     <c:set var="total" value="${total + drug.unitsDispensed*drug.pharmacy.pricePerUnit}" />
                                 </c:forEach>
                                 <tr><td></td><td></td><th>TOTAL</th><td>${total}</td></tr>
+                                <tr><td></td><td></td><th>BALANCE</th><td><strong>${balance}</strong></td></tr>
+                                <tr>
+                                    <td>
+                                        <form action="<c:url value='/module/pharmacy/paydrug.form' />" method="get">
+                                        <button type="button" data-toggle="modal" data-target="#paydrug_${drug.id}" class="btn btn-success"><i
+                                                class="fa fa-edit"></i> Clear patient for payment made
+                                        </button>
 
+                                        </form>
 
+                                    </td>
+                                </tr>
                                 </tbody>
-                            </table>
 
+                            </table>
                         </div>
+
                     </div>
                 </div>
             </div>

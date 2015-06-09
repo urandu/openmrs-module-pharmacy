@@ -23,6 +23,8 @@ import org.openmrs.api.context.Context;
 import org.openmrs.module.pharmacy.Pharmacy;
 import org.openmrs.module.pharmacy.api.DispenseDrugService;
 import org.openmrs.module.pharmacy.api.OtherModels.DispenseDrug;
+import org.openmrs.module.pharmacy.api.OtherModels.PayDrug;
+import org.openmrs.module.pharmacy.api.PayDrugService;
 import org.openmrs.module.pharmacy.api.PharmacyService;
 import org.openmrs.web.WebConstants;
 import org.springframework.orm.ObjectRetrievalFailureException;
@@ -33,6 +35,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import javax.servlet.http.HttpSession;
+import java.util.Date;
 import java.util.List;
 
 
@@ -216,7 +219,45 @@ public class  PharmacyManageController {
         model.addAttribute("patientId",patientId);
         model.addAttribute("person",person);
 
-
     }
+    @RequestMapping(value ="/module/pharmacy/paydrug.form"  , method = RequestMethod.GET)
+    public String paydrug(HttpSession httpSession,
+                             @RequestParam(value = "patientId", required = false) int patientId,
+                             @RequestParam(value = "totalAmount", required = false) String totalAmount,
+                             @RequestParam(value = "drugId", required = false) Integer drugId,
+                          @RequestParam(value = "comments", required = false) String comments,
+                          @RequestParam(value = "units", required = false) String units,
+                          @RequestParam(value = "date", required = false) Date date,
+                          @RequestParam(value = "date", required = false) Integer dispenseId)  {
+        try {
+            DispenseDrug dispenseDrug=new DispenseDrug();
+            dispenseDrug.setPaymentStatus(true);
+            dispenseDrug.setPatientID(patientId);
+            dispenseDrug.setComments(comments);
+            dispenseDrug.setUnitsDispensed(Integer.parseInt(units));
+            dispenseDrug.setDateOfDispense(date);
+            dispenseDrug.setDrugId(drugId);
+            dispenseDrug.setId(dispenseId);
+
+            PayDrug payDrug= new PayDrug();
+            payDrug.setPatientID(patientId);
+            payDrug.setDateOfPayment(new Date());
+            payDrug.setPaid(true);
+            payDrug.setTotalAmount(Float.parseFloat(totalAmount));
+
+            DispenseDrugService dispenseDrugService=Context.getService(DispenseDrugService.class);
+            dispenseDrugService.updateMyDispensedDrug(dispenseDrug);
+
+            PayDrugService payDrugService=Context.getService(PayDrugService.class);
+            payDrugService.saveMyPaidDrug(payDrug);
+
+            httpSession.setAttribute(WebConstants.OPENMRS_MSG_ATTR, "Updated Successfully");
+            return "redirect:manage.form";
+        } catch (Exception ex) {
+            httpSession.setAttribute(WebConstants.OPENMRS_MSG_ATTR, ex.getLocalizedMessage());
+            return "redirect:manage.form";
+        }
+    }
+
 }
 
