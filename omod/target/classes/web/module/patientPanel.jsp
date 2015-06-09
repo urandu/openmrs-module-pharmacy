@@ -47,7 +47,7 @@
                             <table class="table no-margin">
                                 <thead>
                                 <tr>
-                                    <th>Drug</th>
+                                    <th>Drug name</th>
                                     <th>Units To issue</th>
                                     <th>price per unit</th>
                                     <th>unit total</th>
@@ -56,10 +56,11 @@
                                 <tbody>
                                 <c:forEach var="drug" items="${dispenseDrugList}" varStatus="status">
                                     <tr>
-                                        <td>${drug.drugId}</td>
+                                        <td>${drug.pharmacy.genericName}</td>
                                         <td>${drug.unitsDispensed}</td>
                                         <td>${drug.paymentStatus}</td>
                                         <td>${drug.transactionId}</td>
+
                                     </tr>
                                 </c:forEach>
 
