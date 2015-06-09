@@ -78,18 +78,32 @@
                                 <tr><td></td><td></td><th>BALANCE</th><td><strong>${balance}</strong></td></tr>
                                 <tr>
                                     <td>
-                                        <form action="<c:url value='/module/pharmacy/paydrug.form' />" method="get">
-                                        <button type="button" data-toggle="modal" data-target="#paydrug_${drug.id}" class="btn btn-success"><i
+                                        <c:if test="${balance > 0}">
+                                            <c:forEach var="drug" items="${dispenseDrugList}" varStatus="status">
+                                        <form action="<c:url value='/module/pharmacy/paydrug.form' var='url'  >"
+                                                <c:param name="patientId" value="${patient.patientId}" />
+                                                <c:param name="totalAmount" value="${total}" />
+                                                <c:param name="drugId" value="${drug.pharmacy.id}" />
+                                                <c:param name="comments" value="${drug.comments}" />
+                                                <c:param name="units" value="${drug.unitsDispensed}" />
+                                                <c:param name="date" value="${drug.dateOfDispense}" />
+                                                <c:param name="dispenseId" value="${drug.id}" /> method="get">
+                                                <%--<c:import url="${url}"/>--%>
+                                                </c:url>
+                                            </c:forEach>
+                                        <button type="submit" class="btn btn-success"><i
                                                 class="fa fa-edit"></i> Clear patient for payment made
                                         </button>
 
+
                                         </form>
+                                            </c:if>
 
                                     </td>
                                 </tr>
                                 </tbody>
 
-                            </table>
+                            </table> ${url}
                         </div>
 
                     </div>

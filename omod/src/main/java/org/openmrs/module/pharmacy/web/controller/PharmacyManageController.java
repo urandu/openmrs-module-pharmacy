@@ -23,8 +23,6 @@ import org.openmrs.api.context.Context;
 import org.openmrs.module.pharmacy.Pharmacy;
 import org.openmrs.module.pharmacy.api.DispenseDrugService;
 import org.openmrs.module.pharmacy.api.OtherModels.DispenseDrug;
-import org.openmrs.module.pharmacy.api.OtherModels.PayDrug;
-import org.openmrs.module.pharmacy.api.PayDrugService;
 import org.openmrs.module.pharmacy.api.PharmacyService;
 import org.openmrs.web.WebConstants;
 import org.springframework.orm.ObjectRetrievalFailureException;
@@ -222,40 +220,42 @@ public class  PharmacyManageController {
     }
     @RequestMapping(value ="/module/pharmacy/paydrug.form"  , method = RequestMethod.GET)
     public String paydrug(HttpSession httpSession,
-                             @RequestParam(value = "patientId", required = false) int patientId,
-                             @RequestParam(value = "totalAmount", required = false) String totalAmount,
+                             @RequestParam(value = "patientId", required = false) Integer patientId,
+                             @RequestParam(value = "totalAmount", required = false) float totalAmount,
                              @RequestParam(value = "drugId", required = false) Integer drugId,
                           @RequestParam(value = "comments", required = false) String comments,
-                          @RequestParam(value = "units", required = false) String units,
+                          @RequestParam(value = "units", required = false) Integer units,
                           @RequestParam(value = "date", required = false) Date date,
-                          @RequestParam(value = "date", required = false) Integer dispenseId)  {
+                          @RequestParam(value = "dispenseId", required = false) Integer dispenseId)  {
         try {
             DispenseDrug dispenseDrug=new DispenseDrug();
             dispenseDrug.setPaymentStatus(true);
             dispenseDrug.setPatientID(patientId);
             dispenseDrug.setComments(comments);
-            dispenseDrug.setUnitsDispensed(Integer.parseInt(units));
+            dispenseDrug.setUnitsDispensed(units);
             dispenseDrug.setDateOfDispense(date);
             dispenseDrug.setDrugId(drugId);
             dispenseDrug.setId(dispenseId);
 
-            PayDrug payDrug= new PayDrug();
+           /* PayDrug payDrug= new PayDrug();
             payDrug.setPatientID(patientId);
             payDrug.setDateOfPayment(new Date());
             payDrug.setPaid(true);
-            payDrug.setTotalAmount(Float.parseFloat(totalAmount));
+            payDrug.setTotalAmount(totalAmount);*/
 
             DispenseDrugService dispenseDrugService=Context.getService(DispenseDrugService.class);
             dispenseDrugService.updateMyDispensedDrug(dispenseDrug);
 
-            PayDrugService payDrugService=Context.getService(PayDrugService.class);
-            payDrugService.saveMyPaidDrug(payDrug);
+            /*PayDrugService payDrugService=Context.getService(PayDrugService.class);
+            payDrugService.saveMyPaidDrug(payDrug);*/
 
             httpSession.setAttribute(WebConstants.OPENMRS_MSG_ATTR, "Updated Successfully");
-            return "redirect:manage.form";
+            return null;
+            //return "redirect:patientPanel.form";
         } catch (Exception ex) {
             httpSession.setAttribute(WebConstants.OPENMRS_MSG_ATTR, ex.getLocalizedMessage());
-            return "redirect:manage.form";
+            //return "redirect:patientPanel.form";
+            return null;
         }
     }
 
