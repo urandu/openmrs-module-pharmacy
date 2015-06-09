@@ -47,22 +47,24 @@
                             <table class="table no-margin">
                                 <thead>
                                 <tr>
-                                    <th>Drug</th>
+                                    <th>Drug name</th>
                                     <th>Units To issue</th>
                                     <th>price per unit</th>
                                     <th>unit total</th>
                                 </tr>
                                 </thead>
                                 <tbody>
+                                <c:set var="total" value="${0}"/>
                                 <c:forEach var="drug" items="${dispenseDrugList}" varStatus="status">
                                     <tr>
-                                        <td>${drug.drugId}</td>
+                                        <td>${drug.pharmacy.genericName}</td>
                                         <td>${drug.unitsDispensed}</td>
-                                        <td>${drug.paymentStatus}</td>
-                                        <td>${drug.transactionId}</td>
+                                        <td>${drug.pharmacy.pricePerUnit}</td>
+                                        <td>${(drug.unitsDispensed)*(drug.pharmacy.pricePerUnit)}</td>
                                     </tr>
+                                    <c:set var="total" value="${total + drug.unitsDispensed*drug.pharmacy.pricePerUnit}" />
                                 </c:forEach>
-
+                                <tr><td></td><td></td><th>TOTAL</th><td>${total}</td></tr>
 
 
                                 </tbody>

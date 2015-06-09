@@ -1,6 +1,7 @@
 package org.openmrs.module.pharmacy.api.OtherModels;
 
 import org.openmrs.BaseOpenmrsObject;
+import org.openmrs.module.pharmacy.Pharmacy;
 
 import java.io.Serializable;
 import java.util.Date;
@@ -18,6 +19,16 @@ public class DispenseDrug extends BaseOpenmrsObject implements Serializable {
     private Integer transactionId;
     private boolean paymentStatus;
     private String comments;
+
+    private Pharmacy pharmacy;
+
+    public Pharmacy getPharmacy() {
+        return pharmacy;
+    }
+
+    public void setPharmacy(Pharmacy pharmacy) {
+        this.pharmacy = pharmacy;
+    }
 
     public Integer getPatientID() {
         return patientID;
