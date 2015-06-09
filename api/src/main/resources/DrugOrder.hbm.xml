@@ -11,11 +11,12 @@
 			<generator class="native" />
 		</id>
 		<discriminator column="myDrugOrderId" insert="false" />
-		<many-to-one name="id" class="org.openmrs.module.pharmacy.Pharmacy" fetch="select">
+		<many-to-one name="drugId" class="org.openmrs.module.pharmacy.Pharmacy" fetch="select">
 			<column name="myDrugId" not-null="true" />
 		</many-to-one>
 		<!--<property name="id" type="java.lang.String" column="myDrugId" length="38" />-->
 		<property name="unitsDelivered" type="java.lang.String" column="unitsDelivered" length="255" />
+		<property name="batchId" type="java.lang.String" column="batchId" length="255" />
 		<property name="dateOfDelivery" type="java.util.Date" column="dateOfDelivery" length="255"  />
 		<property name="dateOfExpiry" type="java.util.Date" column="dateOfExpiry" length="255" />
 	</class>

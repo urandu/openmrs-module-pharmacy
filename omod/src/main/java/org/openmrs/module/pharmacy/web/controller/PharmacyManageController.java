@@ -169,6 +169,8 @@ public class  PharmacyManageController {
         List<DispenseDrug> dispenseDrugList=dispenseDrugService.getDispensedDrugForPatient(patientId);
         model.addAttribute("dispenseDrugList",dispenseDrugList);
 
+
+
         model.addAttribute("patient",patient);
         model.addAttribute("patientId",patientId);
         model.addAttribute("person",person);

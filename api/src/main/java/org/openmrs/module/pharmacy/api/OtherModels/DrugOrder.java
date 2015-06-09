@@ -15,6 +15,25 @@ public class DrugOrder extends BaseOpenmrsObject implements Serializable {
     private String unitsDelivered;
     private Date dateOfDelivery;
     private Date dateOfExpiry;
+    private  Integer drugId;
+
+    public Integer getBatchId() {
+        return batchId;
+    }
+
+    public void setBatchId(Integer batchId) {
+        this.batchId = batchId;
+    }
+
+    private  Integer batchId;
+
+    public Integer getDrugId() {
+        return drugId;
+    }
+
+    public void setDrugId(Integer drugId) {
+        this.drugId = drugId;
+    }
 
     public String getUnitsDelivered() {
         return unitsDelivered;
