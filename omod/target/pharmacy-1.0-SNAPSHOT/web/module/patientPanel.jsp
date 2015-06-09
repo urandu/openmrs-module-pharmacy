@@ -51,6 +51,7 @@
                                     <th>Units To issue</th>
                                     <th>price per unit</th>
                                     <th>unit total</th>
+                                    <th>payment status</th>
                                 </tr>
                                 </thead>
                                 <tbody>
@@ -61,12 +62,13 @@
                                         <td>${drug.unitsDispensed}</td>
                                         <td>${drug.pharmacy.pricePerUnit}</td>
                                         <td>${(drug.unitsDispensed)*(drug.pharmacy.pricePerUnit)}</td>
-                                        <c:if test="${drug.paymentStatus = 0}">
+                                       <%-- <td>${drug.paymentStatus}</td>--%>
+                                        <c:if test="${drug.paymentStatus = false}">
                                             <td>NOT PAID</td>>
                                         </c:if>
-                                        <c:if test="${drug.paymentStatus = 1}">
+                                        <%--<c:if test="${drug.paymentStatus = true}">
                                             <td>PAID</td>>
-                                        </c:if>
+                                        </c:if>--%>
                                     </tr>
                                     <c:set var="total" value="${total + drug.unitsDispensed*drug.pharmacy.pricePerUnit}" />
                                 </c:forEach>
