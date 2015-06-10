@@ -287,7 +287,6 @@ public class  PharmacyManageController {
             /*PayDrugService payDrugService=Context.getService(PayDrugService.class);
             payDrugService.saveMyPaidDrug(payDrug);*/
 
-            httpSession.setAttribute(WebConstants.OPENMRS_MSG_ATTR, "Updated Successfully");
             return "redirect:patientPanel.form?patientId="+patientId;
         } catch (Exception ex) {
             httpSession.setAttribute(WebConstants.OPENMRS_MSG_ATTR, ex.getLocalizedMessage());

@@ -68,7 +68,7 @@
                                         <c:if test="${drug.paymentStatus == false}">
                                             <td>NOT PAID</td>
                                         </c:if>--%>
-                                            <c:if test="${drug.paymentStatus == true }">
+                                            <c:if test="${drug.paymentStatus == true && drug.issueStatus==false  }">
                                         <td>
                                                 <form action="<c:url value='/module/pharmacy/issuedrug.form'/>" method="get">
 
@@ -87,6 +87,9 @@
                                         </td>
                                         <c:if test="${drug.paymentStatus == false}">
                                             <td>NOT PAID</td>
+                                        </c:if>
+                                        <c:if test="${drug.issueStatus == true}">
+                                            <td>ISSUED</td>
                                         </c:if>
                                     </tr>
                                     <c:set var="total" value="${total + drug.unitsDispensed*drug.pharmacy.pricePerUnit}" />
