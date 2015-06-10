@@ -18,9 +18,18 @@ public class DispenseDrug extends BaseOpenmrsObject implements Serializable {
     private int unitsDispensed;
     private Integer transactionId;
     private boolean paymentStatus;
+    private boolean issueStatus;
     private String comments;
 
     private Pharmacy pharmacy;
+
+    public boolean isIssueStatus() {
+        return issueStatus;
+    }
+
+    public void setIssueStatus(boolean issueStatus) {
+        this.issueStatus = issueStatus;
+    }
 
     public Pharmacy getPharmacy() {
         return pharmacy;

@@ -49,9 +49,7 @@
                                 <tr>
                                     <th>Drug name</th>
                                     <th>Units To issue</th>
-                                    <th>price per unit</th>
-                                    <th>unit total</th>
-                                    <th>payment status</th>
+                                    <th></th>
                                 </tr>
                                 </thead>
                                 <tbody>
@@ -61,19 +59,20 @@
                                     <tr>
                                         <td>${drug.pharmacy.genericName}</td>
                                         <td>${drug.unitsDispensed}</td>
-                                        <td>${drug.pharmacy.pricePerUnit}</td>
-                                        <td>${(drug.unitsDispensed)*(drug.pharmacy.pricePerUnit)}</td>
-                                        <c:if test="${drug.paymentStatus == false}">
+                                        <%--${drug.pharmacy.pricePerUnit}
+                                        ${(drug.unitsDispensed)*(drug.pharmacy.pricePerUnit)}--%>
+                                        <%--<c:if test="${drug.paymentStatus == false}">
                                             <c:set var="balance" value="${balance + drug.unitsDispensed*drug.pharmacy.pricePerUnit}" />
                                             <td>NOT PAID</td>
                                         </c:if>
-                                        <c:if test="${drug.paymentStatus == true}">
-                                            <td>PAID</td>
-                                        </c:if>
+                                        <c:if test="${drug.paymentStatus == false}">
+                                            <td>NOT PAID</td>
+                                        </c:if>--%>
+                                            <c:if test="${drug.paymentStatus == true }">
                                         <td>
-                                            <c:if test="${drug.paymentStatus == false }">
-                                                <form action="<c:url value='/module/pharmacy/paydrug.form'/>" method="get">
-                                            <button type="submit" class="btn btn-success">Clear drug for payment made
+                                                <form action="<c:url value='/module/pharmacy/issuedrug.form'/>" method="get">
+
+                                            <button type="submit" class="btn btn-success">Issue Drug
                                             </button>
                                                     <input type="hidden" class="form-control" name="totalAmount" value="${total}" required />
                                                     <input type="hidden" class="form-control" name="patientId" value="${patient.patientId}" required />
@@ -81,15 +80,19 @@
                                                     <input type="hidden" class="form-control" name="comments" value="${drug.comments}" required />
                                                     <input type="hidden" class="form-control" name="units" value="${drug.unitsDispensed}" required />
                                                     <input type="hidden" class="form-control" name="date" value="${drug.dateOfDispense}" required />
+                                                    <input type="hidden" class="form-control" name="paymentStatus" value="${drug.paymentStatus}" required />
                                                     <input type="hidden" class="form-control" name="dispenseId" value="${drug.id}" required />
                                                 </form>
                                         </c:if>
                                         </td>
+                                        <c:if test="${drug.paymentStatus == false}">
+                                            <td>NOT PAID</td>
+                                        </c:if>
                                     </tr>
                                     <c:set var="total" value="${total + drug.unitsDispensed*drug.pharmacy.pricePerUnit}" />
                                 </c:forEach>
-                                <tr><td></td><td></td><th>TOTAL</th><td>${total}</td></tr>
-                                <tr><td></td><td></td><th>BALANCE</th><td><strong>${balance}</strong></td></tr>
+                                <%--<tr><td></td><td></td><th>TOTAL</th><td>${total}</td></tr>
+                                <tr><td></td><td></td><th>BALANCE</th><td><strong>${balance}</strong></td></tr>--%>
                                 <%--<tr>
                                     <td>
                                         <form action="<c:url value='/module/pharmacy/paydrug.form'/>" method="get">
