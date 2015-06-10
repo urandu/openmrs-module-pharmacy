@@ -219,7 +219,7 @@ public class  PharmacyManageController {
 
     }
     @RequestMapping(value ="/module/pharmacy/paydrug.form"  , method = RequestMethod.GET)
-    public String paydrug(HttpSession httpSession,
+    public void paydrug(HttpSession httpSession,
                              @RequestParam(value = "patientId", required = false) Integer patientId,
                              @RequestParam(value = "totalAmount", required = false) float totalAmount,
                              @RequestParam(value = "drugId", required = false) Integer drugId,
@@ -236,13 +236,12 @@ public class  PharmacyManageController {
             dispenseDrug.setDateOfDispense(date);
             dispenseDrug.setDrugId(drugId);
             dispenseDrug.setId(dispenseId);
-
-           /* PayDrug payDrug= new PayDrug();
+          /*  PayDrug payDrug= new PayDrug();
             payDrug.setPatientID(patientId);
             payDrug.setDateOfPayment(new Date());
             payDrug.setPaid(true);
-            payDrug.setTotalAmount(totalAmount);*/
-
+            payDrug.setTotalAmount(totalAmount);
+*/
             DispenseDrugService dispenseDrugService=Context.getService(DispenseDrugService.class);
             dispenseDrugService.updateMyDispensedDrug(dispenseDrug);
 
@@ -250,12 +249,10 @@ public class  PharmacyManageController {
             payDrugService.saveMyPaidDrug(payDrug);*/
 
             httpSession.setAttribute(WebConstants.OPENMRS_MSG_ATTR, "Updated Successfully");
-            return null;
-            //return "redirect:patientPanel.form";
+            //return "redirect:pharmacyHome.form";
         } catch (Exception ex) {
             httpSession.setAttribute(WebConstants.OPENMRS_MSG_ATTR, ex.getLocalizedMessage());
-            //return "redirect:patientPanel.form";
-            return null;
+            //return "redirect:pharmacyHome.form";
         }
     }
 

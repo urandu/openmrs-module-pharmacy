@@ -80,19 +80,11 @@
                                     <td>
                                         <c:if test="${balance > 0}">
                                             <c:forEach var="drug" items="${dispenseDrugList}" varStatus="status">
-                                        <form action="<c:url value='/module/pharmacy/paydrug.form' var='url'  >"
-                                                <c:param name="patientId" value="${patient.patientId}" />
-                                                <c:param name="totalAmount" value="${total}" />
-                                                <c:param name="drugId" value="${drug.pharmacy.id}" />
-                                                <c:param name="comments" value="${drug.comments}" />
-                                                <c:param name="units" value="${drug.unitsDispensed}" />
-                                                <c:param name="date" value="${drug.dateOfDispense}" />
-                                                <c:param name="dispenseId" value="${drug.id}" /> method="get">
-                                                <%--<c:import url="${url}"/>--%>
-                                                </c:url>
+                                        <form action="<c:url value='/module/pharmacy/paydrug.form?patientId=${patient.patientId}&
+                                        totalAmount=${drug.pharmacy.id} & drugId= ${drug.pharmacy.id}& comments=${drug.comments}&
+                                        units=${drug.unitsDispensed}& date= ${drug.dateOfDispense} & dispenseId= ${drug.id}'/>" method="get">
                                             </c:forEach>
-                                        <button type="submit" class="btn btn-success"><i
-                                                class="fa fa-edit"></i> Clear patient for payment made
+                                        <button type="submit" class="btn btn-success">Clear patient for payment made
                                         </button>
 
 
