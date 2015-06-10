@@ -248,10 +248,10 @@ public class  PharmacyManageController {
             payDrugService.saveMyPaidDrug(payDrug);*/
 
             httpSession.setAttribute(WebConstants.OPENMRS_MSG_ATTR, "Updated Successfully");
-            return "redirect:manage.form";
+            return "redirect:patientPanel.form?patientId="+patientId;
         } catch (Exception ex) {
             httpSession.setAttribute(WebConstants.OPENMRS_MSG_ATTR, ex.getLocalizedMessage());
-            return "redirect:manage.form";
+            return "redirect:patientPanel.form?patientId="+patientId;
         }
     }
 

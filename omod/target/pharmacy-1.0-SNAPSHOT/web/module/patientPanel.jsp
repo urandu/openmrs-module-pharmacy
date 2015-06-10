@@ -70,12 +70,27 @@
                                         <c:if test="${drug.paymentStatus == true}">
                                             <td>PAID</td>
                                         </c:if>
+                                        <td>
+                                            <c:if test="${drug.paymentStatus == false }">
+                                                <form action="<c:url value='/module/pharmacy/paydrug.form'/>" method="get">
+                                            <button type="submit" class="btn btn-success">Clear drug for payment made
+                                            </button>
+                                                    <input type="hidden" class="form-control" name="totalAmount" value="${total}" required />
+                                                    <input type="hidden" class="form-control" name="patientId" value="${patient.patientId}" required />
+                                                    <input type="hidden" class="form-control" name="drugId" value="${drug.pharmacy.id}" required />
+                                                    <input type="hidden" class="form-control" name="comments" value="${drug.comments}" required />
+                                                    <input type="hidden" class="form-control" name="units" value="${drug.unitsDispensed}" required />
+                                                    <input type="hidden" class="form-control" name="date" value="${drug.dateOfDispense}" required />
+                                                    <input type="hidden" class="form-control" name="dispenseId" value="${drug.id}" required />
+                                                </form>
+                                        </c:if>
+                                        </td>
                                     </tr>
                                     <c:set var="total" value="${total + drug.unitsDispensed*drug.pharmacy.pricePerUnit}" />
                                 </c:forEach>
                                 <tr><td></td><td></td><th>TOTAL</th><td>${total}</td></tr>
                                 <tr><td></td><td></td><th>BALANCE</th><td><strong>${balance}</strong></td></tr>
-                                <tr>
+                                <%--<tr>
                                     <td>
                                         <form action="<c:url value='/module/pharmacy/paydrug.form'/>" method="get">
                                             <c:if test="${balance > 0}">
@@ -95,7 +110,7 @@
                                         </form>
 
                                     </td>
-                                </tr>
+                                </tr>--%>
                                 </tbody>
 
                             </table>

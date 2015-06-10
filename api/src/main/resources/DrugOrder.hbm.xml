@@ -11,7 +11,7 @@
 			<generator class="native" />
 		</id>
 		<discriminator column="myDrugOrderId" insert="false" />
-		<many-to-one name="drugId" class="org.openmrs.module.pharmacy.Pharmacy" fetch="select">
+		<many-to-one name="pharmacy" class="org.openmrs.module.pharmacy.Pharmacy" fetch="select">
 			<column name="myDrugId" not-null="true" />
 		</many-to-one>
 		<!--<property name="id" type="java.lang.String" column="myDrugId" length="38" />-->
