@@ -169,6 +169,7 @@ public class  PharmacyManageController {
         List<DispenseDrug> dispenseDrugList=dispenseDrugService.getDispensedDrugForPatient(patientId);
         model.addAttribute("dispenseDrugList",dispenseDrugList);
 
+
         model.addAttribute("patient",patient);
         model.addAttribute("patientId",patientId);
         model.addAttribute("person",person);
@@ -214,7 +215,83 @@ public class  PharmacyManageController {
         model.addAttribute("patientId",patientId);
         model.addAttribute("person",person);
 
+    }
+    @RequestMapping(value ="/module/pharmacy/paydrug.form"  , method = RequestMethod.GET)
+    public String paydrug(HttpSession httpSession,
+                             @RequestParam(value = "patientId", required = false) Integer patientId,
+                             /*@RequestParam(value = "totalAmount", required = false) float totalAmount,*/
+                             @RequestParam(value = "drugId", required = false) Integer drugId,
+                          @RequestParam(value = "comments", required = false) String comments,
+                          @RequestParam(value = "units", required = false) Integer units,
+                          @RequestParam(value = "date", required = false) String date,
+                          @RequestParam(value = "dispenseId", required = false) Integer dispenseId)  {
+        try {
+            DispenseDrug dispenseDrug=new DispenseDrug();
+            dispenseDrug.setPaymentStatus(true);
+            dispenseDrug.setPatientID(patientId);
+            dispenseDrug.setComments(comments);
+            dispenseDrug.setUnitsDispensed(units);
+            /*dispenseDrug.setDateOfDispense(date);*/
+            dispenseDrug.setDrugId(drugId);
+            dispenseDrug.setId(dispenseId);
+          /*  PayDrug payDrug= new PayDrug();
+            payDrug.setPatientID(patientId);
+            payDrug.setDateOfPayment(new Date());
+            payDrug.setPaid(true);
+            payDrug.setTotalAmount(totalAmount);
+*/
+            DispenseDrugService dispenseDrugService=Context.getService(DispenseDrugService.class);
+            dispenseDrugService.updateMyDispensedDrug(dispenseDrug);
 
+            /*PayDrugService payDrugService=Context.getService(PayDrugService.class);
+            payDrugService.saveMyPaidDrug(payDrug);*/
+
+            httpSession.setAttribute(WebConstants.OPENMRS_MSG_ATTR, "Updated Successfully");
+            return "redirect:cashierPatientPanel.form?patientId="+patientId;
+        } catch (Exception ex) {
+            httpSession.setAttribute(WebConstants.OPENMRS_MSG_ATTR, ex.getLocalizedMessage());
+            return "redirect:cashierPatientPanel.form?patientId="+patientId;
+        }
+    }
+
+    @RequestMapping(value ="/module/pharmacy/issuedrug.form"  , method = RequestMethod.GET)
+    public String issuedrug(HttpSession httpSession,
+                          @RequestParam(value = "patientId", required = false) Integer patientId,
+                             /*@RequestParam(value = "totalAmount", required = false) float totalAmount,*/
+                          @RequestParam(value = "drugId", required = false) Integer drugId,
+                          @RequestParam(value = "comments", required = false) String comments,
+                          @RequestParam(value = "units", required = false) Integer units,
+                          @RequestParam(value = "date", required = false) String date,
+                          @RequestParam(value = "dispenseId", required = false) Integer dispenseId,
+                            @RequestParam(value = "paymentStatus", required = false) Boolean payStatus)  {
+        try {
+            DispenseDrug dispenseDrug=new DispenseDrug();
+            dispenseDrug.setPaymentStatus(true);
+            dispenseDrug.setPatientID(patientId);
+            dispenseDrug.setComments(comments);
+            dispenseDrug.setUnitsDispensed(units);
+            /*dispenseDrug.setDateOfDispense(date);*/
+            dispenseDrug.setDrugId(drugId);
+            dispenseDrug.setId(dispenseId);
+            dispenseDrug.setPaymentStatus(payStatus);
+            dispenseDrug.setIssueStatus(true);
+          /*  PayDrug payDrug= new PayDrug();
+            payDrug.setPatientID(patientId);
+            payDrug.setDateOfPayment(new Date());
+            payDrug.setPaid(true);
+            payDrug.setTotalAmount(totalAmount);
+*/
+            DispenseDrugService dispenseDrugService=Context.getService(DispenseDrugService.class);
+            dispenseDrugService.updateMyDispensedDrug(dispenseDrug);
+
+            /*PayDrugService payDrugService=Context.getService(PayDrugService.class);
+            payDrugService.saveMyPaidDrug(payDrug);*/
+
+            return "redirect:patientPanel.form?patientId="+patientId;
+        } catch (Exception ex) {
+            httpSession.setAttribute(WebConstants.OPENMRS_MSG_ATTR, ex.getLocalizedMessage());
+            return "redirect:patientPanel.form?patientId="+patientId;
+        }
     }
 }
 

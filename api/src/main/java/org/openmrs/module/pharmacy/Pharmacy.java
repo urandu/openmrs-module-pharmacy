@@ -31,6 +31,7 @@ public class Pharmacy extends BaseOpenmrsObject implements Serializable {
     private String description;
     private int unitsInStock;
     private float pricePerUnit;
+
     private Set<Pharmacy> myDrugs;
 
     public Set<Pharmacy> getMyDrugs() {

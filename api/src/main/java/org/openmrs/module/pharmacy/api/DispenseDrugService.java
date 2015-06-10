@@ -25,6 +25,9 @@ public interface DispenseDrugService extends OpenmrsService{
 
     @Transactional
     List <DispenseDrug> getDispensedDrugForPatient(Integer patientId);
+
+    @Transactional
+    List <DispenseDrug> getDispensedDrugForPatientIfPaid(Integer patientId,boolean bool);
 /*
     @Transactional(readOnly = true)
     List<DispenseDrug> showDrugOrderByTime();*/

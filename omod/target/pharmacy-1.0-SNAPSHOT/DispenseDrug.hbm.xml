@@ -22,6 +22,7 @@
         <property name="transactionId" type="java.lang.Integer" column="transactionId"/>
         <property name="paymentStatus" type="java.lang.Boolean" column="paymentStatus"/>
         <property name="comments" type="java.lang.String" column="comments"/>
+		<property name="issueStatus" type="java.lang.Boolean" column="issueStatus"/>
 	</class>
 
 </hibernate-mapping>

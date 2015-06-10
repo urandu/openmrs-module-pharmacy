@@ -53,6 +53,10 @@ public class DispenseDrugServiceImpl extends BaseOpenmrsService implements Dispe
     public List <DispenseDrug> getDispensedDrugForPatient(Integer patientId){
                 return dao.getDispensedDrugForPatient(patientId);
             }
+
+    public List <DispenseDrug> getDispensedDrugForPatientIfPaid(Integer patientId,boolean bool){
+        return dao.getDispensedDrugForPatientIfPaid(patientId,bool);
+    }
    /* @Override
     public List<DispenseDrug> showDrugOrderByTime(){
         return dao.showDrugOrderByTime();

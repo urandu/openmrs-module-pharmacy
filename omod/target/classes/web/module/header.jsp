@@ -270,9 +270,16 @@
                 </a>
             </li>
             <li class="highlight">
+                <a href='cashierHome.form'>
+                    <i class="fa fa-home"></i>
+                    <span>Cashier Home</span>
+                    <%--<span class="current-page"></span>--%>
+                </a>
+            </li>
+            <li class="highlight">
                 <a href='listDrugs.form'>
                     <i class="fa fa-desktop"></i>
-                    <span>Drug List</span>
+                    <span>Drug Management</span>
                     <%--<span class="current-page"></span>--%>
                 </a>
             </li>

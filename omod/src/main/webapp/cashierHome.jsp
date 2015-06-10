@@ -7,7 +7,7 @@
     <!-- Top Bar starts -->
     <div class="top-bar">
         <div class="page-title">
-            Cashier Home
+            Cashier-Home
         </div>
 
     </div>
@@ -53,14 +53,14 @@
                 });
 
 
-                 $('#data-table').dataTable({
+                $('#data-table').dataTable({
                     "fnRowCallback": function (nRow, aData, iDisplayIndex) {
 
                         // Bind click event
                         $(nRow).click(function() {
 
-                           // alert( 'You clicked on '+aData+'\'s row' );
-                            window.location="/openmrs/module/pharmacy/patientPanel.form?patientId="+aData[0]+"&patientUuid=";
+                            // alert( 'You clicked on '+aData+'\'s row' );
+                            window.location="/openmrs/module/pharmacy/cashierPatientPanel.form?patientId="+aData[0]+"&patientUuid=";
 
                         });
 
