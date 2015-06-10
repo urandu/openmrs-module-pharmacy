@@ -33,7 +33,6 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import javax.servlet.http.HttpSession;
-import java.util.Date;
 import java.util.List;
 
 
@@ -219,13 +218,13 @@ public class  PharmacyManageController {
 
     }
     @RequestMapping(value ="/module/pharmacy/paydrug.form"  , method = RequestMethod.GET)
-    public void paydrug(HttpSession httpSession,
+    public String paydrug(HttpSession httpSession,
                              @RequestParam(value = "patientId", required = false) Integer patientId,
-                             @RequestParam(value = "totalAmount", required = false) float totalAmount,
+                             /*@RequestParam(value = "totalAmount", required = false) float totalAmount,*/
                              @RequestParam(value = "drugId", required = false) Integer drugId,
                           @RequestParam(value = "comments", required = false) String comments,
                           @RequestParam(value = "units", required = false) Integer units,
-                          @RequestParam(value = "date", required = false) Date date,
+                          @RequestParam(value = "date", required = false) String date,
                           @RequestParam(value = "dispenseId", required = false) Integer dispenseId)  {
         try {
             DispenseDrug dispenseDrug=new DispenseDrug();
@@ -233,7 +232,7 @@ public class  PharmacyManageController {
             dispenseDrug.setPatientID(patientId);
             dispenseDrug.setComments(comments);
             dispenseDrug.setUnitsDispensed(units);
-            dispenseDrug.setDateOfDispense(date);
+            /*dispenseDrug.setDateOfDispense(date);*/
             dispenseDrug.setDrugId(drugId);
             dispenseDrug.setId(dispenseId);
           /*  PayDrug payDrug= new PayDrug();
@@ -249,10 +248,10 @@ public class  PharmacyManageController {
             payDrugService.saveMyPaidDrug(payDrug);*/
 
             httpSession.setAttribute(WebConstants.OPENMRS_MSG_ATTR, "Updated Successfully");
-            //return "redirect:pharmacyHome.form";
+            return "redirect:manage.form";
         } catch (Exception ex) {
             httpSession.setAttribute(WebConstants.OPENMRS_MSG_ATTR, ex.getLocalizedMessage());
-            //return "redirect:pharmacyHome.form";
+            return "redirect:manage.form";
         }
     }
 

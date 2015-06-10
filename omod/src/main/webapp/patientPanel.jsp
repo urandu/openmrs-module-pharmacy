@@ -63,7 +63,6 @@
                                         <td>${drug.unitsDispensed}</td>
                                         <td>${drug.pharmacy.pricePerUnit}</td>
                                         <td>${(drug.unitsDispensed)*(drug.pharmacy.pricePerUnit)}</td>
-                                        <%--<td>${drug.paymentStatus}</td>--%>
                                         <c:if test="${drug.paymentStatus == false}">
                                             <c:set var="balance" value="${balance + drug.unitsDispensed*drug.pharmacy.pricePerUnit}" />
                                             <td>NOT PAID</td>
@@ -78,24 +77,28 @@
                                 <tr><td></td><td></td><th>BALANCE</th><td><strong>${balance}</strong></td></tr>
                                 <tr>
                                     <td>
-                                        <c:if test="${balance > 0}">
-                                            <c:forEach var="drug" items="${dispenseDrugList}" varStatus="status">
-                                        <form action="<c:url value='/module/pharmacy/paydrug.form?patientId=${patient.patientId}&
-                                        totalAmount=${drug.pharmacy.id} & drugId= ${drug.pharmacy.id}& comments=${drug.comments}&
-                                        units=${drug.unitsDispensed}& date= ${drug.dateOfDispense} & dispenseId= ${drug.id}'/>" method="get">
-                                            </c:forEach>
-                                        <button type="submit" class="btn btn-success">Clear patient for payment made
-                                        </button>
-
-
-                                        </form>
+                                        <form action="<c:url value='/module/pharmacy/paydrug.form'/>" method="get">
+                                            <c:if test="${balance > 0}">
+                                            <button type="submit" class="btn btn-success">Clear patient for payment made
+                                            </button>
                                             </c:if>
+                                                <input type="hidden" class="form-control" name="totalAmount" value="${total}" required />
+                                                <input type="hidden" class="form-control" name="patientId" value="${patient.patientId}" required />
+
+                                            <c:forEach var="drug" items="${dispenseDrugList}" >
+                                                <input type="hidden" class="form-control" name="drugId" value="${drug.drugId}" required />
+                                                <input type="hidden" class="form-control" name="comments" value="${drug.comments}" required />
+                                                <input type="hidden" class="form-control" name="units" value="${drug.unitsDispensed}" required />
+                                                <input type="hidden" class="form-control" name="date" value="${drug.dateOfDispense}" required />
+                                                <input type="hidden" class="form-control" name="dispenseId" value="${drug.id}" required />
+                                            </c:forEach>
+                                        </form>
 
                                     </td>
                                 </tr>
                                 </tbody>
 
-                            </table> ${url}
+                            </table>
                         </div>
 
                     </div>
