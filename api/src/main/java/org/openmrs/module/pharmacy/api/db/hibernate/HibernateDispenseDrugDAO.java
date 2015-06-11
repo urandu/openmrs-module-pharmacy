@@ -72,6 +72,15 @@ public class HibernateDispenseDrugDAO implements DispenseDrugDAO {
         List list = criteria.list();
         return list;
     }
+
+    @Override
+    public List<DispenseDrug> getDispensedDrugForDrug(Integer drugId){
+        Criteria criteria = sessionFactory.getCurrentSession().createCriteria(DispenseDrug.class);
+        criteria.setFetchMode("Patient", FetchMode.JOIN).add(Restrictions.eq("drugId",drugId));
+        List list = criteria.list();
+        return list;
+    }
+
     @Override
     public List<DispenseDrug> getDispensedDrugForPatientIfPaid(Integer patientId,boolean bool){
         Criteria criteria = sessionFactory.getCurrentSession().createCriteria(DispenseDrug.class);

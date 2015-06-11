@@ -51,15 +51,14 @@ import java.util.Vector;
 public class  PharmacyManageController {
 
 
-	protected final Log log = LogFactory.getLog(getClass());
+    protected final Log log = LogFactory.getLog(getClass());
     private static final String PATH ="/module/pharmacy/newDrug.form";
 
-	@RequestMapping(value = "/module/pharmacy/manage", method = RequestMethod.GET)
-	public void manage(ModelMap model) {
+    @RequestMapping(value = "/module/pharmacy/manage", method = RequestMethod.GET)
+    public void manage(ModelMap model) {
 		/*PharmacyService pharmacyService=Context.getService(PharmacyService.class);
         List<Pharmacy> drugList=pharmacyService.getAllMyDrugs();
         model.addAttribute("drugList", drugList);
-
         DispenseDrugService dispenseDrugService=Context.getService(DispenseDrugService.class);
         List<DispenseDrug> dispenseDrugList=dispenseDrugService.getAllMyDispensedDrugs();
         model.addAttribute("dispenseDrugList",dispenseDrugList);*/
@@ -200,10 +199,9 @@ public class  PharmacyManageController {
     }
 
 
-	
+
 	/*protected final Log log = LogFactory.getLog(getClass());//jkkjkjkjk
 
-	
 	@RequestMapping(value = "/module/pharmacy/manage", method = RequestMethod.GET)
 	public void manage(ModelMap model) {
 		model.addAttribute("user", Context.getAuthenticatedUser());
@@ -223,7 +221,7 @@ public class  PharmacyManageController {
 
     @RequestMapping(value = "/module/pharmacy/patientPanel", method = RequestMethod.GET)
     public void patientPanel(ModelMap model,@RequestParam( value="patientId",required = true) Integer patientId,
-                               @RequestParam( value="patientUuid",required = false) String patientUuid) {
+                             @RequestParam( value="patientUuid",required = false) String patientUuid) {
         model.addAttribute("user", Context.getAuthenticatedUser());
         //Person person= Context.getPatientService().getPatient(ptId);
 
@@ -265,7 +263,7 @@ public class  PharmacyManageController {
 
     @RequestMapping(value = "/module/pharmacy/cashierPatientPanel", method = RequestMethod.GET)
     public void cashierPatientPanel(ModelMap model,@RequestParam( value="patientId",required = true) Integer patientId,
-                             @RequestParam( value="patientUuid",required = false) String patientUuid) {
+                                    @RequestParam( value="patientUuid",required = false) String patientUuid) {
         model.addAttribute("user", Context.getAuthenticatedUser());
         //Person person= Context.getPatientService().getPatient(ptId);
 
@@ -304,9 +302,9 @@ public class  PharmacyManageController {
     }
     @RequestMapping(value ="/module/pharmacy/paydrug.form"  , method = RequestMethod.GET)
     public String paydrug(HttpSession httpSession,
-                             @RequestParam(value = "patientId", required = false) Integer patientId,
+                          @RequestParam(value = "patientId", required = false) Integer patientId,
                              /*@RequestParam(value = "totalAmount", required = false) float totalAmount,*/
-                             @RequestParam(value = "drugId", required = false) Integer drugId,
+                          @RequestParam(value = "drugId", required = false) Integer drugId,
                           @RequestParam(value = "comments", required = false) String comments,
                           @RequestParam(value = "units", required = false) Integer units,
                           @RequestParam(value = "date", required = false) String date,
@@ -343,13 +341,13 @@ public class  PharmacyManageController {
 
     @RequestMapping(value ="/module/pharmacy/issuedrug.form"  , method = RequestMethod.GET)
     public String issuedrug(HttpSession httpSession,
-                          @RequestParam(value = "patientId", required = false) Integer patientId,
+                            @RequestParam(value = "patientId", required = false) Integer patientId,
                              /*@RequestParam(value = "totalAmount", required = false) float totalAmount,*/
-                          @RequestParam(value = "drugId", required = false) Integer drugId,
-                          @RequestParam(value = "comments", required = false) String comments,
-                          @RequestParam(value = "units", required = false) Integer units,
-                          @RequestParam(value = "date", required = false) String date,
-                          @RequestParam(value = "dispenseId", required = false) Integer dispenseId,
+                            @RequestParam(value = "drugId", required = false) Integer drugId,
+                            @RequestParam(value = "comments", required = false) String comments,
+                            @RequestParam(value = "units", required = false) Integer units,
+                            @RequestParam(value = "date", required = false) String date,
+                            @RequestParam(value = "dispenseId", required = false) Integer dispenseId,
                             @RequestParam(value = "paymentStatus", required = false) Boolean payStatus)  {
         try {
             DispenseDrugService dispenseDrugService=Context.getService(DispenseDrugService.class);
@@ -386,5 +384,14 @@ public class  PharmacyManageController {
             return "redirect:patientPanel.form?patientId="+patientId;
         }
     }
-}
+    @RequestMapping(value = "/module/pharmacy/report", method = RequestMethod.GET)
+    public void report(ModelMap model){
+        PharmacyService pharmacyService=Context.getService(PharmacyService.class);
+        List<Pharmacy> drugList=pharmacyService.getAllMyDrugs();
+        model.addAttribute("drugList",drugList);
 
+        DispenseDrugService dispenseDrugService=Context.getService(DispenseDrugService.class);
+        List<DispenseDrug> dispenseDrugList=dispenseDrugService.getAllMyDispensedDrugs();
+        model.addAttribute("dispenseDrugList",dispenseDrugList);
+    }
+}

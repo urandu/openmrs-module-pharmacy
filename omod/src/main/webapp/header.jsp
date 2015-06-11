@@ -283,6 +283,13 @@
                     <%--<span class="current-page"></span>--%>
                 </a>
             </li>
+            <li class="highlight">
+                <a href='report.form'>
+                    <i class="fa fa-desktop"></i>
+                    <span>ReportS</span>
+                    <%--<span class="current-page"></span>--%>
+                </a>
+            </li>
         </ul>
     </div>
     <!-- Menu End -->
