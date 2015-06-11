@@ -43,19 +43,22 @@
                            <tr><td>Beginning Date</td><td>End Date</td></tr>
                            <tr><td><div class="form-group">
                                <div class='input-group date' id='datetimepicker3'>
-                                   <input type='text' class="form-control" />
+                                   <input type='text' name="minDate" class="form-control" />
                     <span class="input-group-addon">
-                        <span class="glyphicon glyphicon-time"></span>
+                        <span class="glyphicon glyphicon-calendar"></span>
                     </span>
                                </div>
                            </div></td><td><div class="form-group">
                                <div class='input-group date' id='datetimepicker3'>
-                                   <input type='text' class="form-control" />
+                                   <input type='text' name="maxDate" class="form-control" />
                     <span class="input-group-addon">
-                        <span class="glyphicon glyphicon-time"></span>
+                        <span class="glyphicon glyphicon-calendar"></span>
                     </span>
+                                   </form>
                                </div>
-                           </div></td></tr>
+                           </div></td><td><form action="<c:url value='/module/pharmacy/viewtimedreport.form'/>" method="get">
+                               <button type="submit" class="btn btn-success">submit
+                               </button></td></tr>
                         </table>
                     </div>
                 </div>
@@ -68,7 +71,7 @@
                     <thead>
                     <tr>
                         <th>Drug name</th>
-                        <th>Quantities received</th>
+                        <th>Quantities In Stock</th>
                         <th>Total Quantities Dispensed</th>
                     </tr>
                     </thead>

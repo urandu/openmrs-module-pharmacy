@@ -2,6 +2,7 @@ package org.openmrs.module.pharmacy.api.db;
 
 import org.openmrs.module.pharmacy.api.OtherModels.DispenseDrug;
 
+import java.util.Date;
 import java.util.List;
 
 /**
@@ -16,5 +17,5 @@ public interface DispenseDrugDAO {
     List <DispenseDrug> getDispensedDrugForPatient(Integer patientId);
     List<DispenseDrug> getDispensedDrugForDrug(Integer drugId);
     List <DispenseDrug> getDispensedDrugForPatientIfPaid(Integer patientId,boolean bool);
-    /*List<DispenseDrug> showDrugOrderByTime();*/
+    List<DispenseDrug> showDispensedDrugByTime(Date minDate,Date maxDate);
 }

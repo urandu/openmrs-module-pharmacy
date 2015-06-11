@@ -7,6 +7,7 @@ import org.openmrs.module.pharmacy.api.DispenseDrugService;
 import org.openmrs.module.pharmacy.api.OtherModels.DispenseDrug;
 import org.openmrs.module.pharmacy.api.db.DispenseDrugDAO;
 
+import java.util.Date;
 import java.util.List;
 
 /**
@@ -60,9 +61,9 @@ public class DispenseDrugServiceImpl extends BaseOpenmrsService implements Dispe
     public List <DispenseDrug> getDispensedDrugForPatientIfPaid(Integer patientId,boolean bool){
         return dao.getDispensedDrugForPatientIfPaid(patientId,bool);
     }
-   /* @Override
-    public List<DispenseDrug> showDrugOrderByTime(){
-        return dao.showDrugOrderByTime();
-    }*/
+   @Override
+    public List<DispenseDrug> showDispensedDrugByTime(Date minDate,Date maxDate){
+        return dao.showDispensedDrugByTime(minDate,maxDate);
+    }
 
 }
