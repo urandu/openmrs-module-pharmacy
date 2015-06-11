@@ -79,7 +79,7 @@
                             <tr><td>${drug.genericName}</td>
                                 <td>${drug.unitsInStock}</td>
                                 <%--<td>${drug.id}</td>--%>
-                                <c:forEach var="drug1" items="${dispenseDruglist}" varStatus="status">
+                                <c:forEach var="drug1" items="${dispenseDrugList}" varStatus="status">
                                     <c:if test="${drug1.issueStatus == true && drug1.pharmacy.drugId==drug.id}">
                                         <c:set var="totalDispensed" value="${totalDispensed + drug1.pharmacy.unitsDispensed}" />
                                     </c:if>
