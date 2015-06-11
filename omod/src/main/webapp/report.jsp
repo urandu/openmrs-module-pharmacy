@@ -80,8 +80,8 @@
                                 <td>${drug.unitsInStock}</td>
                                 <%--<td>${drug.id}</td>--%>
                                 <c:forEach var="drug1" items="${dispenseDrugList}" varStatus="status">
-                                    <c:if test="${drug1.issueStatus == true && drug1.pharmacy.drugId==drug.id}">
-                                        <c:set var="totalDispensed" value="${totalDispensed + drug1.pharmacy.unitsDispensed}" />
+                                    <c:if test="${drug1.issueStatus == true && drug1.pharmacy.id==drug.id}">
+                                        <c:set var="totalDispensed" value="${totalDispensed + drug1.unitsDispensed}" />
                                     </c:if>
                                 </c:forEach>
                                 <td>${totalDispensed}</td>
