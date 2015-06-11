@@ -209,14 +209,7 @@ public class  PharmacyManageController {
 		model.addAttribute("user", Context.getAuthenticatedUser());
 	}*/
 
-    @RequestMapping(value = "/module/pharmacy/listDrugs", method = RequestMethod.GET)
-    public void listDrugs(ModelMap model) {
 
-        PharmacyService pharmacyService=Context.getService(PharmacyService.class);
-        List<Pharmacy> drugList=pharmacyService.getAllMyDrugs();
-        model.addAttribute("drugList", drugList);
-        model.addAttribute("user", Context.getAuthenticatedUser());
-    }
 
     @RequestMapping(value = "/module/pharmacy/pharmacyHome", method = RequestMethod.GET)
     public void pharmacyHome(ModelMap model) {
