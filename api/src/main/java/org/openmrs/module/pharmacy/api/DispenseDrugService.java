@@ -4,6 +4,7 @@ import org.openmrs.api.OpenmrsService;
 import org.openmrs.module.pharmacy.api.OtherModels.DispenseDrug;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.Date;
 import java.util.List;
 
 /**
@@ -31,7 +32,7 @@ public interface DispenseDrugService extends OpenmrsService{
 
     @Transactional
     List<DispenseDrug> getDispensedDrugForDrug(Integer drugId);
-/*
+
     @Transactional(readOnly = true)
-    List<DispenseDrug> showDrugOrderByTime();*/
+   List<DispenseDrug> showDispensedDrugByTime(Date minDate,Date maxDate);
 }

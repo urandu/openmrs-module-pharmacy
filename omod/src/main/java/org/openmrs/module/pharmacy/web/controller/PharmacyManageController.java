@@ -393,5 +393,23 @@ public class  PharmacyManageController {
         DispenseDrugService dispenseDrugService=Context.getService(DispenseDrugService.class);
         List<DispenseDrug> dispenseDrugList=dispenseDrugService.getAllMyDispensedDrugs();
         model.addAttribute("dispenseDrugList",dispenseDrugList);
+
+    }
+
+    @RequestMapping(value = "/module/pharmacy/viewtimedreport.form", method = RequestMethod.GET)
+    public String viewtimedreport(ModelMap modelMap,
+            @RequestParam(value = "minDate", required = false) String minDate,
+                                @RequestParam(value = "maxDate", required = false) String maxDate){
+        try {
+            SimpleDateFormat format = new SimpleDateFormat("yyyy-mm-dd");
+            Date dateMin, dateMax;
+            dateMin = format.parse(minDate);
+            dateMax = format.parse(maxDate);
+
+            return "redirect:report.form?patientId="+dateMin+"&"+dateMax;
+        }
+        catch (Exception ex){
+            return "redirect:report.form";
+        }
     }
 }

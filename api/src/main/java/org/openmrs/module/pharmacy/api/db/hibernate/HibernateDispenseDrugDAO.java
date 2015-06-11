@@ -5,10 +5,12 @@ import org.apache.commons.logging.LogFactory;
 import org.hibernate.Criteria;
 import org.hibernate.FetchMode;
 import org.hibernate.SessionFactory;
+import org.hibernate.criterion.Conjunction;
 import org.hibernate.criterion.Restrictions;
 import org.openmrs.module.pharmacy.api.OtherModels.DispenseDrug;
 import org.openmrs.module.pharmacy.api.db.DispenseDrugDAO;
 
+import java.util.Date;
 import java.util.List;
 
 /**
@@ -59,11 +61,16 @@ public class HibernateDispenseDrugDAO implements DispenseDrugDAO {
         return dispenseDrug;
     }
 
-    /*@Override
-        public List <DispenseDrug> getDispensedDrugForPatient(Integer patientId){
-
-          return (List<DispenseDrug>) sessionFactory.getCurrentSession().get(DispenseDrug.class, patientId);
-        }*/
+    @Override
+    public List<DispenseDrug> showDispensedDrugByTime(Date minDate,Date maxDate){
+        Conjunction and = Restrictions.conjunction();
+        and.add(Restrictions.ge("dateOfDispense", minDate));
+        and.add( Restrictions.lt("dateOfDispense", maxDate) );
+        Criteria criteria = sessionFactory.getCurrentSession().createCriteria(DispenseDrug.class);
+        criteria.setFetchMode("Pharmacy",FetchMode.JOIN).add(and);
+        List list=criteria.list();
+        return list;
+    }
 
     @Override
     public List<DispenseDrug> getDispensedDrugForPatient(Integer patientId){
