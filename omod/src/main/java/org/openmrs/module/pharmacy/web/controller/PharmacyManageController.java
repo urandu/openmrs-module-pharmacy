@@ -225,13 +225,20 @@ public class  PharmacyManageController {
                           @RequestParam(value = "units", required = false) Integer units,
                           @RequestParam(value = "date", required = false) String date,
                           @RequestParam(value = "dispenseId", required = false) Integer dispenseId)  {
-        try {
+        try {/*
+            String expectedPattern = "yyyy-mm-dd";
+            SimpleDateFormat formatter = new SimpleDateFormat(expectedPattern);
+            Date dateOfDispense = formatter.parse(date);*/
+
+            DispenseDrugService dispenseDrugService=Context.getService(DispenseDrugService.class);
+            dispenseDrugService.getMyDispensedDrug(dispenseId);
+
             DispenseDrug dispenseDrug=new DispenseDrug();
             dispenseDrug.setPaymentStatus(true);
             dispenseDrug.setPatientID(patientId);
             dispenseDrug.setComments(comments);
             dispenseDrug.setUnitsDispensed(units);
-            /*dispenseDrug.setDateOfDispense(date);*/
+            /*dispenseDrug.setDateOfDispense(dateOfDispense);*/
             dispenseDrug.setDrugId(drugId);
             dispenseDrug.setId(dispenseId);
           /*  PayDrug payDrug= new PayDrug();
@@ -240,7 +247,6 @@ public class  PharmacyManageController {
             payDrug.setPaid(true);
             payDrug.setTotalAmount(totalAmount);
 */
-            DispenseDrugService dispenseDrugService=Context.getService(DispenseDrugService.class);
             dispenseDrugService.updateMyDispensedDrug(dispenseDrug);
 
             /*PayDrugService payDrugService=Context.getService(PayDrugService.class);
@@ -264,13 +270,20 @@ public class  PharmacyManageController {
                           @RequestParam(value = "date", required = false) String date,
                           @RequestParam(value = "dispenseId", required = false) Integer dispenseId,
                             @RequestParam(value = "paymentStatus", required = false) Boolean payStatus)  {
-        try {
+        try {/*
+            String expectedPattern = "yyyy-mm-dd";
+            SimpleDateFormat formatter = new SimpleDateFormat(expectedPattern);
+            Date dateOfDispense = formatter.parse(date);*/
+
+            DispenseDrugService dispenseDrugService=Context.getService(DispenseDrugService.class);
+            dispenseDrugService.getMyDispensedDrug(dispenseId);
+
             DispenseDrug dispenseDrug=new DispenseDrug();
             dispenseDrug.setPaymentStatus(true);
             dispenseDrug.setPatientID(patientId);
             dispenseDrug.setComments(comments);
             dispenseDrug.setUnitsDispensed(units);
-            /*dispenseDrug.setDateOfDispense(date);*/
+            /*dispenseDrug.setDateOfDispense(dateOfDispense);*/
             dispenseDrug.setDrugId(drugId);
             dispenseDrug.setId(dispenseId);
             dispenseDrug.setPaymentStatus(payStatus);
@@ -281,7 +294,6 @@ public class  PharmacyManageController {
             payDrug.setPaid(true);
             payDrug.setTotalAmount(totalAmount);
 */
-            DispenseDrugService dispenseDrugService=Context.getService(DispenseDrugService.class);
             dispenseDrugService.updateMyDispensedDrug(dispenseDrug);
 
             /*PayDrugService payDrugService=Context.getService(PayDrugService.class);
