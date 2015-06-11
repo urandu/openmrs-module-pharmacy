@@ -226,7 +226,8 @@ public class  PharmacyManageController {
                           @RequestParam(value = "date", required = false) String date,
                           @RequestParam(value = "dispenseId", required = false) Integer dispenseId)  {
         try {
-            DispenseDrug dispenseDrug=new DispenseDrug();
+            DispenseDrugService dispenseDrugService=Context.getService(DispenseDrugService.class);
+            DispenseDrug dispenseDrug=dispenseDrugService.getMyDispensedDrug(dispenseId);
             dispenseDrug.setPaymentStatus(true);
             dispenseDrug.setPatientID(patientId);
             dispenseDrug.setComments(comments);
@@ -240,7 +241,7 @@ public class  PharmacyManageController {
             payDrug.setPaid(true);
             payDrug.setTotalAmount(totalAmount);
 */
-            DispenseDrugService dispenseDrugService=Context.getService(DispenseDrugService.class);
+
             dispenseDrugService.updateMyDispensedDrug(dispenseDrug);
 
             /*PayDrugService payDrugService=Context.getService(PayDrugService.class);
@@ -265,7 +266,8 @@ public class  PharmacyManageController {
                           @RequestParam(value = "dispenseId", required = false) Integer dispenseId,
                             @RequestParam(value = "paymentStatus", required = false) Boolean payStatus)  {
         try {
-            DispenseDrug dispenseDrug=new DispenseDrug();
+            DispenseDrugService dispenseDrugService=Context.getService(DispenseDrugService.class);
+            DispenseDrug dispenseDrug=dispenseDrugService.getMyDispensedDrug(dispenseId);
             dispenseDrug.setPaymentStatus(true);
             dispenseDrug.setPatientID(patientId);
             dispenseDrug.setComments(comments);
@@ -281,7 +283,7 @@ public class  PharmacyManageController {
             payDrug.setPaid(true);
             payDrug.setTotalAmount(totalAmount);
 */
-            DispenseDrugService dispenseDrugService=Context.getService(DispenseDrugService.class);
+
             dispenseDrugService.updateMyDispensedDrug(dispenseDrug);
 
             /*PayDrugService payDrugService=Context.getService(PayDrugService.class);
