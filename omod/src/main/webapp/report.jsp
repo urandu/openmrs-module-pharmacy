@@ -68,7 +68,7 @@
                     <thead>
                     <tr>
                         <th>Drug name</th>
-                        <th>Quantities received</th>
+                        <th>Quantities In Stock</th>
                         <th>Total Quantities Dispensed</th>
                     </tr>
                     </thead>
